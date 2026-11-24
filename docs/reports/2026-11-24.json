@@ -1,9 +1,9 @@
 {
   "day": "2026-11-24",
   "start": "2026-11-23T16:00:00-08:00",
-  "end": "2026-11-24T15:22:24.265578-08:00",
+  "end": "2026-11-24T15:26:44.138009-08:00",
   "partial_day": true,
-  "generated": "2026-11-24T15:22:24.265578-08:00",
+  "generated": "2026-11-24T15:26:44.138009-08:00",
   "matches": [
     {
       "id": "401915300",
@@ -20,6 +20,14 @@
           "minute": "77'",
           "type": "Goal - Header",
           "players": "Deniz Gül",
+          "player": {
+            "id": "350513",
+            "name": "Deniz Gül",
+            "name_zh": "德尼兹·居尔",
+            "number": "21"
+          },
+          "assist": null,
+          "scoring": true,
           "text": "Goal! Galatasaray 1, Aston Villa 0. Deniz Gül (Galatasaray) header from very close range to the centre of the goal following a corner."
         }
       ],
@@ -61,7 +69,7 @@
         "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915300-zh-en.png",
         "filename": "401915300-zh-en.png",
         "width": 1080,
-        "height": 2404,
+        "height": 2457,
         "image_embedded": true,
         "team_crests_embedded": 2
       }
@@ -81,6 +89,14 @@
           "minute": "90'+2'",
           "type": "Own Goal",
           "players": "Melayro Bogarde",
+          "player": {
+            "id": "290638",
+            "name": "Melayro Bogarde",
+            "name_zh": "梅莱罗·博加德",
+            "number": "6"
+          },
+          "assist": null,
+          "scoring": true,
           "text": "Own Goal by Melayro Bogarde, LASK. Bodø/Glimt 1, LASK 0."
         }
       ],
@@ -124,7 +140,7 @@
         "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915380-zh-en.png",
         "filename": "401915380-zh-en.png",
         "width": 1080,
-        "height": 2428,
+        "height": 2481,
         "image_embedded": true,
         "team_crests_embedded": 2
       }
@@ -144,6 +160,14 @@
           "minute": "2'",
           "type": "Own Goal",
           "players": "Oussama Targhaline",
+          "player": {
+            "id": "313354",
+            "name": "Oussama Targhaline",
+            "name_zh": "乌萨马·塔尔加林",
+            "number": "28"
+          },
+          "assist": null,
+          "scoring": true,
           "text": "Own Goal by Oussama Targhalline, Feyenoord. Feyenoord 0, FC Porto 1."
         }
       ],
@@ -187,7 +211,7 @@
         "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915294-zh-en.png",
         "filename": "401915294-zh-en.png",
         "width": 1080,
-        "height": 2428,
+        "height": 2481,
         "image_embedded": true,
         "team_crests_embedded": 2
       }
@@ -206,13 +230,34 @@
         {
           "minute": "10'",
           "type": "Goal",
-          "players": "Viktor Gyökeres, Noni Madueke",
+          "players": "Viktor Gyökeres",
+          "player": {
+            "id": "258906",
+            "name": "Viktor Gyökeres",
+            "name_zh": "维克托·哲凯赖什",
+            "number": "14"
+          },
+          "assist": {
+            "id": "293236",
+            "name": "Noni Madueke",
+            "name_zh": "诺尼·马杜埃凯",
+            "number": "20"
+          },
+          "scoring": true,
           "text": "Goal! Arsenal 1, Borussia Dortmund 0. Viktor Gyökeres (Arsenal) right footed shot from outside the box to the high centre of the goal. Assisted by Noni Madueke."
         },
         {
           "minute": "55'",
           "type": "Goal",
-          "players": "Maximilian Beier, Kouakou Gadou",
+          "players": "Maximilian Beier",
+          "player": {
+            "id": "290639",
+            "name": "Maximilian Beier",
+            "name_zh": "马克西米利安·拜尔",
+            "number": "14"
+          },
+          "assist": null,
+          "scoring": true,
           "text": "Goal! Arsenal 1, Borussia Dortmund 1. Maximilian Beier (Borussia Dortmund) left footed shot from the centre of the box to the bottom right corner. Assisted by Joane Gadou."
         }
       ],
@@ -254,7 +299,7 @@
         "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915295-zh-en.png",
         "filename": "401915295-zh-en.png",
         "width": 1080,
-        "height": 2433,
+        "height": 2539,
         "image_embedded": true,
         "team_crests_embedded": 2
       }
@@ -273,7 +318,20 @@
         {
           "minute": "57'",
           "type": "Goal",
-          "players": "Luis Milla, Martin Baturina",
+          "players": "Luis Milla",
+          "player": {
+            "id": "264211",
+            "name": "Luis Milla",
+            "name_zh": "路易斯·米利亚",
+            "number": "6"
+          },
+          "assist": {
+            "id": "311475",
+            "name": "Martin Baturina",
+            "name_zh": "马丁·巴图里纳",
+            "number": "20"
+          },
+          "scoring": true,
           "text": "Goal! Como 1, AEK Athens 0. Luis Milla (Como) right footed shot from outside the box to the top right corner. Assisted by Martin Baturina."
         }
       ],
@@ -317,7 +375,7 @@
         "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915296-zh-en.png",
         "filename": "401915296-zh-en.png",
         "width": 1080,
-        "height": 2428,
+        "height": 2481,
         "image_embedded": true,
         "team_crests_embedded": 2
       }
@@ -336,13 +394,39 @@
         {
           "minute": "43'",
           "type": "Goal - Header",
-          "players": "Cucho Hernández, Ángel Ortiz",
+          "players": "Cucho Hernández",
+          "player": {
+            "id": "336809",
+            "name": "Cucho Hernández",
+            "name_zh": "库乔·埃尔南德斯",
+            "number": "9"
+          },
+          "assist": {
+            "id": "395941",
+            "name": "Ángel Ortiz",
+            "name_zh": "安赫尔·奥尔蒂斯",
+            "number": "12"
+          },
+          "scoring": true,
           "text": "Goal! Slovan Bratislava 0, Real Betis 1. Cucho Hernández (Real Betis) header from the centre of the box to the bottom left corner. Assisted by Ángel Ortiz with a cross."
         },
         {
           "minute": "57'",
           "type": "Goal - Header",
-          "players": "Cucho Hernández, Isco",
+          "players": "Cucho Hernández",
+          "player": {
+            "id": "336809",
+            "name": "Cucho Hernández",
+            "name_zh": "库乔·埃尔南德斯",
+            "number": "9"
+          },
+          "assist": {
+            "id": "143564",
+            "name": "Isco",
+            "name_zh": "伊斯科",
+            "number": "22"
+          },
+          "scoring": true,
           "text": "Goal! Slovan Bratislava 0, Real Betis 2. Cucho Hernández (Real Betis) header from the centre of the box to the high centre of the goal. Assisted by Isco with a cross following a corner."
         }
       ],
@@ -378,7 +462,7 @@
         "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915297-zh-en.png",
         "filename": "401915297-zh-en.png",
         "width": 1080,
-        "height": 2492,
+        "height": 2598,
         "image_embedded": true,
         "team_crests_embedded": 2
       }
@@ -398,36 +482,109 @@
           "minute": "32'",
           "type": "Penalty - Scored",
           "players": "Ivan Perisic",
+          "player": {
+            "id": "103485",
+            "name": "Ivan Perisic",
+            "name_zh": "伊万·佩里西奇",
+            "number": "5"
+          },
+          "assist": null,
+          "scoring": true,
           "text": "Goal! Real Madrid 0, PSV Eindhoven 1. Ivan Perisic (PSV Eindhoven) converts the penalty with a right footed shot to the bottom right corner."
         },
         {
           "minute": "50'",
           "type": "Goal",
-          "players": "Federico Valverde, Arda Güler",
+          "players": "Federico Valverde",
+          "player": {
+            "id": "235818",
+            "name": "Federico Valverde",
+            "name_zh": "费德里科·巴尔韦德",
+            "number": "8"
+          },
+          "assist": {
+            "id": "310452",
+            "name": "Arda Güler",
+            "name_zh": "阿尔达·居莱尔",
+            "number": "15"
+          },
+          "scoring": true,
           "text": "Goal! Real Madrid 1, PSV Eindhoven 1. Federico Valverde (Real Madrid) right footed shot from the centre of the box to the bottom right corner. Assisted by Arda Güler."
         },
         {
           "minute": "60'",
           "type": "Goal - Volley",
-          "players": "Jude Bellingham, Kylian Mbappé",
+          "players": "Jude Bellingham",
+          "player": {
+            "id": "291281",
+            "name": "Jude Bellingham",
+            "name_zh": "裘德·贝林厄姆",
+            "number": "5"
+          },
+          "assist": {
+            "id": "231388",
+            "name": "Kylian Mbappé",
+            "name_zh": "基利安·姆巴佩",
+            "number": "10"
+          },
+          "scoring": true,
           "text": "Goal! Real Madrid 2, PSV Eindhoven 1. Jude Bellingham (Real Madrid) right footed shot from outside the box to the bottom right corner. Assisted by Kylian Mbappé."
         },
         {
           "minute": "64'",
           "type": "Goal",
-          "players": "Kylian Mbappé, Arda Güler",
+          "players": "Kylian Mbappé",
+          "player": {
+            "id": "231388",
+            "name": "Kylian Mbappé",
+            "name_zh": "基利安·姆巴佩",
+            "number": "10"
+          },
+          "assist": {
+            "id": "310452",
+            "name": "Arda Güler",
+            "name_zh": "阿尔达·居莱尔",
+            "number": "15"
+          },
+          "scoring": true,
           "text": "Goal! Real Madrid 3, PSV Eindhoven 1. Kylian Mbappé (Real Madrid) right footed shot from the centre of the box to the top left corner. Assisted by Arda Güler."
         },
         {
           "minute": "84'",
           "type": "Goal",
-          "players": "Kylian Mbappé, Brahim Díaz",
+          "players": "Kylian Mbappé",
+          "player": {
+            "id": "231388",
+            "name": "Kylian Mbappé",
+            "name_zh": "基利安·姆巴佩",
+            "number": "10"
+          },
+          "assist": {
+            "id": "246532",
+            "name": "Brahim Díaz",
+            "name_zh": "布拉欣·迪亚斯",
+            "number": "21"
+          },
+          "scoring": true,
           "text": "Goal! Real Madrid 4, PSV Eindhoven 1. Kylian Mbappé (Real Madrid) right footed shot from the centre of the box to the bottom right corner. Assisted by Brahim Díaz with a through ball."
         },
         {
           "minute": "87'",
           "type": "Goal",
-          "players": "Vinícius Júnior, Jude Bellingham",
+          "players": "Vinícius Júnior",
+          "player": {
+            "id": "252107",
+            "name": "Vinícius Júnior",
+            "name_zh": "维尼修斯·儒尼奥尔",
+            "number": "7"
+          },
+          "assist": {
+            "id": "291281",
+            "name": "Jude Bellingham",
+            "name_zh": "裘德·贝林厄姆",
+            "number": "5"
+          },
+          "scoring": true,
           "text": "Goal! Real Madrid 5, PSV Eindhoven 1. Vinícius Júnior (Real Madrid) right footed shot from the centre of the box to the centre of the goal. Assisted by Jude Bellingham following a fast break."
         }
       ],
@@ -469,7 +626,7 @@
         "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915298-zh-en.png",
         "filename": "401915298-zh-en.png",
         "width": 1080,
-        "height": 2653,
+        "height": 2971,
         "image_embedded": true,
         "team_crests_embedded": 2
       }
@@ -489,24 +646,61 @@
           "minute": "6'",
           "type": "Goal - Free-kick",
           "players": "David Raum",
+          "player": {
+            "id": "249548",
+            "name": "David Raum",
+            "name_zh": "大卫·劳姆",
+            "number": "22"
+          },
+          "assist": null,
+          "scoring": true,
           "text": "Goal! RB Leipzig 1, Lens 0. David Raum (RB Leipzig) from a free kick with a left footed shot to the bottom left corner."
         },
         {
           "minute": "9'",
           "type": "Goal",
           "players": "Antonio Nusa",
+          "player": {
+            "id": "319368",
+            "name": "Antonio Nusa",
+            "name_zh": "安东尼奥·努萨",
+            "number": "7"
+          },
+          "assist": null,
+          "scoring": true,
           "text": "Goal! RB Leipzig 2, Lens 0. Antonio Nusa (RB Leipzig) right footed shot from the centre of the box to the bottom right corner."
         },
         {
           "minute": "58'",
           "type": "Goal",
           "players": "Matthieu Udol",
+          "player": {
+            "id": "233199",
+            "name": "Matthieu Udol",
+            "name_zh": "马蒂厄·乌多尔",
+            "number": "14"
+          },
+          "assist": null,
+          "scoring": true,
           "text": "Goal! RB Leipzig 2, Lens 1. Matthieu Udol (Lens) right footed shot from the centre of the box to the bottom left corner following a fast break."
         },
         {
           "minute": "90'+4'",
           "type": "Goal",
-          "players": "Antonio Nusa, Christopher Nkunku",
+          "players": "Antonio Nusa",
+          "player": {
+            "id": "319368",
+            "name": "Antonio Nusa",
+            "name_zh": "安东尼奥·努萨",
+            "number": "7"
+          },
+          "assist": {
+            "id": "222176",
+            "name": "Christopher Nkunku",
+            "name_zh": "克里斯托弗·恩昆库",
+            "number": "28"
+          },
+          "scoring": true,
           "text": "Goal! RB Leipzig 3, Lens 1. Antonio Nusa (RB Leipzig) right footed shot from the centre of the box to the bottom right corner. Assisted by Christopher Nkunku following a fast break."
         }
       ],
@@ -550,7 +744,7 @@
         "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915299-zh-en.png",
         "filename": "401915299-zh-en.png",
         "width": 1080,
-        "height": 2620,
+        "height": 2832,
         "image_embedded": true,
         "team_crests_embedded": 2
       }
@@ -569,25 +763,77 @@
         {
           "minute": "55'",
           "type": "Goal",
-          "players": "Rasmus Højlund, Billy Gilmour",
+          "players": "Rasmus Højlund",
+          "player": {
+            "id": "309273",
+            "name": "Rasmus Højlund",
+            "name_zh": "拉斯穆斯·霍伊伦",
+            "number": "19"
+          },
+          "assist": {
+            "id": "274217",
+            "name": "Billy Gilmour",
+            "name_zh": "比利·吉尔莫",
+            "number": "6"
+          },
+          "scoring": true,
           "text": "Goal! Manchester City 0, Napoli 1. Rasmus Højlund (Napoli) left footed shot from the centre of the box to the centre of the goal. Assisted by Billy Gilmour with a through ball."
         },
         {
           "minute": "67'",
           "type": "Goal",
-          "players": "Ayyoub Bouaddi, Jérémy Doku",
+          "players": "Ayyoub Bouaddi",
+          "player": {
+            "id": "373927",
+            "name": "Ayyoub Bouaddi",
+            "name_zh": "阿尤布·布阿迪",
+            "number": "32"
+          },
+          "assist": {
+            "id": "283672",
+            "name": "Jérémy Doku",
+            "name_zh": "热雷米·多库",
+            "number": "11"
+          },
+          "scoring": true,
           "text": "Goal! Manchester City 1, Napoli 1. Ayyoub Bouaddi (Manchester City) left footed shot from the centre of the box to the high centre of the goal. Assisted by Jérémy Doku following a corner."
         },
         {
           "minute": "76'",
           "type": "Goal",
-          "players": "Noa Lang, Leonardo Spinazzola",
+          "players": "Noa Lang",
+          "player": {
+            "id": "255344",
+            "name": "Noa Lang",
+            "name_zh": "诺阿·朗",
+            "number": "70"
+          },
+          "assist": {
+            "id": "148974",
+            "name": "Leonardo Spinazzola",
+            "name_zh": "莱昂纳多·斯皮纳佐拉",
+            "number": "37"
+          },
+          "scoring": true,
           "text": "Goal! Manchester City 1, Napoli 2. Noa Lang (Napoli) right footed shot from the centre of the box to the centre of the goal. Assisted by Leonardo Spinazzola with a cross."
         },
         {
           "minute": "86'",
           "type": "Goal",
-          "players": "Rayan Cherki, Iliman Ndiaye",
+          "players": "Rayan Cherki",
+          "player": {
+            "id": "298008",
+            "name": "Rayan Cherki",
+            "name_zh": "拉扬·谢尔基",
+            "number": "10"
+          },
+          "assist": {
+            "id": "268641",
+            "name": "Iliman Ndiaye",
+            "name_zh": "伊利曼·恩迪亚耶",
+            "number": "7"
+          },
+          "scoring": true,
           "text": "Goal! Manchester City 2, Napoli 2. Rayan Cherki (Manchester City) right footed shot from a difficult angle on the right to the bottom left corner. Assisted by Iliman Ndiaye."
         }
       ],
@@ -621,7 +867,7 @@
         "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915379-zh-en.png",
         "filename": "401915379-zh-en.png",
         "width": 1080,
-        "height": 2631,
+        "height": 2843,
         "image_embedded": true,
         "team_crests_embedded": 2
       }
