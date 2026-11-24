@@ -35,13 +35,13 @@ def groups(paths):
 
 def build_messages(report, folder, sender, recipient):
     day = report['day']
-    paths = [folder / 'posters' / day / (m['id'] + '.png') for m in report['matches']]
+    paths = [folder / 'posters' / day / m.get('poster', {}).get('filename', m['id'] + '.png') for m in report['matches']]
     paths += [folder / 'posters' / day / chart['filename'] for chart in report.get('standings_charts', [])]
     batches = groups(paths) or [[]]
     messages = []
     for index, batch in enumerate(batches, 1):
         msg = EmailMessage()
-        msg['Subject'] = f"男足图文日报 {day}" + (f'（{index}/{len(batches)}）' if len(batches) > 1 else '')
+        msg['Subject'] = f"男足图文日报 {day} · 中英双语队名版" + (f'（{index}/{len(batches)}）' if len(batches) > 1 else '')
         if report.get('partial_day'):
             msg.replace_header('Subject', str(msg['Subject']) + ' · 提前试跑')
         msg['From'], msg['To'] = sender, recipient
@@ -52,7 +52,7 @@ def build_messages(report, folder, sender, recipient):
             text += '积分榜图片也已附在邮件和 ZIP 中，按赛事列出积分、排名、场次和净胜球。\n'
         text += '官方集锦链接（按比赛）：\n'
         for match in report['matches']:
-            text += f"\n{match['home']} vs {match['away']}（附件 {match['id']}.png）\n"
+            text += f"\n{match['home']} vs {match['away']}（附件 {match.get('poster', {}).get('filename', match['id'] + '.png')}）\n"
             clips = match.get('highlights', [])
             text += '\n'.join(f"{v['publisher']}：{v['url']}" for v in clips) if clips else '完整官方集锦暂缺'
             text += '\n'
@@ -76,7 +76,7 @@ def build_messages(report, folder, sender, recipient):
                 markup += '<br>'.join('<a href="' + html.escape(v['url'], quote=True) + '">官方集锦 · ' + html.escape(v['publisher']) + '</a>' for v in clips)
             else:
                 markup += '完整官方集锦暂缺'
-            markup += '<br><small>对应附件：' + html.escape(match['id']) + '.png</small></li>'
+            markup += '<br><small>对应附件：' + html.escape(match.get('poster', {}).get('filename', match['id'] + '.png')) + '</small></li>'
         markup += '</ul>'
         if batch:
             markup += '<p>本批首张预览：</p><img style="width:100%;max-width:540px;height:auto" src="cid:' + cid + '">'
@@ -98,7 +98,7 @@ def build_messages(report, folder, sender, recipient):
                 msg.add_attachment(path.read_bytes(), maintype='image', subtype='png', filename=path.name)
             suffix = f'-part{index}' if len(batches) > 1 else ''
             msg.add_attachment(bundle.getvalue(), maintype='application', subtype='zip',
-                               filename=f'football-{day}{suffix}.zip')
+                               filename=f'football-{day}-zh-en{suffix}.zip')
         if len(msg.as_bytes()) > MAX_EMAIL_BYTES:
             raise ValueError('Encoded email exceeds safe Gmail limit; refusing partial delivery')
         messages.append(msg)

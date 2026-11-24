@@ -1,5 +1,6 @@
 """Export one self-contained, downloadable social image per match."""
 import io
+import json
 import os
 from pathlib import Path
 import zipfile
@@ -14,8 +15,7 @@ BG = '#101b18'
 FG = '#f2f5ec'
 MUTED = '#b0c1b4'
 ACCENT = '#d5f48f'
-TEAM_NAMES = {'Monza': '蒙扎', 'Fiorentina': '佛罗伦萨', 'Brentford': '布伦特福德',
-              'Everton': '埃弗顿', 'Levante': '莱万特', 'Elche': '埃尔切'}
+TEAM_NAMES = json.loads(Path(__file__).with_name('team-names.json').read_text())
 
 
 def font(size):
@@ -46,7 +46,7 @@ def wrap(text, face, max_width=CONTENT):
 
 
 def translated(text):
-    for original, chinese in TEAM_NAMES.items():
+    for original, chinese in sorted(TEAM_NAMES.items(), key=lambda item: len(item[0]), reverse=True):
         text = text.replace(original, chinese)
     return text
 
@@ -75,7 +75,9 @@ def draw_poster(match, day, output, fetch, public_base):
     text('FULL TIME  /  男足比赛特辑', 27, ACCENT, 28)
     text(f"{day}   ·   {match['league']}", 30, MUTED, 28)
     text(TEAM_NAMES.get(match['home'], match['home']), 57, FG, 2)
-    text('VS  ' + TEAM_NAMES.get(match['away'], match['away']), 42, MUTED, 18)
+    text(match['home'], 28, MUTED, 14)
+    text('VS  ' + TEAM_NAMES.get(match['away'], match['away']), 48, FG, 2)
+    text(match['away'], 28, MUTED, 18)
     text(match['score'], 150, ACCENT, 6)
     text('洛杉矶开球时间 ' + match['kickoff'][:16].replace('T', ' '), 26, MUTED, 24)
 
@@ -148,14 +150,14 @@ def export(report, out, fetch):
     folder = out / 'posters' / report['day']
     generated = []
     for match in report['matches']:
-        path = folder / (match['id'] + '.png')
+        path = folder / (match['id'] + '-zh-en.png')
         metadata = draw_poster(match, report['day'], path, fetch, base)
-        match['poster'] = {'url': prefix + '/' + path.name, **metadata}
+        match['poster'] = {'url': prefix + '/' + path.name, 'filename': path.name, **metadata}
         generated.append(path)
     from standings_chart import export_tables
     generated.extend(export_tables(report, out, fetch, prefix, folder))
     if generated:
-        bundle = folder / ('football-' + report['day'] + '.zip')
+        bundle = folder / ('football-' + report['day'] + '-zh-en.zip')
         with zipfile.ZipFile(bundle, 'w', zipfile.ZIP_DEFLATED) as archive:
             for path in generated:
                 archive.write(path, path.name)

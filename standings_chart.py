@@ -85,7 +85,7 @@ def export_tables(report, out, fetch, prefix, folder):
                 report['errors'].append(league + '：队标加载失败：' + ', '.join(missing_logos))
             draw.text((PAD, y + 20), '来源：ESPN · 抓取时积分快照', fill=MUTED, font=font(25))
             draw.text((PAD, y + 65), '非赛前后名次变化；晋级以赛事官方最终规则及结果为准。', fill=MUTED, font=font(22))
-            path = folder / f'standings-{slug}-{group_index}.png'
+            path = folder / f'standings-{slug}-{group_index}-zh-en-crests.png'
             image.save(path, 'PNG', optimize=True)
             assets.append({'url': prefix + '/' + path.name, 'filename': path.name, 'league': league,
                            'group': group['name'], 'source': source, 'rows': rows,
