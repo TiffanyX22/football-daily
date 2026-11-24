@@ -39,3 +39,15 @@ class PosterTests(unittest.TestCase):
                     self.assertEqual(result.size, (1080, 1312))
                     self.assertEqual(result.getpixel((100, 70)), (18, 52, 86))
             self.assertFalse(path.exists())
+
+    def test_compact_match_is_one_fixed_card(self):
+        from social_match import draw_match
+        match = {'home': 'Arsenal', 'away': 'Lens', 'league': '欧冠', 'score': '1–0',
+                 'kickoff': '2026-11-24T12:00:00-08:00', 'id': 'demo', 'photos': [],
+                 'timeline': [], 'standings': [], 'impact': '积分暂缺', 'highlights': []}
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'match.png'
+            result = draw_match(match, '2026-11-24', path, None, 'https://example.com')
+            with Image.open(path) as image:
+                self.assertEqual(image.size, (1080, 1312))
+            self.assertEqual(result['height'], 1312)

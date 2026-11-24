@@ -11,10 +11,10 @@ import qrcode
 WIDTH = 1080
 PAD = 64
 CONTENT = WIDTH - PAD * 2
-BG = '#080e63'
+BG = '#101b18'
 FG = '#f2f5ec'
 MUTED = '#b0c1b4'
-ACCENT = '#46f5eb'
+ACCENT = '#d5f48f'
 TEAM_NAMES = json.loads(Path(__file__).with_name('team-names.json').read_text())
 
 
@@ -191,11 +191,11 @@ def export(report, out, fetch):
     generated = [folder / a['filename'] for a in report['covers']]
     for match in report['matches']:
         path = folder / (match['id'] + '-zh-en.png')
-        metadata = draw_poster(match, report['day'], path, fetch, base)
-        pages = paginate(path, metadata.pop('_breaks'), TEAM_NAMES.get(match['home'], match['home']) + ' / ' + match['home'] + ' vs ' + TEAM_NAMES.get(match['away'], match['away']) + ' / ' + match['away'], match['highlights'][0]['url'] if match['highlights'] else base + '/reports/' + report['day'] + '.html#' + match['id'])
-        match['poster_pages'] = [{'filename': p.name, 'url': prefix + '/' + p.name} for p in pages]
-        match['poster'] = {**match['poster_pages'][0], **metadata, 'height': 1312}
-        generated.extend(pages)
+        from social_match import draw_match
+        metadata = draw_match(match, report['day'], path, fetch, base)
+        match['poster_pages'] = [{'filename': path.name, 'url': prefix + '/' + path.name}]
+        match['poster'] = {**match['poster_pages'][0], **metadata}
+        generated.append(path)
     from standings_chart import export_tables
     generated.extend(export_tables(report, out, fetch, prefix, folder))
     if generated:
