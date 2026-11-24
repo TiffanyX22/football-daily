@@ -31,7 +31,7 @@ jobs:
     timeout-minutes: 20
     environment:
       name: github-pages
-      url: ${{ steps.publish.outputs.page_url }}
+      url: ${{ steps.publish.outputs.page_url || steps.publish_retry.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -107,11 +107,19 @@ jobs:
           PY
       - name: Publish report
         id: publish
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - name: Allow Pages artifact listing to settle before retry
+        if: steps.publish.outcome == 'failure'
+        run: sleep 15
+      - name: Retry transient Pages deployment failure once
+        if: steps.publish.outcome == 'failure'
+        id: publish_retry
         uses: actions/deploy-pages@v4
       - name: Notify personal account after publishing
         env:
           GH_TOKEN: ${{ github.token }}
-          PAGE_URL: ${{ steps.publish.outputs.page_url }}
+          PAGE_URL: ${{ steps.publish.outputs.page_url || steps.publish_retry.outputs.page_url }}
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
