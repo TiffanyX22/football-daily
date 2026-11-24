@@ -101,7 +101,26 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PAGE_URL: ${{ steps.publish.outputs.page_url }}
-        run: python notify.py
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+        run: |
+          if [ -z "$SMTP_USERNAME" ] || [ -z "$SMTP_PASSWORD" ] || [ -z "$REPORT_EMAIL" ]; then
+            python notify.py
+          else
+            echo 'Attachment email enabled; skipping duplicate GitHub notification.'
+          fi
+      - name: Email PNG and ZIP attachments
+        env:
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+        run: |
+          if [ -n "$SMTP_USERNAME" ] && [ -n "$SMTP_PASSWORD" ] && [ -n "$REPORT_EMAIL" ]; then
+            python mail_report.py --date "$REPORT_DATE"
+          else
+            echo '::notice::Attachment email is awaiting Gmail authorization. GitHub notification remains active.'
+          fi
       - name: Surface incomplete data as a failed check
         if: steps.generate.outcome == 'failure'
         run: |

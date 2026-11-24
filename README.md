@@ -37,3 +37,13 @@ python agent.py --date 2026-11-23
 ESPN 公开网页接口没有稳定性承诺，可能修改或限制访问。网页照片外链展示；社媒长图按用户要求合成配图并保留来源归属，照片版权仍归原作者。历史报告存在仓库中；需自行遵守数据及媒体来源的使用条件。
 
 旧 ChatGPT 云端任务不会由此程序自动停用；新部署验证后可另行关闭，避免重复通知。
+
+## 邮件正文预览与附件
+
+`mail_report.py` 使用 Gmail SSL SMTP，邮件正文嵌入小预览，同时直接附上全部原尺寸 PNG 和 ZIP。内容多时按安全大小分封，附件不是网页链接。
+
+在本仓库 Actions Secrets 中配置 `SMTP_USERNAME`、`SMTP_PASSWORD`（Google 应用专用密码，不能用普通登录密码）、`REPORT_EMAIL`。三个 Secret 齐备后自动改发附件邮件，并停止重复的 GitHub Issue 邮件。未配置时继续原来的 GitHub 通知，不冒充已开通附件邮件。
+
+Gmail 应用专用密码由用户在 Google 安全页面创建并直接填入 GitHub Secrets，不进入代码、聊天、运行日志或仓库。需要 Google 两步验证，部分账号政策可能不提供应用密码。
+
+本地不发送邮件的 MIME 验证：`python mail_report.py --date 2026-11-23 --dry-run /tmp/football-email-preview`。不要提交 `.eml` 或授权凭证。
