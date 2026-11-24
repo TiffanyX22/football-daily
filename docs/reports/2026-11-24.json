@@ -1,9 +1,9 @@
 {
   "day": "2026-11-24",
   "start": "2026-11-23T16:00:00-08:00",
-  "end": "2026-11-24T15:04:28.391265-08:00",
+  "end": "2026-11-24T15:14:53.916607-08:00",
   "partial_day": true,
-  "generated": "2026-11-24T15:04:28.391265-08:00",
+  "generated": "2026-11-24T15:14:53.916607-08:00",
   "matches": [
     {
       "id": "401915300",
@@ -923,6 +923,8 @@
       "rows": [
         {
           "team": "Real Madrid",
+          "team_zh": "皇家马德里",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/86.png",
           "gamesPlayed": "5",
           "losses": "0",
           "pointDifferential": "+10",
@@ -940,6 +942,8 @@
         },
         {
           "team": "Paris Saint-Germain",
+          "team_zh": "巴黎圣日耳曼",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/160.png",
           "gamesPlayed": "4",
           "losses": "0",
           "pointDifferential": "+15",
@@ -957,6 +961,8 @@
         },
         {
           "team": "Como",
+          "team_zh": "科莫",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2572.png",
           "gamesPlayed": "5",
           "losses": "1",
           "pointDifferential": "+14",
@@ -974,6 +980,8 @@
         },
         {
           "team": "Real Betis",
+          "team_zh": "皇家贝蒂斯",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/244.png",
           "gamesPlayed": "5",
           "losses": "1",
           "pointDifferential": "+4",
@@ -991,6 +999,8 @@
         },
         {
           "team": "Arsenal",
+          "team_zh": "阿森纳",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/359.png",
           "gamesPlayed": "5",
           "losses": "0",
           "pointDifferential": "+5",
@@ -1008,6 +1018,8 @@
         },
         {
           "team": "Manchester City",
+          "team_zh": "曼城",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
           "gamesPlayed": "5",
           "losses": "1",
           "pointDifferential": "+5",
@@ -1025,6 +1037,8 @@
         },
         {
           "team": "Borussia Dortmund",
+          "team_zh": "多特蒙德",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/124.png",
           "gamesPlayed": "5",
           "losses": "1",
           "pointDifferential": "+2",
@@ -1042,6 +1056,8 @@
         },
         {
           "team": "Barcelona",
+          "team_zh": "巴塞罗那",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/83.png",
           "gamesPlayed": "4",
           "losses": "1",
           "pointDifferential": "+8",
@@ -1059,6 +1075,8 @@
         },
         {
           "team": "Aston Villa",
+          "team_zh": "阿斯顿维拉",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
           "gamesPlayed": "5",
           "losses": "2",
           "pointDifferential": "+5",
@@ -1076,6 +1094,8 @@
         },
         {
           "team": "Liverpool",
+          "team_zh": "利物浦",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
           "gamesPlayed": "4",
           "losses": "1",
           "pointDifferential": "+4",
@@ -1093,6 +1113,8 @@
         },
         {
           "team": "Club Brugge",
+          "team_zh": "布鲁日",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/570.png",
           "gamesPlayed": "4",
           "losses": "1",
           "pointDifferential": "+4",
@@ -1110,6 +1132,8 @@
         },
         {
           "team": "Sporting CP",
+          "team_zh": "葡萄牙体育",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2250.png",
           "gamesPlayed": "4",
           "losses": "1",
           "pointDifferential": "+4",
@@ -1127,6 +1151,8 @@
         },
         {
           "team": "Galatasaray",
+          "team_zh": "加拉塔萨雷",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/432.png",
           "gamesPlayed": "5",
           "losses": "2",
           "pointDifferential": "0",
@@ -1144,6 +1170,8 @@
         },
         {
           "team": "Bayern Munich",
+          "team_zh": "拜仁慕尼黑",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132.png",
           "gamesPlayed": "4",
           "losses": "0",
           "pointDifferential": "+7",
@@ -1161,6 +1189,8 @@
         },
         {
           "team": "VfB Stuttgart",
+          "team_zh": "斯图加特",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/134.png",
           "gamesPlayed": "4",
           "losses": "1",
           "pointDifferential": "+3",
@@ -1178,6 +1208,8 @@
         },
         {
           "team": "Bodo/Glimt",
+          "team_zh": "博德闪耀",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2980.png",
           "gamesPlayed": "5",
           "losses": "2",
           "pointDifferential": "-4",
@@ -1195,6 +1227,8 @@
         },
         {
           "team": "Internazionale",
+          "team_zh": "国际米兰",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/110.png",
           "gamesPlayed": "4",
           "losses": "2",
           "pointDifferential": "+2",
@@ -1212,6 +1246,8 @@
         },
         {
           "team": "LASK Linz",
+          "team_zh": "林茨",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4411.png",
           "gamesPlayed": "5",
           "losses": "3",
           "pointDifferential": "0",
@@ -1229,6 +1265,8 @@
         },
         {
           "team": "Manchester United",
+          "team_zh": "曼联",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
           "gamesPlayed": "4",
           "losses": "2",
           "pointDifferential": "0",
@@ -1246,6 +1284,8 @@
         },
         {
           "team": "FC Porto",
+          "team_zh": "波尔图",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png",
           "gamesPlayed": "5",
           "losses": "3",
           "pointDifferential": "0",
@@ -1263,6 +1303,8 @@
         },
         {
           "team": "RB Leipzig",
+          "team_zh": "RB莱比锡",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11420.png",
           "gamesPlayed": "5",
           "losses": "3",
           "pointDifferential": "-4",
@@ -1280,6 +1322,8 @@
         },
         {
           "team": "Fenerbahce",
+          "team_zh": "费内巴切",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/436.png",
           "gamesPlayed": "4",
           "losses": "1",
           "pointDifferential": "-5",
@@ -1297,6 +1341,8 @@
         },
         {
           "team": "AS Roma",
+          "team_zh": "罗马",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
           "gamesPlayed": "4",
           "losses": "2",
           "pointDifferential": "+2",
@@ -1314,6 +1360,8 @@
         },
         {
           "team": "Shakhtar Donetsk",
+          "team_zh": "顿涅茨克矿工",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/493.png",
           "gamesPlayed": "4",
           "losses": "2",
           "pointDifferential": "0",
@@ -1331,6 +1379,8 @@
         },
         {
           "team": "Viking FK",
+          "team_zh": "维京",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/510.png",
           "gamesPlayed": "4",
           "losses": "2",
           "pointDifferential": "-1",
@@ -1348,6 +1398,8 @@
         },
         {
           "team": "Atlético Madrid",
+          "team_zh": "马德里竞技",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
           "gamesPlayed": "4",
           "losses": "2",
           "pointDifferential": "-1",
@@ -1365,6 +1417,8 @@
         },
         {
           "team": "Napoli",
+          "team_zh": "那不勒斯",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
           "gamesPlayed": "5",
           "losses": "3",
           "pointDifferential": "-5",
@@ -1382,6 +1436,8 @@
         },
         {
           "team": "PSV Eindhoven",
+          "team_zh": "PSV埃因霍温",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/148.png",
           "gamesPlayed": "5",
           "losses": "3",
           "pointDifferential": "-5",
@@ -1399,6 +1455,8 @@
         },
         {
           "team": "Villarreal",
+          "team_zh": "比利亚雷亚尔",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/102.png",
           "gamesPlayed": "4",
           "losses": "3",
           "pointDifferential": "-6",
@@ -1416,6 +1474,8 @@
         },
         {
           "team": "Sabah FK",
+          "team_zh": "沙巴",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/21922.png",
           "gamesPlayed": "4",
           "losses": "3",
           "pointDifferential": "-6",
@@ -1433,6 +1493,8 @@
         },
         {
           "team": "AEK Athens",
+          "team_zh": "雅典AEK",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/887.png",
           "gamesPlayed": "5",
           "losses": "4",
           "pointDifferential": "-7",
@@ -1450,6 +1512,8 @@
         },
         {
           "team": "Feyenoord Rotterdam",
+          "team_zh": "费耶诺德",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/142.png",
           "gamesPlayed": "5",
           "losses": "4",
           "pointDifferential": "-8",
@@ -1467,6 +1531,8 @@
         },
         {
           "team": "Lens",
+          "team_zh": "朗斯",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/175.png",
           "gamesPlayed": "5",
           "losses": "4",
           "pointDifferential": "-14",
@@ -1484,6 +1550,8 @@
         },
         {
           "team": "Slavia Prague",
+          "team_zh": "布拉格斯拉维亚",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/494.png",
           "gamesPlayed": "4",
           "losses": "3",
           "pointDifferential": "-4",
@@ -1501,6 +1569,8 @@
         },
         {
           "team": "Lille",
+          "team_zh": "里尔",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/166.png",
           "gamesPlayed": "4",
           "losses": "3",
           "pointDifferential": "-6",
@@ -1518,6 +1588,8 @@
         },
         {
           "team": "Slovan Bratislava",
+          "team_zh": "布拉迪斯拉发",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/521.png",
           "gamesPlayed": "5",
           "losses": "5",
           "pointDifferential": "-18",
@@ -1533,7 +1605,9 @@
           "rankChange": "0",
           "overall": "0-0-5"
         }
-      ]
+      ],
+      "bilingual_complete": true,
+      "logos_complete": true
     }
   ],
   "poster_bundle": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/football-2026-11-24.zip"
