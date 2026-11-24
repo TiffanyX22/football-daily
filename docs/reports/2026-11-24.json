@@ -1,0 +1,744 @@
+{
+  "day": "2026-11-24",
+  "start": "2026-11-23T16:00:00-08:00",
+  "end": "2026-11-24T14:29:40.772046-08:00",
+  "partial_day": true,
+  "generated": "2026-11-24T14:29:40.772046-08:00",
+  "matches": [
+    {
+      "id": "401915300",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Galatasaray",
+      "away": "Aston Villa",
+      "score": "1–0",
+      "kickoff": "2026-11-24T09:45:00-08:00",
+      "finished": "2026-11-24T11:38:57-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915300/aston-villa-galatasaray",
+      "timeline": [
+        {
+          "minute": "77'",
+          "type": "Goal - Header",
+          "players": "Deniz Gül",
+          "text": "Goal! Galatasaray 1, Aston Villa 0. Deniz Gül (Galatasaray) header from very close range to the centre of the goal following a corner."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://a.espncdn.com/photo/2026/1124/r1750730_1296x729_16-9.jpg",
+          "caption": "Galatasaray's forward #21 Deniz Gul (C) celebrates after scoring a goal during the UEFA Champions League football match between Galatasaray and Aston Villa at Ali Sami Yen Spor Kompleksi in Istanbul, on November 24, 2026.",
+          "credit": "Ozan KOSE / AFP via Getty Images",
+          "source": "https://www.espn.com/soccer/report/_/gameId/401915300"
+        }
+      ],
+      "highlights": [],
+      "standings": [
+        "Galatasaray：9分，第13名，已赛5场，距本组榜首6分。",
+        "Aston Villa：9分，第9名，已赛5场，距本组榜首6分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915300.png",
+        "width": 1080,
+        "height": 2307,
+        "image_embedded": true
+      }
+    },
+    {
+      "id": "401915380",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Bodo/Glimt",
+      "away": "LASK Linz",
+      "score": "1–0",
+      "kickoff": "2026-11-24T09:45:00-08:00",
+      "finished": "2026-11-24T11:35:46-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915380/lask-linz-bodoglimt",
+      "timeline": [
+        {
+          "minute": "90'+2'",
+          "type": "Own Goal",
+          "players": "Melayro Bogarde",
+          "text": "Own Goal by Melayro Bogarde, LASK. Bodø/Glimt 1, LASK 0."
+        }
+      ],
+      "photos": [],
+      "highlights": [],
+      "standings": [
+        "Bodo/Glimt：7分，第16名，已赛5场，距本组榜首8分。",
+        "LASK Linz：6分，第18名，已赛5场，距本组榜首9分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915380.png",
+        "width": 1080,
+        "height": 1886,
+        "image_embedded": false
+      }
+    },
+    {
+      "id": "401915294",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Feyenoord Rotterdam",
+      "away": "FC Porto",
+      "score": "0–1",
+      "kickoff": "2026-11-24T12:00:00-08:00",
+      "finished": "2026-11-24T13:56:35-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915294/fc-porto-feyenoord-rotterdam",
+      "timeline": [
+        {
+          "minute": "2'",
+          "type": "Own Goal",
+          "players": "Oussama Targhaline",
+          "text": "Own Goal by Oussama Targhalline, Feyenoord. Feyenoord 0, FC Porto 1."
+        }
+      ],
+      "photos": [],
+      "highlights": [],
+      "standings": [
+        "Feyenoord Rotterdam：3分，第32名，已赛5场，距本组榜首12分。",
+        "FC Porto：6分，第20名，已赛5场，距本组榜首9分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915294.png",
+        "width": 1080,
+        "height": 1886,
+        "image_embedded": false
+      }
+    },
+    {
+      "id": "401915295",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Arsenal",
+      "away": "Borussia Dortmund",
+      "score": "1–1",
+      "kickoff": "2026-11-24T12:00:00-08:00",
+      "finished": "2026-11-24T13:50:14-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915295/borussia-dortmund-arsenal",
+      "timeline": [
+        {
+          "minute": "10'",
+          "type": "Goal",
+          "players": "Viktor Gyökeres, Noni Madueke",
+          "text": "Goal! Arsenal 1, Borussia Dortmund 0. Viktor Gyökeres (Arsenal) right footed shot from outside the box to the high centre of the goal. Assisted by Noni Madueke."
+        },
+        {
+          "minute": "55'",
+          "type": "Goal",
+          "players": "Maximilian Beier, Kouakou Gadou",
+          "text": "Goal! Arsenal 1, Borussia Dortmund 1. Maximilian Beier (Borussia Dortmund) left footed shot from the centre of the box to the bottom right corner. Assisted by Joane Gadou."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://a.espncdn.com/photo/2026/1124/r1750801_1296x729_16-9.jpg",
+          "caption": "Arsenal players react after conceding a goal to Dortmund in the Champions League.",
+          "credit": "Getty Images",
+          "source": "https://www.espn.com/soccer/report/_/gameId/401915295"
+        }
+      ],
+      "highlights": [],
+      "standings": [
+        "Arsenal：11分，第5名，已赛5场，距本组榜首4分。",
+        "Borussia Dortmund：10分，第7名，已赛5场，距本组榜首5分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915295.png",
+        "width": 1080,
+        "height": 2336,
+        "image_embedded": true
+      }
+    },
+    {
+      "id": "401915296",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Como",
+      "away": "AEK Athens",
+      "score": "1–0",
+      "kickoff": "2026-11-24T12:00:00-08:00",
+      "finished": "2026-11-24T13:54:18-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915296/aek-athens-como",
+      "timeline": [
+        {
+          "minute": "57'",
+          "type": "Goal",
+          "players": "Luis Milla, Martin Baturina",
+          "text": "Goal! Como 1, AEK Athens 0. Luis Milla (Como) right footed shot from outside the box to the top right corner. Assisted by Martin Baturina."
+        }
+      ],
+      "photos": [],
+      "highlights": [],
+      "standings": [
+        "Como：12分，第3名，已赛5场，距本组榜首3分。",
+        "AEK Athens：3分，第31名，已赛5场，距本组榜首12分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915296.png",
+        "width": 1080,
+        "height": 1886,
+        "image_embedded": false
+      }
+    },
+    {
+      "id": "401915297",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Slovan Bratislava",
+      "away": "Real Betis",
+      "score": "0–2",
+      "kickoff": "2026-11-24T12:00:00-08:00",
+      "finished": "2026-11-24T13:49:42-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915297/real-betis-slovan-bratislava",
+      "timeline": [
+        {
+          "minute": "43'",
+          "type": "Goal - Header",
+          "players": "Cucho Hernández, Ángel Ortiz",
+          "text": "Goal! Slovan Bratislava 0, Real Betis 1. Cucho Hernández (Real Betis) header from the centre of the box to the bottom left corner. Assisted by Ángel Ortiz with a cross."
+        },
+        {
+          "minute": "57'",
+          "type": "Goal - Header",
+          "players": "Cucho Hernández, Isco",
+          "text": "Goal! Slovan Bratislava 0, Real Betis 2. Cucho Hernández (Real Betis) header from the centre of the box to the high centre of the goal. Assisted by Isco with a cross following a corner."
+        }
+      ],
+      "photos": [],
+      "highlights": [],
+      "standings": [
+        "Slovan Bratislava：0分，第36名，已赛5场，距本组榜首15分。",
+        "Real Betis：12分，第4名，已赛5场，距本组榜首3分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915297.png",
+        "width": 1080,
+        "height": 1950,
+        "image_embedded": false
+      }
+    },
+    {
+      "id": "401915298",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Real Madrid",
+      "away": "PSV Eindhoven",
+      "score": "5–1",
+      "kickoff": "2026-11-24T12:00:00-08:00",
+      "finished": "2026-11-24T13:52:20-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915298/psv-eindhoven-real-madrid",
+      "timeline": [
+        {
+          "minute": "32'",
+          "type": "Penalty - Scored",
+          "players": "Ivan Perisic",
+          "text": "Goal! Real Madrid 0, PSV Eindhoven 1. Ivan Perisic (PSV Eindhoven) converts the penalty with a right footed shot to the bottom right corner."
+        },
+        {
+          "minute": "50'",
+          "type": "Goal",
+          "players": "Federico Valverde, Arda Güler",
+          "text": "Goal! Real Madrid 1, PSV Eindhoven 1. Federico Valverde (Real Madrid) right footed shot from the centre of the box to the bottom right corner. Assisted by Arda Güler."
+        },
+        {
+          "minute": "60'",
+          "type": "Goal - Volley",
+          "players": "Jude Bellingham, Kylian Mbappé",
+          "text": "Goal! Real Madrid 2, PSV Eindhoven 1. Jude Bellingham (Real Madrid) right footed shot from outside the box to the bottom right corner. Assisted by Kylian Mbappé."
+        },
+        {
+          "minute": "64'",
+          "type": "Goal",
+          "players": "Kylian Mbappé, Arda Güler",
+          "text": "Goal! Real Madrid 3, PSV Eindhoven 1. Kylian Mbappé (Real Madrid) right footed shot from the centre of the box to the top left corner. Assisted by Arda Güler."
+        },
+        {
+          "minute": "84'",
+          "type": "Goal",
+          "players": "Kylian Mbappé, Brahim Díaz",
+          "text": "Goal! Real Madrid 4, PSV Eindhoven 1. Kylian Mbappé (Real Madrid) right footed shot from the centre of the box to the bottom right corner. Assisted by Brahim Díaz with a through ball."
+        },
+        {
+          "minute": "87'",
+          "type": "Goal",
+          "players": "Vinícius Júnior, Jude Bellingham",
+          "text": "Goal! Real Madrid 5, PSV Eindhoven 1. Vinícius Júnior (Real Madrid) right footed shot from the centre of the box to the centre of the goal. Assisted by Jude Bellingham following a fast break."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://a.espncdn.com/photo/2026/1124/r1750810_1296x729_16-9.jpg",
+          "caption": "Bellingham celeb [1296x729]",
+          "credit": "Photo by Kiko Huesca/EPA/Shutterstock",
+          "source": "https://www.espn.com/soccer/report/_/gameId/401915298"
+        }
+      ],
+      "highlights": [],
+      "standings": [
+        "Real Madrid：15分，第1名，已赛5场，距本组榜首0分。",
+        "PSV Eindhoven：4分，第28名，已赛5场，距本组榜首11分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915298.png",
+        "width": 1080,
+        "height": 2556,
+        "image_embedded": true
+      }
+    },
+    {
+      "id": "401915299",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "RB Leipzig",
+      "away": "Lens",
+      "score": "3–1",
+      "kickoff": "2026-11-24T12:00:00-08:00",
+      "finished": "2026-11-24T13:50:32-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915299/lens-rb-leipzig",
+      "timeline": [
+        {
+          "minute": "6'",
+          "type": "Goal - Free-kick",
+          "players": "David Raum",
+          "text": "Goal! RB Leipzig 1, Lens 0. David Raum (RB Leipzig) from a free kick with a left footed shot to the bottom left corner."
+        },
+        {
+          "minute": "9'",
+          "type": "Goal",
+          "players": "Antonio Nusa",
+          "text": "Goal! RB Leipzig 2, Lens 0. Antonio Nusa (RB Leipzig) right footed shot from the centre of the box to the bottom right corner."
+        },
+        {
+          "minute": "58'",
+          "type": "Goal",
+          "players": "Matthieu Udol",
+          "text": "Goal! RB Leipzig 2, Lens 1. Matthieu Udol (Lens) right footed shot from the centre of the box to the bottom left corner following a fast break."
+        },
+        {
+          "minute": "90'+4'",
+          "type": "Goal",
+          "players": "Antonio Nusa, Christopher Nkunku",
+          "text": "Goal! RB Leipzig 3, Lens 1. Antonio Nusa (RB Leipzig) right footed shot from the centre of the box to the bottom right corner. Assisted by Christopher Nkunku following a fast break."
+        }
+      ],
+      "photos": [],
+      "highlights": [],
+      "standings": [
+        "RB Leipzig：6分，第21名，已赛5场，距本组榜首9分。",
+        "Lens：3分，第33名，已赛5场，距本组榜首12分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915299.png",
+        "width": 1080,
+        "height": 2078,
+        "image_embedded": false
+      }
+    },
+    {
+      "id": "401915379",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Manchester City",
+      "away": "Napoli",
+      "score": "2–2",
+      "kickoff": "2026-11-24T12:00:00-08:00",
+      "finished": "2026-11-24T13:49:49-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915379/napoli-manchester-city",
+      "timeline": [
+        {
+          "minute": "55'",
+          "type": "Goal",
+          "players": "Rasmus Højlund, Billy Gilmour",
+          "text": "Goal! Manchester City 0, Napoli 1. Rasmus Højlund (Napoli) left footed shot from the centre of the box to the centre of the goal. Assisted by Billy Gilmour with a through ball."
+        },
+        {
+          "minute": "67'",
+          "type": "Goal",
+          "players": "Ayyoub Bouaddi, Jérémy Doku",
+          "text": "Goal! Manchester City 1, Napoli 1. Ayyoub Bouaddi (Manchester City) left footed shot from the centre of the box to the high centre of the goal. Assisted by Jérémy Doku following a corner."
+        },
+        {
+          "minute": "76'",
+          "type": "Goal",
+          "players": "Noa Lang, Leonardo Spinazzola",
+          "text": "Goal! Manchester City 1, Napoli 2. Noa Lang (Napoli) right footed shot from the centre of the box to the centre of the goal. Assisted by Leonardo Spinazzola with a cross."
+        },
+        {
+          "minute": "86'",
+          "type": "Goal",
+          "players": "Rayan Cherki, Iliman Ndiaye",
+          "text": "Goal! Manchester City 2, Napoli 2. Rayan Cherki (Manchester City) right footed shot from a difficult angle on the right to the bottom left corner. Assisted by Iliman Ndiaye."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://a.espncdn.com/photo/2026/1124/r1750802_1296x729_16-9.jpg",
+          "caption": "Rayan Cherki of Manchester City celebrates after scoring their second goal during the UEFA Champions League 2026/27 League Phase MD5 match between Manchester City and SSC Napoli at City of Manchester Stadium on November 24, 2026 in Manchester, England.",
+          "credit": "Alex Livesey - Danehouse/Getty Images",
+          "source": "https://www.espn.com/soccer/report/_/gameId/401915379"
+        }
+      ],
+      "highlights": [],
+      "standings": [
+        "Manchester City：10分，第6名，已赛5场，距本组榜首5分。",
+        "Napoli：4分，第27名，已赛5场，距本组榜首11分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915379.png",
+        "width": 1080,
+        "height": 2534,
+        "image_embedded": true
+      }
+    }
+  ],
+  "errors": [],
+  "scans": [
+    {
+      "league": "afc.asian.cup",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "afc.asian.cup",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "afc.asian.cup",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "eng.1",
+      "date": "20261123",
+      "count": 1
+    },
+    {
+      "league": "eng.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "eng.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "esp.1",
+      "date": "20261123",
+      "count": 1
+    },
+    {
+      "league": "esp.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "esp.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fra.1",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fra.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fra.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "ger.1",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "ger.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "ger.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "ita.1",
+      "date": "20261123",
+      "count": 1
+    },
+    {
+      "league": "ita.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "ita.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261124",
+      "count": 9
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261125",
+      "count": 9
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261125",
+      "count": 0
+    }
+  ],
+  "audit": {
+    "url": "https://www.soccerbase.com/matches/results.sd?date=2026-11-24",
+    "expected": 0,
+    "findings": [],
+    "scope": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准"
+  },
+  "coverage": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准",
+  "poster_bundle": "https://shuyaox.github.io/football-daily/posters/2026-11-24/football-2026-11-24.zip"
+}
