@@ -327,6 +327,7 @@ def make_match(slug, event, start, end, rules):
             'score': '–'.join(scores), 'kickoff': instant(event['date']).astimezone(LA).isoformat(),
             'finished': finished.astimezone(LA).isoformat(), 'source': source_url(event),
             'timeline': timeline, 'photos': pictures[:2],
+            'team_logos': {s['team']['displayName']: s['team'].get('logo') or next((l['href'] for l in s['team'].get('logos', []) if l.get('href', '').startswith('https://')), '') for s in sides},
             'highlights': clips,
             'standings': standings(summary, sides), 'impact': impact}
 

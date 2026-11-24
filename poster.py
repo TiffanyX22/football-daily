@@ -74,10 +74,22 @@ def draw_poster(match, day, output, fetch, public_base):
 
     text('FULL TIME  /  男足比赛特辑', 27, ACCENT, 28)
     text(f"{day}   ·   {match['league']}", 30, MUTED, 28)
-    text(TEAM_NAMES.get(match['home'], match['home']), 57, FG, 2)
-    text(match['home'], 28, MUTED, 14)
-    text('VS  ' + TEAM_NAMES.get(match['away'], match['away']), 48, FG, 2)
-    text(match['away'], 28, MUTED, 18)
+    loaded_crests = []
+    def team_heading(name, versus=False):
+        top = y
+        url = match.get('team_logos', {}).get(name, '')
+        if url:
+            try:
+                data, mime = fetch(url, binary=True)
+                crest = ImageOps.contain(Image.open(io.BytesIO(data)).convert('RGBA'), (104, 104))
+                canvas.paste(crest, (PAD + (104 - crest.width) // 2, top + (104 - crest.height) // 2), crest)
+                loaded_crests.append(name)
+            except Exception:
+                pass
+        text(('VS  ' if versus else '') + TEAM_NAMES.get(name, name), 48, FG, 2, x=PAD + 130, width=CONTENT - 130)
+        text(name, 27, MUTED, 18, x=PAD + 130, width=CONTENT - 130)
+    team_heading(match['home'])
+    team_heading(match['away'], versus=True)
     text(match['score'], 150, ACCENT, 6)
     text('洛杉矶开球时间 ' + match['kickoff'][:16].replace('T', ' '), 26, MUTED, 24)
 
@@ -139,7 +151,7 @@ def draw_poster(match, day, output, fetch, public_base):
         raise RuntimeError('Poster content exceeds safe canvas height')
     output.parent.mkdir(parents=True, exist_ok=True)
     canvas.crop((0, 0, WIDTH, y)).save(output, 'PNG', optimize=True)
-    return {'width': WIDTH, 'height': y, 'image_embedded': bool(selected)}
+    return {'width': WIDTH, 'height': y, 'image_embedded': bool(selected), 'team_crests_embedded': len(loaded_crests)}
 
 
 def export(report, out, fetch):
