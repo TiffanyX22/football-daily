@@ -17,7 +17,8 @@ class MailReportTests(unittest.TestCase):
             root.mkdir(parents=True)
             Image.new('RGB', (1080, 1800), '#123456').save(root / 'test.png')
             report = {'day': '2026-11-23', 'matches': [{'id': 'test', 'league': '英超',
-                      'home': 'A', 'away': 'B', 'score': '2–0'}], 'errors': []}
+                      'home': 'A', 'away': 'B', 'score': '2–0',
+                      'highlights': [{'publisher': 'Official broadcaster', 'url': 'https://example.com/highlights?match=1&date=2'}]}], 'errors': []}
             mail = build_messages(report, folder, 'a@example.invalid', 'b@example.invalid')[0]
             parsed = BytesParser(policy=policy.default).parsebytes(mail.as_bytes())
             attachments = {p.get_filename(): p for p in parsed.iter_attachments()}
@@ -26,4 +27,6 @@ class MailReportTests(unittest.TestCase):
             with zipfile.ZipFile(io.BytesIO(attachments['football-2026-11-23.zip'].get_payload(decode=True))) as archive:
                 self.assertEqual(archive.read('test.png'), (root / 'test.png').read_bytes())
             self.assertIn('cid:', parsed.get_body(('html',)).get_content())
+            self.assertIn('href="https://example.com/highlights?match=1&amp;date=2"', parsed.get_body(('html',)).get_content())
+            self.assertIn('https://example.com/highlights?match=1&date=2', parsed.get_body(('plain',)).get_content())
             self.assertTrue(any(p.get_content_type() == 'image/jpeg' and p['Content-ID'] for p in parsed.walk()))

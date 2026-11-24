@@ -47,6 +47,12 @@ def build_messages(report, folder, sender, recipient):
         msg['Date'], msg['Message-ID'] = formatdate(localtime=False), make_msgid()
         summary = '\n'.join(f"{m['league']}：{m['home']} {m['score']} {m['away']}" for m in report['matches'])
         text = f'本期图文已生成。附件包含可直接保存的原尺寸PNG，以及同批图片ZIP。\n\n{summary}\n\n'
+        text += '官方集锦链接（按比赛）：\n'
+        for match in report['matches']:
+            text += f"\n{match['home']} vs {match['away']}（附件 {match['id']}.png）\n"
+            clips = match.get('highlights', [])
+            text += '\n'.join(f"{v['publisher']}：{v['url']}" for v in clips) if clips else '完整官方集锦暂缺'
+            text += '\n'
         if report.get('partial_day'):
             text += f"提前试跑，实际截稿：{report['end']}，不是16:00完整版。\n"
         if len(batches) > 1:
@@ -57,6 +63,16 @@ def build_messages(report, folder, sender, recipient):
         cid = make_msgid(domain='football-daily.local')[1:-1]
         markup = '<html><body><h2>男足图文日报 ' + html.escape(day) + '</h2><p>原尺寸 PNG 和 ZIP 均在附件，可直接保存，无需打开网页。</p>'
         markup += '<p>' + html.escape(summary).replace('\n', '<br>') + '</p>'
+        markup += '<h3>官方集锦 · 点击观看</h3><ul>'
+        for match in report['matches']:
+            markup += '<li><strong>' + html.escape(match['home'] + ' vs ' + match['away']) + '</strong><br>'
+            clips = match.get('highlights', [])
+            if clips:
+                markup += '<br>'.join('<a href="' + html.escape(v['url'], quote=True) + '">官方集锦 · ' + html.escape(v['publisher']) + '</a>' for v in clips)
+            else:
+                markup += '完整官方集锦暂缺'
+            markup += '<br><small>对应附件：' + html.escape(match['id']) + '.png</small></li>'
+        markup += '</ul>'
         if batch:
             markup += '<p>本批首张预览：</p><img style="width:100%;max-width:540px;height:auto" src="cid:' + cid + '">'
         markup += '<p>图片含来源说明；部分配图为已标明的官方视频封面。完整文件请保存附件。</p></body></html>'
