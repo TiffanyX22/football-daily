@@ -1,0 +1,513 @@
+{
+  "day": "2026-11-23",
+  "start": "2026-11-22T16:00:00-08:00",
+  "end": "2026-11-23T16:00:00-08:00",
+  "generated": "2026-11-24T00:17:30.481046-08:00",
+  "matches": [
+    {
+      "id": "401875009",
+      "league": "意甲",
+      "slug": "ita.1",
+      "home": "Monza",
+      "away": "Fiorentina",
+      "score": "3–0",
+      "kickoff": "2026-11-23T11:45:00-08:00",
+      "finished": "2026-11-23T13:37:11-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401875009/fiorentina-monza",
+      "timeline": [
+        {
+          "minute": "45'",
+          "type": "Penalty - Scored",
+          "players": "Gustavo Varela",
+          "text": "Goal! Monza 1, Fiorentina 0. Gustavo Varela (Monza) converts the penalty with a right footed shot to the bottom right corner."
+        },
+        {
+          "minute": "51'",
+          "type": "Goal",
+          "players": "Gustavo Varela, Matteo Pessina",
+          "text": "Goal! Monza 2, Fiorentina 0. Gustavo Varela (Monza) left footed shot from the centre of the box to the bottom right corner. Assisted by Matteo Pessina with a cross following a fast break."
+        },
+        {
+          "minute": "59'",
+          "type": "Goal - Volley",
+          "players": "Jay Robinson",
+          "text": "Goal! Monza 3, Fiorentina 0. Jay Robinson (Monza) right footed shot from the centre of the box to the top left corner following a corner."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://images.legaseriea.it/image/private/t_ratio16_9-size60-f_webp-c_fill/v1795473774/prd/cjuxdqumorttmmuulcud",
+          "caption": "蒙扎 3–0 佛罗伦萨：意甲官方集锦封面（非额外现场照）",
+          "credit": "Lega Serie A",
+          "source": "https://en.legaseriea.it/videos/serie-a-enilive-2026-2027-monza-fiorentina"
+        }
+      ],
+      "highlights": [
+        {
+          "url": "https://en.legaseriea.it/videos/serie-a-enilive-2026-2027-monza-fiorentina",
+          "title": "蒙扎 3–0 佛罗伦萨：意甲官方集锦封面（非额外现场照）",
+          "publisher": "Lega Serie A"
+        }
+      ],
+      "standings": [
+        "Monza：10分，第14名，已赛12场，距本组榜首22分。",
+        "Fiorentina：9分，第16名，已赛12场，距本组榜首23分。"
+      ],
+      "impact": "Monza本场获得3分，Fiorentina获得0分。"
+    },
+    {
+      "id": "401879237",
+      "league": "英超",
+      "slug": "eng.1",
+      "home": "Brentford",
+      "away": "Everton",
+      "score": "4–0",
+      "kickoff": "2026-11-23T12:00:00-08:00",
+      "finished": "2026-11-23T14:02:16-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401879237/everton-brentford",
+      "timeline": [
+        {
+          "minute": "23'",
+          "type": "Goal",
+          "players": "Keane Lewis-Potter, Jaidon Anthony",
+          "text": "Goal! Brentford 1, Everton 0. Keane Lewis-Potter (Brentford) right footed shot from the centre of the box to the centre of the goal. Assisted by Jaidon Anthony."
+        },
+        {
+          "minute": "25'",
+          "type": "Goal",
+          "players": "Keane Lewis-Potter",
+          "text": "Goal! Brentford 2, Everton 0. Keane Lewis-Potter (Brentford) left footed shot from the centre of the box to the bottom left corner following a set piece situation."
+        },
+        {
+          "minute": "40'",
+          "type": "Red Card",
+          "players": "James Tarkowski",
+          "text": "James Tarkowski (Everton) is shown the red card."
+        },
+        {
+          "minute": "67'",
+          "type": "Goal",
+          "players": "Vitaly Janelt, Jaidon Anthony",
+          "text": "Goal! Brentford 3, Everton 0. Vitaly Janelt (Brentford) left footed shot from outside the box to the top right corner. Assisted by Jaidon Anthony."
+        },
+        {
+          "minute": "90'",
+          "type": "Goal",
+          "players": "Fábio Carvalho, Mathias Jensen",
+          "text": "Goal! Brentford 4, Everton 0. Fábio Carvalho (Brentford) right footed shot from very close range to the centre of the goal. Assisted by Mathias Jensen with a cross following a corner.Goal confirmed following VAR Review."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://a.espncdn.com/photo/2026/1123/r1750365_1296x729_16-9.jpg",
+          "caption": "Vitaly Janelt celebrates.",
+          "credit": "(Photo by Adrian DENNIS / AFP via Getty Images)",
+          "source": "https://www.espn.com/soccer/report/_/gameId/401879237"
+        },
+        {
+          "url": "https://images.gc.evertonfcservices.co.uk/fit-in/800x800/15ca9900-e78d-11f1-bde2-33f40659c579.jpg",
+          "caption": "布伦特福德 4–0 埃弗顿：埃弗顿官方集锦封面",
+          "credit": "Everton FC",
+          "source": "https://www.evertonfc.com/news/2026/november/23/highlights--brentford-4-0-everton/"
+        }
+      ],
+      "highlights": [
+        {
+          "url": "https://www.evertonfc.com/news/2026/november/23/highlights--brentford-4-0-everton/",
+          "title": "布伦特福德 4–0 埃弗顿：埃弗顿官方集锦封面",
+          "publisher": "Everton FC"
+        }
+      ],
+      "standings": [
+        "Brentford：17分，第6名，已赛11场，距本组榜首11分。",
+        "Everton：16分，第9名，已赛11场，距本组榜首12分。"
+      ],
+      "impact": "Brentford本场获得3分，Everton获得0分。"
+    },
+    {
+      "id": "401882802",
+      "league": "西甲",
+      "slug": "esp.1",
+      "home": "Levante",
+      "away": "Elche",
+      "score": "1–1",
+      "kickoff": "2026-11-23T12:00:00-08:00",
+      "finished": "2026-11-23T13:53:42-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401882802/elche-levante",
+      "timeline": [
+        {
+          "minute": "62'",
+          "type": "Goal",
+          "players": "Roy Revivo, Germán Valera",
+          "text": "Goal! Levante 0, Elche 1. Roy Revivo (Elche) right footed shot from a difficult angle on the left to the bottom right corner. Assisted by Germán Valera."
+        },
+        {
+          "minute": "88'",
+          "type": "Goal - Volley",
+          "players": "Dani Requena, Jon Ander Olasagasti",
+          "text": "Goal! Levante 1, Elche 1. Dani Requena (Levante) right footed shot from the centre of the box to the bottom right corner. Assisted by Jon Ander Olasagasti with a headed pass."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://assets.laliga.com/assets/2026/11/23/xlarge/c4f9bec86e1ce70917e7e3b031a0f391.jpeg",
+          "caption": "莱万特 1–1 埃尔切：西甲官方集锦封面",
+          "credit": "LALIGA",
+          "source": "https://www.laliga.com/videos/requena-aparece-a-tiempo-para-el-levante-ud"
+        }
+      ],
+      "highlights": [
+        {
+          "url": "https://www.laliga.com/videos/requena-aparece-a-tiempo-para-el-levante-ud",
+          "title": "莱万特 1–1 埃尔切：西甲官方集锦封面",
+          "publisher": "LALIGA"
+        }
+      ],
+      "standings": [
+        "Levante：12分，第15名，已赛13场，距本组榜首24分。",
+        "Elche：11分，第19名，已赛13场，距本组榜首25分。"
+      ],
+      "impact": "Levante本场获得1分，Elche获得1分。"
+    }
+  ],
+  "errors": [],
+  "scans": [
+    {
+      "league": "afc.asian.cup",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "afc.asian.cup",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "afc.asian.cup",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "eng.1",
+      "date": "20261122",
+      "count": 2
+    },
+    {
+      "league": "eng.1",
+      "date": "20261123",
+      "count": 1
+    },
+    {
+      "league": "eng.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "esp.1",
+      "date": "20261122",
+      "count": 4
+    },
+    {
+      "league": "esp.1",
+      "date": "20261123",
+      "count": 1
+    },
+    {
+      "league": "esp.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fra.1",
+      "date": "20261122",
+      "count": 3
+    },
+    {
+      "league": "fra.1",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "fra.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "ger.1",
+      "date": "20261122",
+      "count": 2
+    },
+    {
+      "league": "ger.1",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "ger.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "ita.1",
+      "date": "20261122",
+      "count": 5
+    },
+    {
+      "league": "ita.1",
+      "date": "20261123",
+      "count": 1
+    },
+    {
+      "league": "ita.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261124",
+      "count": 9
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261122",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261123",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261124",
+      "count": 0
+    }
+  ],
+  "audit": {
+    "url": "https://www.soccerbase.com/matches/results.sd?date=2026-11-23",
+    "expected": 3,
+    "findings": [],
+    "scope": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准"
+  },
+  "coverage": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准"
+}

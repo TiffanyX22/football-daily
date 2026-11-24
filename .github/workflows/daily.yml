@@ -1,0 +1,75 @@
+name: Daily men's football
+on:
+  schedule:
+    - cron: '0 16 * * *'
+      timezone: America/Los_Angeles
+  workflow_dispatch:
+    inputs:
+      report_date:
+        description: 'Optional LA report day YYYY-MM-DD (blank = latest 16:00 cutoff)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: football-daily
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.publish.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify date, scope, and media safeguards
+        run: python -m unittest discover -s tests -v
+      - name: Generate report
+        id: generate
+        continue-on-error: true
+        env:
+          REPORT_DATE: ${{ inputs.report_date }}
+        run: |
+          if [ -n "$REPORT_DATE" ]; then
+            python agent.py --date "$REPORT_DATE"
+          else
+            python agent.py
+          fi
+      - name: Preserve daily history
+        run: |
+          test -f docs/index.html
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish daily football report'
+            git push
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+          retention-days: 1
+      - name: Publish report
+        id: publish
+        uses: actions/deploy-pages@v4
+      - name: Notify personal account after publishing
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAGE_URL: ${{ steps.publish.outputs.page_url }}
+          REPORT_DATE: ${{ inputs.report_date }}
+        run: python notify.py
+      - name: Surface incomplete data as a failed check
+        if: steps.generate.outcome == 'failure'
+        run: |
+          echo 'Report published with explicit data gaps. See report and owner notification.'
+          exit 1
