@@ -1,9 +1,9 @@
 {
   "day": "2026-11-24",
   "start": "2026-11-23T16:00:00-08:00",
-  "end": "2026-11-24T15:14:53.916607-08:00",
+  "end": "2026-11-24T15:22:24.265578-08:00",
   "partial_day": true,
-  "generated": "2026-11-24T15:14:53.916607-08:00",
+  "generated": "2026-11-24T15:22:24.265578-08:00",
   "matches": [
     {
       "id": "401915300",
@@ -39,6 +39,10 @@
           "published": "2026-11-24T19:32:27+00:00"
         }
       ],
+      "team_logos": {
+        "Galatasaray": "https://a.espncdn.com/i/teamlogos/soccer/500/432.png",
+        "Aston Villa": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png"
+      },
       "highlights": [
         {
           "url": "https://www.youtube.com/watch?v=wWSpykREYU4",
@@ -54,10 +58,12 @@
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915300.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915300-zh-en.png",
+        "filename": "401915300-zh-en.png",
         "width": 1080,
-        "height": 2307,
-        "image_embedded": true
+        "height": 2404,
+        "image_embedded": true,
+        "team_crests_embedded": 2
       }
     },
     {
@@ -96,6 +102,10 @@
           "published": "2026-11-24T19:31:14+00:00"
         }
       ],
+      "team_logos": {
+        "Bodo/Glimt": "https://a.espncdn.com/i/teamlogos/soccer/500/2980.png",
+        "LASK Linz": "https://a.espncdn.com/i/teamlogos/soccer/500/4411.png"
+      },
       "highlights": [
         {
           "url": "https://www.youtube.com/watch?v=becifqHEKUw",
@@ -111,10 +121,12 @@
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915380.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915380-zh-en.png",
+        "filename": "401915380-zh-en.png",
         "width": 1080,
-        "height": 2331,
-        "image_embedded": true
+        "height": 2428,
+        "image_embedded": true,
+        "team_crests_embedded": 2
       }
     },
     {
@@ -153,6 +165,10 @@
           "published": "2026-11-24T21:40:08+00:00"
         }
       ],
+      "team_logos": {
+        "Feyenoord Rotterdam": "https://a.espncdn.com/i/teamlogos/soccer/500/142.png",
+        "FC Porto": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png"
+      },
       "highlights": [
         {
           "url": "https://www.youtube.com/watch?v=HKu377htIsM",
@@ -168,10 +184,12 @@
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915294.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915294-zh-en.png",
+        "filename": "401915294-zh-en.png",
         "width": 1080,
-        "height": 2331,
-        "image_embedded": true
+        "height": 2428,
+        "image_embedded": true,
+        "team_crests_embedded": 2
       }
     },
     {
@@ -214,6 +232,10 @@
           "published": "2026-11-24T21:47:17+00:00"
         }
       ],
+      "team_logos": {
+        "Arsenal": "https://a.espncdn.com/i/teamlogos/soccer/500/359.png",
+        "Borussia Dortmund": "https://a.espncdn.com/i/teamlogos/soccer/500/124.png"
+      },
       "highlights": [
         {
           "url": "https://www.youtube.com/watch?v=bMZQg5aNuPA",
@@ -229,10 +251,12 @@
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915295.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915295-zh-en.png",
+        "filename": "401915295-zh-en.png",
         "width": 1080,
-        "height": 2336,
-        "image_embedded": true
+        "height": 2433,
+        "image_embedded": true,
+        "team_crests_embedded": 2
       }
     },
     {
@@ -271,6 +295,10 @@
           "published": "2026-11-24T21:43:16+00:00"
         }
       ],
+      "team_logos": {
+        "Como": "https://a.espncdn.com/i/teamlogos/soccer/500/2572.png",
+        "AEK Athens": "https://a.espncdn.com/i/teamlogos/soccer/500/887.png"
+      },
       "highlights": [
         {
           "url": "https://www.youtube.com/watch?v=ck1QAIZPYu0",
@@ -286,10 +314,12 @@
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915296.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915296-zh-en.png",
+        "filename": "401915296-zh-en.png",
         "width": 1080,
-        "height": 2331,
-        "image_embedded": true
+        "height": 2428,
+        "image_embedded": true,
+        "team_crests_embedded": 2
       }
     },
     {
@@ -326,6 +356,10 @@
           "published": "2026-11-24T21:39:07+00:00"
         }
       ],
+      "team_logos": {
+        "Slovan Bratislava": "https://a.espncdn.com/i/teamlogos/soccer/500/521.png",
+        "Real Betis": "https://a.espncdn.com/i/teamlogos/soccer/500/244.png"
+      },
       "highlights": [
         {
           "url": "https://www.youtube.com/watch?v=0u1o0P6mFE0",
@@ -341,10 +375,12 @@
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915297.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915297-zh-en.png",
+        "filename": "401915297-zh-en.png",
         "width": 1080,
-        "height": 2395,
-        "image_embedded": true
+        "height": 2492,
+        "image_embedded": true,
+        "team_crests_embedded": 2
       }
     },
     {
@@ -411,6 +447,10 @@
           "published": "2026-11-24T21:32:17+00:00"
         }
       ],
+      "team_logos": {
+        "Real Madrid": "https://a.espncdn.com/i/teamlogos/soccer/500/86.png",
+        "PSV Eindhoven": "https://a.espncdn.com/i/teamlogos/soccer/500/148.png"
+      },
       "highlights": [
         {
           "url": "https://www.youtube.com/watch?v=shSau4ZXUtU",
@@ -426,10 +466,12 @@
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915298.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915298-zh-en.png",
+        "filename": "401915298-zh-en.png",
         "width": 1080,
-        "height": 2556,
-        "image_embedded": true
+        "height": 2653,
+        "image_embedded": true,
+        "team_crests_embedded": 2
       }
     },
     {
@@ -486,6 +528,10 @@
           "published": "2026-11-24T21:49:35+00:00"
         }
       ],
+      "team_logos": {
+        "RB Leipzig": "https://a.espncdn.com/i/teamlogos/soccer/500/11420.png",
+        "Lens": "https://a.espncdn.com/i/teamlogos/soccer/500/175.png"
+      },
       "highlights": [
         {
           "url": "https://www.youtube.com/watch?v=t_IbmG-pOOk",
@@ -501,10 +547,12 @@
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915299.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915299-zh-en.png",
+        "filename": "401915299-zh-en.png",
         "width": 1080,
-        "height": 2523,
-        "image_embedded": true
+        "height": 2620,
+        "image_embedded": true,
+        "team_crests_embedded": 2
       }
     },
     {
@@ -551,6 +599,10 @@
           "source": "https://www.espn.com/soccer/report/_/gameId/401915379"
         }
       ],
+      "team_logos": {
+        "Manchester City": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
+        "Napoli": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png"
+      },
       "highlights": [
         {
           "url": "https://www.youtube.com/watch?v=gGs3UBkOV0Q",
@@ -566,10 +618,12 @@
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915379.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915379-zh-en.png",
+        "filename": "401915379-zh-en.png",
         "width": 1080,
-        "height": 2534,
-        "image_embedded": true
+        "height": 2631,
+        "image_embedded": true,
+        "team_crests_embedded": 2
       }
     }
   ],
@@ -915,8 +969,8 @@
   "coverage": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准",
   "standings_charts": [
     {
-      "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/standings-uefa.champions-1.png",
-      "filename": "standings-uefa.champions-1.png",
+      "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/standings-uefa.champions-1-zh-en-crests.png",
+      "filename": "standings-uefa.champions-1-zh-en-crests.png",
       "league": "欧冠",
       "group": "League Phase",
       "source": "https://site.web.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings",
@@ -1610,5 +1664,5 @@
       "logos_complete": true
     }
   ],
-  "poster_bundle": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/football-2026-11-24.zip"
+  "poster_bundle": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/football-2026-11-24-zh-en.zip"
 }
