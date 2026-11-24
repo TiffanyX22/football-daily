@@ -337,6 +337,8 @@ body{{margin:0;background:#101715;color:#edf5ed;font:17px/1.7 system-ui,sans-ser
 <p class="muted">自动模板生成，无付费AI。球队名保留数据源原文，避免误译。积分表是抓取时快照，非历史截稿复原；未核实名次升降不作推断。</p>''']
     if report['errors']:
         parts.append('<div class="missing"><b>本期资料不完整，不能声称零漏报。</b><ul>' + ''.join('<li>' + esc(e) + '</li>' for e in report['errors']) + '</ul></div>')
+    if report.get('partial_day'):
+        parts.append('<p class="missing">这是下午4点前的手动试跑，仅覆盖截至上述实际截稿时间已完场的比赛；每日16:00正式任务保持不变。</p>')
     if report.get('poster_bundle'):
         parts.append('<p><a download href="' + esc(report['poster_bundle']) + '">下载本期全部社媒长图（ZIP）</a></p>')
     parts.append('<h2>本期比赛清单</h2><table><tr><th>赛事</th><th>比赛</th><th>比分</th></tr>')
@@ -376,12 +378,16 @@ def main():
     parser.add_argument('--date', help='LA planned reporting day YYYY-MM-DD')
     parser.add_argument('--out', default='docs')
     parser.add_argument('--leagues', help='Comma-separated subset for diagnostics')
+    parser.add_argument('--partial-day', action='store_true', help='Explicit manual preview before 16:00; cutoff at actual run time')
     args = parser.parse_args()
     now = dt.datetime.now(LA)
     day = dt.date.fromisoformat(args.date) if args.date else now.date()
     if not args.date and now.hour < 16:
         day -= dt.timedelta(days=1)
     start, end = window(day)
+    partial_day = args.partial_day and start < now < end
+    if partial_day:
+        end = now
     if end > now:
         parser.error('Cannot generate a future cutoff before 16:00 LA; use a completed reporting day')
     rules = json.loads(Path(__file__).with_name('publishers.json').read_text())
@@ -407,7 +413,7 @@ def main():
     except Exception as e:
         audit = {'findings': [str(e)], 'scope': '独立赛果核对失败'}
         errors.append('独立赛果源不可用，无法完成交叉核对')
-    report = {'day': str(day), 'start': start.isoformat(), 'end': end.isoformat(),
+    report = {'day': str(day), 'start': start.isoformat(), 'end': end.isoformat(), 'partial_day': partial_day,
               'generated': now.isoformat(), 'matches': matches, 'errors': errors,
               'scans': sorted(scans, key=lambda x: (x['league'], x['date'])),
               'audit': audit, 'coverage': audit['scope']}

@@ -41,10 +41,14 @@ def build_messages(report, folder, sender, recipient):
     for index, batch in enumerate(batches, 1):
         msg = EmailMessage()
         msg['Subject'] = f"男足图文日报 {day}" + (f'（{index}/{len(batches)}）' if len(batches) > 1 else '')
+        if report.get('partial_day'):
+            msg.replace_header('Subject', str(msg['Subject']) + ' · 提前试跑')
         msg['From'], msg['To'] = sender, recipient
         msg['Date'], msg['Message-ID'] = formatdate(localtime=False), make_msgid()
         summary = '\n'.join(f"{m['league']}：{m['home']} {m['score']} {m['away']}" for m in report['matches'])
         text = f'本期图文已生成。附件包含可直接保存的原尺寸PNG，以及同批图片ZIP。\n\n{summary}\n\n'
+        if report.get('partial_day'):
+            text += f"提前试跑，实际截稿：{report['end']}，不是16:00完整版。\n"
         if len(batches) > 1:
             text += f'图片较多，已分成{len(batches)}封邮件，这是第{index}封。\n'
         if report['errors']:

@@ -9,6 +9,11 @@ on:
         description: 'Optional LA report day YYYY-MM-DD (blank = latest 16:00 cutoff)'
         required: false
         type: string
+      partial_day:
+        description: 'Manual preview before 16:00; only include completed matches as of run time'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -55,8 +60,14 @@ jobs:
       - name: Generate report
         id: generate
         continue-on-error: true
+        env:
+          PARTIAL_DAY: ${{ inputs.partial_day }}
         run: |
-          python agent.py --date "$REPORT_DATE"
+          if [ "$PARTIAL_DAY" = 'true' ]; then
+            python agent.py --date "$REPORT_DATE" --partial-day
+          else
+            python agent.py --date "$REPORT_DATE"
+          fi
       - name: Preserve daily history
         run: |
           python - <<'PY'
