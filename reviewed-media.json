@@ -69,7 +69,16 @@
     ]
   },
   "401915299": {
-    "uefa_url": "https://www.uefa.com/uefachampionsleague/match/2049630--leipzig-vs-lens/"
+    "uefa_url": "https://www.uefa.com/uefachampionsleague/match/2049630--leipzig-vs-lens/",
+    "verified_highlights": [
+      {
+        "url": "https://www.youtube.com/watch?v=t_IbmG-pOOk",
+        "title": "RB Leipzig vs. Lens: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+        "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+        "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+        "published": "2026-11-24T14:46:20-08:00"
+      }
+    ]
   },
   "401915294": {
     "uefa_url": "https://www.uefa.com/uefachampionsleague/match/2049628--feyenoord-vs-porto/",
