@@ -31,16 +31,24 @@
           "source": "https://www.espn.com/soccer/report/_/gameId/401915300"
         }
       ],
-      "highlights": [],
+      "highlights": [
+        {
+          "url": "https://www.youtube.com/watch?v=wWSpykREYU4",
+          "title": "Galatasaray vs. Aston Villa: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+          "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+          "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+          "published": "2026-11-24T11:57:11-08:00"
+        }
+      ],
       "standings": [
         "Galatasaray：9分，第13名，已赛5场，距本组榜首6分。",
         "Aston Villa：9分，第9名，已赛5场，距本组榜首6分。"
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915300.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915300.png",
         "width": 1080,
-        "height": 2307,
+        "height": 2342,
         "image_embedded": true
       }
     },
@@ -62,18 +70,43 @@
           "text": "Own Goal by Melayro Bogarde, LASK. Bodø/Glimt 1, LASK 0."
         }
       ],
-      "photos": [],
-      "highlights": [],
+      "photos": [
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-22264c5f6c44-31c86948b0cf-1000/fk_bodo_glimt_v_lask_-_uefa_champions_league_2026_27_league_phase_md5.jpeg",
+          "caption": "Bodo/Glimt vs LASK Linz · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049629--bodo-glimt-vs-lask/#02a8-222649c840a0-c73be09afc25-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T19:33:39+00:00"
+        },
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-2226498c50c2-0e38cc65ecdc-1000/fk_bodo_glimt_v_lask_-_uefa_champions_league_2026_27_league_phase_md5.jpeg",
+          "caption": "Bodo/Glimt vs LASK Linz · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049629--bodo-glimt-vs-lask/#02a8-222648eb5d0f-50d28de2ff48-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T19:31:14+00:00"
+        }
+      ],
+      "highlights": [
+        {
+          "url": "https://www.youtube.com/watch?v=becifqHEKUw",
+          "title": "Bodø/Glimt vs. LASK: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+          "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+          "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+          "published": "2026-11-24T12:20:53-08:00"
+        }
+      ],
       "standings": [
         "Bodo/Glimt：7分，第16名，已赛5场，距本组榜首8分。",
         "LASK Linz：6分，第18名，已赛5场，距本组榜首9分。"
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915380.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915380.png",
         "width": 1080,
-        "height": 1886,
-        "image_embedded": false
+        "height": 2331,
+        "image_embedded": true
       }
     },
     {
@@ -94,18 +127,43 @@
           "text": "Own Goal by Oussama Targhalline, Feyenoord. Feyenoord 0, FC Porto 1."
         }
       ],
-      "photos": [],
-      "highlights": [],
+      "photos": [
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-222685168d3a-700918ded711-1000/uefa_champions_league_-_matchday_5_feyenoord_rotterdam_v_fc_porto.jpeg",
+          "caption": "Feyenoord Rotterdam vs FC Porto · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049628--feyenoord-vs-porto/#02a8-22267e870c69-15e7be191074-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T21:46:35+00:00"
+        },
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-2226855578bf-a882b0c44e8d-1000/feyenoord_v_fc_porto_-_uefa_champions_league_2026_27_league_phase_md5.jpeg",
+          "caption": "Feyenoord Rotterdam vs FC Porto · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049628--feyenoord-vs-porto/#02a8-222677056175-aa8dde1e78c8-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T21:40:08+00:00"
+        }
+      ],
+      "highlights": [
+        {
+          "url": "https://www.youtube.com/watch?v=HKu377htIsM",
+          "title": "Feyenoord vs. Porto: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+          "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+          "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+          "published": "2026-11-24T14:17:58-08:00"
+        }
+      ],
       "standings": [
         "Feyenoord Rotterdam：3分，第32名，已赛5场，距本组榜首12分。",
         "FC Porto：6分，第20名，已赛5场，距本组榜首9分。"
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915294.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915294.png",
         "width": 1080,
-        "height": 1886,
-        "image_embedded": false
+        "height": 2366,
+        "image_embedded": true
       }
     },
     {
@@ -140,14 +198,22 @@
           "source": "https://www.espn.com/soccer/report/_/gameId/401915295"
         }
       ],
-      "highlights": [],
+      "highlights": [
+        {
+          "url": "https://www.youtube.com/watch?v=bMZQg5aNuPA",
+          "title": "Arsenal vs. Borussia Dortmund: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+          "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+          "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+          "published": "2026-11-24T14:10:22-08:00"
+        }
+      ],
       "standings": [
         "Arsenal：11分，第5名，已赛5场，距本组榜首4分。",
         "Borussia Dortmund：10分，第7名，已赛5场，距本组榜首5分。"
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915295.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915295.png",
         "width": 1080,
         "height": 2336,
         "image_embedded": true
@@ -171,18 +237,43 @@
           "text": "Goal! Como 1, AEK Athens 0. Luis Milla (Como) right footed shot from outside the box to the top right corner. Assisted by Martin Baturina."
         }
       ],
-      "photos": [],
-      "highlights": [],
+      "photos": [
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-22267ddaf72e-cbafd658d93d-1000/fbl-eur-c1-como-aek.jpeg",
+          "caption": "Como vs AEK Athens · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049633--como-vs-aek-athens/#02a8-22267ca3e51f-ad1a0280579b-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T21:48:55+00:00"
+        },
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-222678cf472a-583db4df74db-1000/como_1907_v_aek_athens_-_uefa_champions_league_2026_27_league_phase_md5.jpeg",
+          "caption": "Como vs AEK Athens · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049633--como-vs-aek-athens/#02ab-222678cf3d8b-7096f3d23852-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T21:43:16+00:00"
+        }
+      ],
+      "highlights": [
+        {
+          "url": "https://www.youtube.com/watch?v=ck1QAIZPYu0",
+          "title": "Como vs. AEK Athens: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+          "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+          "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+          "published": "2026-11-24T14:23:01-08:00"
+        }
+      ],
       "standings": [
         "Como：12分，第3名，已赛5场，距本组榜首3分。",
         "AEK Athens：3分，第31名，已赛5场，距本组榜首12分。"
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915296.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915296.png",
         "width": 1080,
-        "height": 1886,
-        "image_embedded": false
+        "height": 2331,
+        "image_embedded": true
       }
     },
     {
@@ -209,18 +300,35 @@
           "text": "Goal! Slovan Bratislava 0, Real Betis 2. Cucho Hernández (Real Betis) header from the centre of the box to the high centre of the goal. Assisted by Isco with a cross following a corner."
         }
       ],
-      "photos": [],
-      "highlights": [],
+      "photos": [
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-222676a754c2-d541a6d0c20a-1000/gettyimages-2306211647-594x594.jpeg",
+          "caption": "Slovan Bratislava vs Real Betis · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049632--s-bratislava-vs-real-betis/#02ab-222676a74bf3-b1590bae1cdc-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T21:39:07+00:00"
+        }
+      ],
+      "highlights": [
+        {
+          "url": "https://www.youtube.com/watch?v=0u1o0P6mFE0",
+          "title": "Slovan Bratislava vs. Real Betis: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+          "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+          "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+          "published": "2026-11-24T14:18:01-08:00"
+        }
+      ],
       "standings": [
         "Slovan Bratislava：0分，第36名，已赛5场，距本组榜首15分。",
         "Real Betis：12分，第4名，已赛5场，距本组榜首3分。"
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915297.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915297.png",
         "width": 1080,
-        "height": 1950,
-        "image_embedded": false
+        "height": 2395,
+        "image_embedded": true
       }
     },
     {
@@ -279,14 +387,22 @@
           "source": "https://www.espn.com/soccer/report/_/gameId/401915298"
         }
       ],
-      "highlights": [],
+      "highlights": [
+        {
+          "url": "https://www.youtube.com/watch?v=shSau4ZXUtU",
+          "title": "Real Madrid vs. PSV: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+          "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+          "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+          "published": "2026-11-24T14:33:39-08:00"
+        }
+      ],
       "standings": [
         "Real Madrid：15分，第1名，已赛5场，距本组榜首0分。",
         "PSV Eindhoven：4分，第28名，已赛5场，距本组榜首11分。"
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915298.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915298.png",
         "width": 1080,
         "height": 2556,
         "image_embedded": true
@@ -328,7 +444,24 @@
           "text": "Goal! RB Leipzig 3, Lens 1. Antonio Nusa (RB Leipzig) right footed shot from the centre of the box to the bottom right corner. Assisted by Christopher Nkunku following a fast break."
         }
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-22267947f347-79e6ad17efd2-1000/fbl-eur-c1-leipzig-lens.jpeg",
+          "caption": "RB Leipzig vs Lens · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049630--leipzig-vs-lens/#02ab-22267947eb3b-daa65a1e2d44-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T21:42:20+00:00"
+        },
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-22267e0116dd-829b7012b386-1000/rb_leipzig_v_rc_lens_-_uefa_champions_league_2026_27_league_phase_md5.jpeg",
+          "caption": "RB Leipzig vs Lens · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049630--leipzig-vs-lens/#02a8-22267a64ee08-4c2e400c0146-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T21:49:35+00:00"
+        }
+      ],
       "highlights": [],
       "standings": [
         "RB Leipzig：6分，第21名，已赛5场，距本组榜首9分。",
@@ -336,10 +469,10 @@
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915299.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915299.png",
         "width": 1080,
-        "height": 2078,
-        "image_embedded": false
+        "height": 2523,
+        "image_embedded": true
       }
     },
     {
@@ -386,14 +519,22 @@
           "source": "https://www.espn.com/soccer/report/_/gameId/401915379"
         }
       ],
-      "highlights": [],
+      "highlights": [
+        {
+          "url": "https://www.youtube.com/watch?v=gGs3UBkOV0Q",
+          "title": "Manchester City vs. Napoli: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+          "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+          "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+          "published": "2026-11-24T14:08:12-08:00"
+        }
+      ],
       "standings": [
         "Manchester City：10分，第6名，已赛5场，距本组榜首5分。",
         "Napoli：4分，第27名，已赛5场，距本组榜首11分。"
       ],
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "poster": {
-        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-24/401915379.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915379.png",
         "width": 1080,
         "height": 2534,
         "image_embedded": true
@@ -740,5 +881,5 @@
     "scope": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准"
   },
   "coverage": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准",
-  "poster_bundle": "https://shuyaox.github.io/football-daily/posters/2026-11-24/football-2026-11-24.zip"
+  "poster_bundle": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/football-2026-11-24.zip"
 }

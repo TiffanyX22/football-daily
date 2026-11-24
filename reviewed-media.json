@@ -1,11 +1,130 @@
 {
   "401875009": {
-    "pages": [{"url": "https://en.legaseriea.it/videos/serie-a-enilive-2026-2027-monza-fiorentina", "date": "2026-11-23", "caption": "蒙扎 3–0 佛罗伦萨：意甲官方集锦封面（非额外现场照）", "publisher": "Lega Serie A", "video": true}]
+    "pages": [
+      {
+        "url": "https://en.legaseriea.it/videos/serie-a-enilive-2026-2027-monza-fiorentina",
+        "date": "2026-11-23",
+        "caption": "蒙扎 3–0 佛罗伦萨：意甲官方集锦封面（非额外现场照）",
+        "publisher": "Lega Serie A",
+        "video": true
+      }
+    ]
   },
   "401879237": {
-    "pages": [{"url": "https://www.evertonfc.com/news/2026/november/23/highlights--brentford-4-0-everton/", "date": "2026-11-23", "caption": "布伦特福德 4–0 埃弗顿：埃弗顿官方集锦封面", "publisher": "Everton FC", "video": true}]
+    "pages": [
+      {
+        "url": "https://www.evertonfc.com/news/2026/november/23/highlights--brentford-4-0-everton/",
+        "date": "2026-11-23",
+        "caption": "布伦特福德 4–0 埃弗顿：埃弗顿官方集锦封面",
+        "publisher": "Everton FC",
+        "video": true
+      }
+    ]
   },
   "401882802": {
-    "pages": [{"url": "https://www.laliga.com/videos/requena-aparece-a-tiempo-para-el-levante-ud", "date": "2026-11-23", "caption": "莱万特 1–1 埃尔切：西甲官方集锦封面", "publisher": "LALIGA", "video": true}]
+    "pages": [
+      {
+        "url": "https://www.laliga.com/videos/requena-aparece-a-tiempo-para-el-levante-ud",
+        "date": "2026-11-23",
+        "caption": "莱万特 1–1 埃尔切：西甲官方集锦封面",
+        "publisher": "LALIGA",
+        "video": true
+      }
+    ]
+  },
+  "401915380": {
+    "uefa_url": "https://www.uefa.com/uefachampionsleague/match/2049629--bodo-glimt-vs-lask/",
+    "verified_highlights": [
+      {
+        "url": "https://www.youtube.com/watch?v=becifqHEKUw",
+        "title": "Bodø/Glimt vs. LASK: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+        "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+        "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+        "published": "2026-11-24T12:20:53-08:00"
+      }
+    ]
+  },
+  "401915296": {
+    "uefa_url": "https://www.uefa.com/uefachampionsleague/match/2049633--como-vs-aek-athens/",
+    "verified_highlights": [
+      {
+        "url": "https://www.youtube.com/watch?v=ck1QAIZPYu0",
+        "title": "Como vs. AEK Athens: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+        "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+        "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+        "published": "2026-11-24T14:23:01-08:00"
+      }
+    ]
+  },
+  "401915297": {
+    "uefa_url": "https://www.uefa.com/uefachampionsleague/match/2049632--s-bratislava-vs-real-betis/",
+    "verified_highlights": [
+      {
+        "url": "https://www.youtube.com/watch?v=0u1o0P6mFE0",
+        "title": "Slovan Bratislava vs. Real Betis: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+        "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+        "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+        "published": "2026-11-24T14:18:01-08:00"
+      }
+    ]
+  },
+  "401915299": {
+    "uefa_url": "https://www.uefa.com/uefachampionsleague/match/2049630--leipzig-vs-lens/"
+  },
+  "401915294": {
+    "uefa_url": "https://www.uefa.com/uefachampionsleague/match/2049628--feyenoord-vs-porto/",
+    "verified_highlights": [
+      {
+        "url": "https://www.youtube.com/watch?v=HKu377htIsM",
+        "title": "Feyenoord vs. Porto: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+        "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+        "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+        "published": "2026-11-24T14:17:58-08:00"
+      }
+    ]
+  },
+  "401915300": {
+    "verified_highlights": [
+      {
+        "url": "https://www.youtube.com/watch?v=wWSpykREYU4",
+        "title": "Galatasaray vs. Aston Villa: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+        "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+        "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+        "published": "2026-11-24T11:57:11-08:00"
+      }
+    ]
+  },
+  "401915295": {
+    "verified_highlights": [
+      {
+        "url": "https://www.youtube.com/watch?v=bMZQg5aNuPA",
+        "title": "Arsenal vs. Borussia Dortmund: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+        "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+        "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+        "published": "2026-11-24T14:10:22-08:00"
+      }
+    ]
+  },
+  "401915298": {
+    "verified_highlights": [
+      {
+        "url": "https://www.youtube.com/watch?v=shSau4ZXUtU",
+        "title": "Real Madrid vs. PSV: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+        "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+        "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+        "published": "2026-11-24T14:33:39-08:00"
+      }
+    ]
+  },
+  "401915379": {
+    "verified_highlights": [
+      {
+        "url": "https://www.youtube.com/watch?v=gGs3UBkOV0Q",
+        "title": "Manchester City vs. Napoli: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+        "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+        "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+        "published": "2026-11-24T14:08:12-08:00"
+      }
+    ]
   }
 }

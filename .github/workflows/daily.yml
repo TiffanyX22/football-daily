@@ -14,6 +14,11 @@ on:
         required: false
         default: false
         type: boolean
+      require_complete_media:
+        description: 'Do not email until every match has a loaded photo and verified highlights'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -134,7 +139,18 @@ jobs:
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+          REQUIRE_COMPLETE_MEDIA: ${{ inputs.require_complete_media }}
         run: |
+          if [ "$REQUIRE_COMPLETE_MEDIA" = 'true' ]; then
+            python - <<'PY'
+          import json, os
+          from pathlib import Path
+          p = json.loads(Path(f'docs/reports/{os.environ["REPORT_DATE"]}.json').read_text())
+          missing = [m['home'] + ' vs ' + m['away'] for m in p['matches'] if not m['photos'] or not m['highlights'] or not m.get('poster', {}).get('image_embedded')]
+          if not p['matches'] or missing:
+              raise SystemExit('Email held: incomplete verified match media: ' + ', '.join(missing))
+          PY
+          fi
           if [ -n "$SMTP_USERNAME" ] && [ -n "$SMTP_PASSWORD" ] && [ -n "$REPORT_EMAIL" ]; then
             python mail_report.py --date "$REPORT_DATE"
           else

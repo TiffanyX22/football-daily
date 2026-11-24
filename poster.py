@@ -130,7 +130,7 @@ def draw_poster(match, day, output, fetch, public_base):
     text('扫码看官方集锦' if match['highlights'] else '扫码看完整战报', 32, ACCENT, 12, width=CONTENT - 250)
     text('比分、进球、积分与媒体来源\n见完整日报的来源链接。', 25, MUTED, 8, width=CONTENT - 250)
     y = max(y, qr_top + 226)
-    text('shuyaox.github.io/football-daily', 25, MUTED, 8)
+    text(public_base.removeprefix('https://'), 25, MUTED, 8)
     text('图源版权归原作者；视频封面已在图注标明。', 22, MUTED, 8)
     y += 42
     if y > canvas.height:
@@ -141,7 +141,9 @@ def draw_poster(match, day, output, fetch, public_base):
 
 
 def export(report, out, fetch):
-    base = os.environ.get('PUBLIC_BASE_URL', 'https://shuyaox.github.io/football-daily').rstrip('/')
+    repository = os.environ.get('GITHUB_REPOSITORY', 'TiffanyX22/football-daily')
+    owner, repo = repository.split('/', 1)
+    base = os.environ.get('PUBLIC_BASE_URL', f'https://{owner.lower()}.github.io/{repo}').rstrip('/')
     prefix = base + '/posters/' + report['day']
     folder = out / 'posters' / report['day']
     generated = []

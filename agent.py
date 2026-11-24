@@ -309,9 +309,20 @@ def make_match(slug, event, start, end, rules):
     impact = (f'{home}本场获得{win_points[0]}分，{away}获得{win_points[1]}分。'
               if slug in ('eng.1', 'esp.1', 'ita.1', 'ger.1', 'fra.1') else '杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。')
     pictures = photos(summary, event['id'])
+    from media import uefa_photos, broadcast_highlights
+    if slug == 'uefa.champions':
+        reviewed = json.loads(Path(__file__).with_name('reviewed-media.json').read_text()).get(event['id'], {})
+        pictures += uefa_photos(home, away, instant(event['date']), finished, fetch, reviewed.get('uefa_url'))
     reviewed_images, reviewed_videos = curated_assets(event['id'], home, away)
     pictures = pictures + [p for p in reviewed_images if p['url'] not in {x['url'] for x in pictures}]
     clips = reviewed_videos or official_highlights(home, away, instant(event['date']).astimezone(LA).date(), rules, slug)
+    if not clips:
+        clips = broadcast_highlights(home, away, instant(event['date']), fetch)
+    if not clips:
+        reviewed = json.loads(Path(__file__).with_name('reviewed-media.json').read_text()).get(event['id'], {})
+        clips = [v for v in reviewed.get('verified_highlights', [])
+                 if instant(event['date']) <= instant(v['published']) <= instant(event['date']) + dt.timedelta(days=2)
+                 and v.get('channel_id') == 'UCET00YnetHT7tOpu12v8jxg']
     return {'id': event['id'], 'league': LEAGUES[slug], 'slug': slug, 'home': home, 'away': away,
             'score': '–'.join(scores), 'kickoff': instant(event['date']).astimezone(LA).isoformat(),
             'finished': finished.astimezone(LA).isoformat(), 'source': source_url(event),

@@ -94,6 +94,14 @@ def main():
         parser.error('Report date is required')
     folder = Path(args.out)
     report = json.loads((folder / 'reports' / f'{args.date}.json').read_text())
+    requirements_file = Path(__file__).with_name('delivery-requirements.json')
+    requirements = json.loads(requirements_file.read_text()) if requirements_file.exists() else {}
+    strict = requirements.get(args.date, {}).get('require_complete_media') or os.environ.get('REQUIRE_COMPLETE_MEDIA') == 'true'
+    if strict:
+        missing = [m['home'] + ' vs ' + m['away'] for m in report['matches']
+                   if not m['photos'] or not m['highlights'] or not m.get('poster', {}).get('image_embedded')]
+        if not report['matches'] or missing:
+            raise RuntimeError('Email held until all verified match photos and highlights exist: ' + ', '.join(missing))
     sender = os.environ.get('SMTP_USERNAME', '')
     password = os.environ.get('SMTP_PASSWORD', '')
     recipient = os.environ.get('REPORT_EMAIL', sender)

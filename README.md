@@ -32,7 +32,7 @@ python agent.py --date 2026-11-23
 
 ## 部署
 
-仅部署到个人账号 `shuyaox/football-daily`。仓库公开只包含本项目；不要上传工作目录其他内容或凭证。Pages source 设为 GitHub Actions。工作流仅使用标准 Ubuntu runner，Pages artifact 保留一天，无额外付费服务。
+仅部署到个人账号 `TiffanyX22/football-daily`。仓库公开只包含本项目；不要上传工作目录其他内容或凭证。Pages source 设为 GitHub Actions。工作流仅使用标准 Ubuntu runner，Pages artifact 保留一天，无额外付费服务。
 
 ESPN 公开网页接口没有稳定性承诺，可能修改或限制访问。网页照片外链展示；社媒长图按用户要求合成配图并保留来源归属，照片版权仍归原作者。历史报告存在仓库中；需自行遵守数据及媒体来源的使用条件。
 
