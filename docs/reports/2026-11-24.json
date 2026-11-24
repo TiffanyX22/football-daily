@@ -1,9 +1,9 @@
 {
   "day": "2026-11-24",
   "start": "2026-11-23T16:00:00-08:00",
-  "end": "2026-11-24T14:31:17.831290-08:00",
+  "end": "2026-11-24T14:47:13.836949-08:00",
   "partial_day": true,
-  "generated": "2026-11-24T14:31:17.831290-08:00",
+  "generated": "2026-11-24T14:47:13.836949-08:00",
   "matches": [
     {
       "id": "401915300",
@@ -29,6 +29,14 @@
           "caption": "Galatasaray's forward #21 Deniz Gul (C) celebrates after scoring a goal during the UEFA Champions League football match between Galatasaray and Aston Villa at Ali Sami Yen Spor Kompleksi in Istanbul, on November 24, 2026.",
           "credit": "Ozan KOSE / AFP via Getty Images",
           "source": "https://www.espn.com/soccer/report/_/gameId/401915300"
+        },
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-22264d114c65-49605bc7c306-1000/fbl-eur-c1-galatasaray-aston_villa.jpeg",
+          "caption": "Galatasaray vs Aston Villa · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049631--galatasaray-vs-aston-villa/#02a8-22264cac2ece-014814f9b56e-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T19:32:27+00:00"
         }
       ],
       "highlights": [
@@ -48,7 +56,7 @@
       "poster": {
         "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915300.png",
         "width": 1080,
-        "height": 2342,
+        "height": 2307,
         "image_embedded": true
       }
     },
@@ -162,7 +170,7 @@
       "poster": {
         "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/401915294.png",
         "width": 1080,
-        "height": 2366,
+        "height": 2331,
         "image_embedded": true
       }
     },
@@ -196,6 +204,14 @@
           "caption": "Arsenal players react after conceding a goal to Dortmund in the Champions League.",
           "credit": "Getty Images",
           "source": "https://www.espn.com/soccer/report/_/gameId/401915295"
+        },
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-222679935455-bfdbd7469bc3-1000/matchday_live.jpeg",
+          "caption": "Arsenal vs Borussia Dortmund · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049627--arsenal-vs-b-dortmund/#02ab-222679934b68-aa6c09704354-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T21:47:17+00:00"
         }
       ],
       "highlights": [
@@ -385,6 +401,14 @@
           "caption": "Bellingham celeb [1296x729]",
           "credit": "Photo by Kiko Huesca/EPA/Shutterstock",
           "source": "https://www.espn.com/soccer/report/_/gameId/401915298"
+        },
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-222674354317-5e90afaefc9c-1000/fbl-eur-c1-real_madrid-psv.jpeg",
+          "caption": "Real Madrid vs PSV Eindhoven · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049625--real-madrid-vs-psv/#02ab-2226743538f6-1cf8e9706288-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T21:32:17+00:00"
         }
       ],
       "highlights": [
