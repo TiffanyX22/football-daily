@@ -352,6 +352,8 @@ body{{margin:0;background:#101715;color:#edf5ed;font:17px/1.7 system-ui,sans-ser
         parts.append('<p class="missing">这是下午4点前的手动试跑，仅覆盖截至上述实际截稿时间已完场的比赛；每日16:00正式任务保持不变。</p>')
     if report.get('poster_bundle'):
         parts.append('<p><a download href="' + esc(report['poster_bundle']) + '">下载本期全部社媒长图（ZIP）</a></p>')
+    for chart in report.get('standings_charts', []):
+        parts.append('<h2>' + esc(chart['league']) + '积分榜</h2><a download href="' + esc(chart['url']) + '"><img alt="积分榜" src="' + esc(chart['url']) + '"></a>')
     parts.append('<h2>本期比赛清单</h2><table><tr><th>赛事</th><th>比赛</th><th>比分</th></tr>')
     for m in matches:
         parts.append(f'<tr><td>{esc(m["league"])}</td><td><a href="#{esc(m["id"])}">{esc(m["home"])} — {esc(m["away"])}</a></td><td>{esc(m["score"])}</td></tr>')

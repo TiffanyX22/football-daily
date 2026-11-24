@@ -152,6 +152,8 @@ def export(report, out, fetch):
         metadata = draw_poster(match, report['day'], path, fetch, base)
         match['poster'] = {'url': prefix + '/' + path.name, **metadata}
         generated.append(path)
+    from standings_chart import export_tables
+    generated.extend(export_tables(report, out, fetch, prefix, folder))
     if generated:
         bundle = folder / ('football-' + report['day'] + '.zip')
         with zipfile.ZipFile(bundle, 'w', zipfile.ZIP_DEFLATED) as archive:

@@ -36,6 +36,7 @@ def groups(paths):
 def build_messages(report, folder, sender, recipient):
     day = report['day']
     paths = [folder / 'posters' / day / (m['id'] + '.png') for m in report['matches']]
+    paths += [folder / 'posters' / day / chart['filename'] for chart in report.get('standings_charts', [])]
     batches = groups(paths) or [[]]
     messages = []
     for index, batch in enumerate(batches, 1):
@@ -47,6 +48,8 @@ def build_messages(report, folder, sender, recipient):
         msg['Date'], msg['Message-ID'] = formatdate(localtime=False), make_msgid()
         summary = '\n'.join(f"{m['league']}：{m['home']} {m['score']} {m['away']}" for m in report['matches'])
         text = f'本期图文已生成。附件包含可直接保存的原尺寸PNG，以及同批图片ZIP。\n\n{summary}\n\n'
+        if report.get('standings_charts'):
+            text += '积分榜图片也已附在邮件和 ZIP 中，按赛事列出积分、排名、场次和净胜球。\n'
         text += '官方集锦链接（按比赛）：\n'
         for match in report['matches']:
             text += f"\n{match['home']} vs {match['away']}（附件 {match['id']}.png）\n"
@@ -63,6 +66,8 @@ def build_messages(report, folder, sender, recipient):
         cid = make_msgid(domain='football-daily.local')[1:-1]
         markup = '<html><body><h2>男足图文日报 ' + html.escape(day) + '</h2><p>原尺寸 PNG 和 ZIP 均在附件，可直接保存，无需打开网页。</p>'
         markup += '<p>' + html.escape(summary).replace('\n', '<br>') + '</p>'
+        if report.get('standings_charts'):
+            markup += '<p>另附积分榜 PNG：排名、积分、已赛场次与净胜球；浅绿标记本期参赛球队。积分为抓取时快照。</p>'
         markup += '<h3>官方集锦 · 点击观看</h3><ul>'
         for match in report['matches']:
             markup += '<li><strong>' + html.escape(match['home'] + ' vs ' + match['away']) + '</strong><br>'
