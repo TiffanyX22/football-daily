@@ -38,6 +38,8 @@ def main():
     run_url = f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}"
     body = f"@{owner} 本期日报{status}。\n\n[查看图文报告]({page}/reports/{report['day']}.html) · [运行记录]({run_url})\n\n"
     body += f"已核实 {len(matches)} 场，{photos} 场有配图，{clips} 场有官方集锦。\n\n"
+    if report.get('poster_bundle'):
+        body += f"[下载本期所有社媒长图 ZIP]({report['poster_bundle']})\n\n"
     body += '\n'.join('- ' + s for s in missing + report['errors'])
     body += '\n\n国家队和欧冠尚未接入独立赛程源，不能保证零漏报。图片为外链，可能受原站限制。'
     issues = api('/issues?state=all&per_page=100')

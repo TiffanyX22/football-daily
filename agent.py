@@ -337,6 +337,8 @@ body{{margin:0;background:#101715;color:#edf5ed;font:17px/1.7 system-ui,sans-ser
 <p class="muted">自动模板生成，无付费AI。球队名保留数据源原文，避免误译。积分表是抓取时快照，非历史截稿复原；未核实名次升降不作推断。</p>''']
     if report['errors']:
         parts.append('<div class="missing"><b>本期资料不完整，不能声称零漏报。</b><ul>' + ''.join('<li>' + esc(e) + '</li>' for e in report['errors']) + '</ul></div>')
+    if report.get('poster_bundle'):
+        parts.append('<p><a download href="' + esc(report['poster_bundle']) + '">下载本期全部社媒长图（ZIP）</a></p>')
     parts.append('<h2>本期比赛清单</h2><table><tr><th>赛事</th><th>比赛</th><th>比分</th></tr>')
     for m in matches:
         parts.append(f'<tr><td>{esc(m["league"])}</td><td><a href="#{esc(m["id"])}">{esc(m["home"])} — {esc(m["away"])}</a></td><td>{esc(m["score"])}</td></tr>')
@@ -345,6 +347,8 @@ body{{margin:0;background:#101715;color:#edf5ed;font:17px/1.7 system-ui,sans-ser
         parts.append('<p>此窗口未取得已核实完赛记录。若上方存在数据源错误，这不代表休赛。</p>')
     for m in matches:
         parts.append(f'<article id="{esc(m["id"])}"><p class="eyebrow">{esc(m["league"])}</p><h2>{esc(m["home"])} vs {esc(m["away"])}</h2><div class="score">{esc(m["score"])}</div><p class="muted">开球 {esc(m["kickoff"])} · 终场 {esc(m["finished"])}</p>')
+        if m.get('poster'):
+            parts.append(f'<p><a download href="{esc(m["poster"]["url"])}">下载本场图文长图 · PNG · 1080px</a> · <a href="{esc(m["poster"]["url"])}" target="_blank" rel="noopener">打开图片 / 手机长按保存</a></p>')
         for p in m['photos']:
             parts.append(f'<figure><img src="{esc(p["url"])}" alt="{esc(p["caption"])}" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.textContent=\'照片加载失败，请打开来源查看\'"><figcaption>{esc(p["caption"])} · {esc(p["credit"])} · <a href="{esc(p["source"])}">战报照片来源</a></figcaption></figure>')
         if not m['photos']:
@@ -409,6 +413,8 @@ def main():
               'audit': audit, 'coverage': audit['scope']}
     out = Path(args.out)
     (out / 'reports').mkdir(parents=True, exist_ok=True)
+    from poster import export
+    export(report, out, fetch)
     payload = json.dumps(report, ensure_ascii=False, indent=2)
     (out / 'reports' / f'{day}.json').write_text(payload)
     page = render(report)

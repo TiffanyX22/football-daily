@@ -53,7 +53,13 @@
         "Monza：10分，第14名，已赛12场，距本组榜首22分。",
         "Fiorentina：9分，第16名，已赛12场，距本组榜首23分。"
       ],
-      "impact": "Monza本场获得3分，Fiorentina获得0分。"
+      "impact": "Monza本场获得3分，Fiorentina获得0分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-23/401875009.png",
+        "width": 1080,
+        "height": 2365,
+        "image_embedded": true
+      }
     },
     {
       "id": "401879237",
@@ -122,7 +128,13 @@
         "Brentford：17分，第6名，已赛11场，距本组榜首11分。",
         "Everton：16分，第9名，已赛11场，距本组榜首12分。"
       ],
-      "impact": "Brentford本场获得3分，Everton获得0分。"
+      "impact": "Brentford本场获得3分，Everton获得0分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-23/401879237.png",
+        "width": 1080,
+        "height": 2493,
+        "image_embedded": true
+      }
     },
     {
       "id": "401882802",
@@ -167,7 +179,13 @@
         "Levante：12分，第15名，已赛13场，距本组榜首24分。",
         "Elche：11分，第19名，已赛13场，距本组榜首25分。"
       ],
-      "impact": "Levante本场获得1分，Elche获得1分。"
+      "impact": "Levante本场获得1分，Elche获得1分。",
+      "poster": {
+        "url": "https://shuyaox.github.io/football-daily/posters/2026-11-23/401882802.png",
+        "width": 1080,
+        "height": 2395,
+        "image_embedded": true
+      }
     }
   ],
   "errors": [],
@@ -509,5 +527,6 @@
     "findings": [],
     "scope": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准"
   },
-  "coverage": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准"
+  "coverage": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准",
+  "poster_bundle": "https://shuyaox.github.io/football-daily/posters/2026-11-23/football-2026-11-23.zip"
 }

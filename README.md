@@ -1,6 +1,6 @@
 # 每日男足图文日报
 
-个人使用的免费模板型程序：Python 标准库、GitHub Actions 标准 Linux runner、GitHub Pages。不使用 TinyFish、付费 AI 或 API 密钥。
+个人使用的免费模板型程序：Python、Pillow、GitHub Actions 标准 Linux runner、GitHub Pages。不使用 TinyFish、付费 AI 或 API 密钥。
 
 每天计划于 **America/Los_Angeles 16:00** 运行，自动随夏令时调整。GitHub 免费调度可能延迟或丢弃任务，不能承诺准点。成功发布后给仓库所有者创建 GitHub Issue 通知；是否推送邮件/手机由个人 GitHub 设置决定。
 
@@ -16,19 +16,24 @@
 
 ## 本地运行
 
-需要 Python 3.11+ 和网络，无需安装依赖：
+需要 Python 3.11+、网络和中文字体（Linux 安装 `fonts-noto-cjk`；macOS 自动使用系统中文字体）：
 
 ```sh
+python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 python agent.py --date 2026-11-23
 ```
 
 输出 `docs/index.html` 和 `docs/reports/YYYY-MM-DD.{html,json}`。可用 Actions → Daily men's football → Run workflow 手动补刊。
 
+## 社媒图文长图
+
+每场自动输出一张 1080px 宽的 PNG，长图高度随内容调整，包含比赛配图、比分、关键时刻、积分影响及官方集锦二维码；缺图时显示缺项。网页支持单张下载和整期 ZIP 下载，邮件通知附 ZIP 链接。文件位于 `docs/posters/YYYY-MM-DD/`。
+
 ## 部署
 
 仅部署到个人账号 `shuyaox/football-daily`。仓库公开只包含本项目；不要上传工作目录其他内容或凭证。Pages source 设为 GitHub Actions。工作流仅使用标准 Ubuntu runner，Pages artifact 保留一天，无额外付费服务。
 
-ESPN 公开网页接口没有稳定性承诺，可能修改或限制访问。照片仅外链展示并标注原始来源/版权，不下载再分发。历史报告存在仓库中；需自行遵守数据及媒体来源的使用条件。
+ESPN 公开网页接口没有稳定性承诺，可能修改或限制访问。网页照片外链展示；社媒长图按用户要求合成配图并保留来源归属，照片版权仍归原作者。历史报告存在仓库中；需自行遵守数据及媒体来源的使用条件。
 
 旧 ChatGPT 云端任务不会由此程序自动停用；新部署验证后可另行关闭，避免重复通知。
