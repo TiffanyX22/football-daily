@@ -34,20 +34,33 @@ jobs:
           python-version: '3.12'
       - name: Verify date, scope, and media safeguards
         run: python -m unittest discover -s tests -v
+      - name: Lock report date and build timestamp
+        env:
+          REQUESTED_DATE: ${{ inputs.report_date }}
+        run: |
+          python - <<'PY'
+          import datetime as dt, os
+          from agent import LA
+          now = dt.datetime.now(LA)
+          requested = os.environ.get('REQUESTED_DATE')
+          day = dt.date.fromisoformat(requested) if requested else now.date() - dt.timedelta(days=now.hour < 16)
+          with open(os.environ['GITHUB_ENV'], 'a') as f:
+              f.write(f'REPORT_DATE={day}\nBUILD_STARTED={now.isoformat()}\n')
+          PY
       - name: Generate report
         id: generate
         continue-on-error: true
-        env:
-          REPORT_DATE: ${{ inputs.report_date }}
         run: |
-          if [ -n "$REPORT_DATE" ]; then
-            python agent.py --date "$REPORT_DATE"
-          else
-            python agent.py
-          fi
+          python agent.py --date "$REPORT_DATE"
       - name: Preserve daily history
         run: |
-          test -f docs/index.html
+          python - <<'PY'
+          import datetime as dt, json, os
+          from pathlib import Path
+          p = json.loads(Path(f'docs/reports/{os.environ["REPORT_DATE"]}.json').read_text())
+          assert p['day'] == os.environ['REPORT_DATE']
+          assert dt.datetime.fromisoformat(p['generated']) >= dt.datetime.fromisoformat(os.environ['BUILD_STARTED']), 'Stale report: refuse to publish or send success notification'
+          PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add docs
@@ -66,7 +79,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PAGE_URL: ${{ steps.publish.outputs.page_url }}
-          REPORT_DATE: ${{ inputs.report_date }}
         run: python notify.py
       - name: Surface incomplete data as a failed check
         if: steps.generate.outcome == 'failure'
