@@ -41,7 +41,7 @@ def build_messages(report, folder, sender, recipient):
     messages = []
     for index, batch in enumerate(batches, 1):
         msg = EmailMessage()
-        msg['Subject'] = f"男足图文日报 {day} · 中英双语队名版" + (f'（{index}/{len(batches)}）' if len(batches) > 1 else '')
+        msg['Subject'] = f"男足图文日报 {day} · 双语球员号码助攻版" + (f'（{index}/{len(batches)}）' if len(batches) > 1 else '')
         if report.get('partial_day'):
             msg.replace_header('Subject', str(msg['Subject']) + ' · 提前试跑')
         msg['From'], msg['To'] = sender, recipient

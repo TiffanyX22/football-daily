@@ -118,11 +118,14 @@ def draw_poster(match, day, output, fetch, public_base):
     rule()
     text('关键时刻', 38, ACCENT, 22)
     event_names = {'Goal': '进球', 'Penalty - Scored': '点球命中', 'Goal - Volley': '凌空进球',
-                   'Goal - Header': '头球进球', 'Own Goal': '乌龙球', 'Red Card': '红牌',
+                   'Goal - Header': '头球进球', 'Goal - Free-kick': '任意球进球', 'Own Goal': '乌龙球', 'Red Card': '红牌',
                    'Yellow Red Card': '两黄变一红'}
     for event in match['timeline']:
         name = event_names.get(event['type'], event['type'])
-        text(f"{event['minute']}  {name}  ·  {event['players']}", 30, FG, 18)
+        from players import label
+        text(f"{event['minute']}  {name}  ·  " + (label(event['player']) if event.get('player') else event['players']), 30, FG, 10)
+        if event.get('scoring'):
+            text('助攻：' + (label(event['assist']) if event.get('assist') else '数据源未记录'), 27, MUTED, 20)
     if not match['timeline']:
         text('关键事件资料暂缺，以终场比分为准。', 30, MUTED)
     rule()

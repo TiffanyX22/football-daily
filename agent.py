@@ -297,14 +297,8 @@ def make_match(slug, event, start, end, rules):
     sides = sorted(competition['competitors'], key=lambda x: x['homeAway'] != 'home')
     home, away = [x['team']['displayName'] for x in sides]
     scores = [str(x['score']) for x in sides]
-    timeline = []
-    for e in summary.get('keyEvents', []):
-        kind = e.get('type', {}).get('type', '')
-        if e.get('scoringPlay') or kind in ('red-card', 'yellow-red-card'):
-            names = ', '.join(p.get('athlete', {}).get('displayName', '') for p in e.get('participants', []))
-            timeline.append({'minute': e.get('clock', {}).get('displayValue', ''),
-                             'type': e.get('type', {}).get('text', ''), 'players': names,
-                             'text': e.get('text', '')})
+    from players import timeline as player_timeline
+    timeline = player_timeline(summary)
     win_points = [1, 1] if scores[0] == scores[1] else ([3, 0] if int(scores[0]) > int(scores[1]) else [0, 3])
     impact = (f'{home}本场获得{win_points[0]}分，{away}获得{win_points[1]}分。'
               if slug in ('eng.1', 'esp.1', 'ita.1', 'ger.1', 'fra.1') else '杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。')
@@ -371,7 +365,9 @@ body{{margin:0;background:#101715;color:#edf5ed;font:17px/1.7 system-ui,sans-ser
             parts.append('<p class="missing">本场暂缺可核实照片；未使用队徽或其他比赛照片替代。</p>')
         parts.append('<h3>关键时刻</h3><ul>')
         for e in m['timeline']:
-            parts.append(f'<li><b>{esc(e["minute"])}</b> {esc(e["type"])} · {esc(e["players"])}</li>')
+            parts.append(f'<li><b>{esc(e["minute"])}</b> {esc(e["type"])} · {esc(__import__("players").label(e["player"]) if e.get("player") else e["players"])}</li>')
+            if e.get('scoring'):
+                parts.append('<li>助攻：' + esc(__import__('players').label(e['assist']) if e.get('assist') else '数据源未记录') + '</li>')
         parts.append('</ul><h3>积分与排名影响</h3><p>' + esc(m['impact']) + '</p>')
         parts.extend('<p>' + esc(s) + '</p>' for s in m['standings'])
         if not m['standings']:
