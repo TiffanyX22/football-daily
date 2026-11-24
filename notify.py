@@ -44,6 +44,10 @@ def main():
     previous = next((i for i in issues if i['title'] == title and 'pull_request' not in i), None)
     if previous:
         api(f"/issues/{previous['number']}", {'body': body}, 'PATCH')
+        # Editing an issue body does not reliably generate an email. A bot
+        # comment with an owner mention notifies subscribers on manual reruns.
+        api(f"/issues/{previous['number']}/comments", {
+            'body': f"@{owner} 日报已重新生成（邮件通知测试 / 手动重跑）。\n\n[查看图文报告]({page}/reports/{report['day']}.html) · [本次运行]({run_url})"})
     else:
         api('/issues', {'title': title, 'body': body, 'assignees': [owner]})
 
