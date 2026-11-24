@@ -345,8 +345,10 @@ body{{margin:0;background:#101715;color:#edf5ed;font:17px/1.7 system-ui,sans-ser
         parts.append('<div class="missing"><b>本期资料不完整，不能声称零漏报。</b><ul>' + ''.join('<li>' + esc(e) + '</li>' for e in report['errors']) + '</ul></div>')
     if report.get('partial_day'):
         parts.append('<p class="missing">这是下午4点前的手动试跑，仅覆盖截至上述实际截稿时间已完场的比赛；每日16:00正式任务保持不变。</p>')
+    for cover in report.get('covers', []):
+        parts.append('<a download href="' + esc(cover['url']) + '"><img alt="本期比赛封面" src="' + esc(cover['url']) + '"></a>')
     if report.get('poster_bundle'):
-        parts.append('<p><a download href="' + esc(report['poster_bundle']) + '">下载本期全部社媒长图（ZIP）</a></p>')
+        parts.append('<p><a download href="' + esc(report['poster_bundle']) + '">下载本期全部社媒图片（ZIP）</a></p>')
     for chart in report.get('standings_charts', []):
         parts.append('<h2>' + esc(chart['league']) + '积分榜</h2><a download href="' + esc(chart['url']) + '"><img alt="积分榜" src="' + esc(chart['url']) + '"></a>')
     parts.append('<h2>本期比赛清单</h2><table><tr><th>赛事</th><th>比赛</th><th>比分</th></tr>')
@@ -358,7 +360,9 @@ body{{margin:0;background:#101715;color:#edf5ed;font:17px/1.7 system-ui,sans-ser
     for m in matches:
         parts.append(f'<article id="{esc(m["id"])}"><p class="eyebrow">{esc(m["league"])}</p><h2>{esc(m["home"])} vs {esc(m["away"])}</h2><div class="score">{esc(m["score"])}</div><p class="muted">开球 {esc(m["kickoff"])} · 终场 {esc(m["finished"])}</p>')
         if m.get('poster'):
-            parts.append(f'<p><a download href="{esc(m["poster"]["url"])}">下载本场图文长图 · PNG · 1080px</a> · <a href="{esc(m["poster"]["url"])}" target="_blank" rel="noopener">打开图片 / 手机长按保存</a></p>')
+            parts.append(f'<p><a download href="{esc(m["poster"]["url"])}">下载本场图文 · PNG · 1080×1312</a> · <a href="{esc(m["poster"]["url"])}" target="_blank" rel="noopener">打开图片 / 手机长按保存</a></p>')
+        for page in m.get('poster_pages', [])[1:]:
+            parts.append('<p><a download href="' + esc(page['url']) + '">下载本场下一张竖版图片</a></p>')
         for p in m['photos']:
             parts.append(f'<figure><img src="{esc(p["url"])}" alt="{esc(p["caption"])}" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.textContent=\'照片加载失败，请打开来源查看\'"><figcaption>{esc(p["caption"])} · {esc(p["credit"])} · <a href="{esc(p["source"])}">战报照片来源</a></figcaption></figure>')
         if not m['photos']:
@@ -366,7 +370,7 @@ body{{margin:0;background:#101715;color:#edf5ed;font:17px/1.7 system-ui,sans-ser
         parts.append('<h3>关键时刻</h3><ul>')
         for e in m['timeline']:
             parts.append(f'<li><b>{esc(e["minute"])}</b> {esc(e["type"])} · {esc(__import__("players").label(e["player"]) if e.get("player") else e["players"])}</li>')
-            if e.get('scoring'):
+            if __import__('players').show_assist(e):
                 parts.append('<li>助攻：' + esc(__import__('players').label(e['assist']) if e.get('assist') else '数据源未记录') + '</li>')
         parts.append('</ul><h3>积分与排名影响</h3><p>' + esc(m['impact']) + '</p>')
         parts.extend('<p>' + esc(s) + '</p>' for s in m['standings'])

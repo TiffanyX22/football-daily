@@ -11,10 +11,10 @@ import qrcode
 WIDTH = 1080
 PAD = 64
 CONTENT = WIDTH - PAD * 2
-BG = '#101b18'
+BG = '#080e63'
 FG = '#f2f5ec'
 MUTED = '#b0c1b4'
-ACCENT = '#d5f48f'
+ACCENT = '#46f5eb'
 TEAM_NAMES = json.loads(Path(__file__).with_name('team-names.json').read_text())
 
 
@@ -57,6 +57,7 @@ def draw_poster(match, day, output, fetch, public_base):
     canvas = Image.new('RGB', (WIDTH, 18000), BG)
     draw = ImageDraw.Draw(canvas)
     y = 62
+    breaks = [0]
 
     def text(value, size=30, color=FG, gap=14, x=PAD, width=CONTENT):
         nonlocal y
@@ -65,6 +66,8 @@ def draw_poster(match, day, output, fetch, public_base):
             draw.text((x, y), line, font=face, fill=color)
             y += int(size * 1.55)
         y += gap
+        if color != ACCENT:
+            breaks.append(y)
 
     def rule():
         nonlocal y
@@ -90,7 +93,7 @@ def draw_poster(match, day, output, fetch, public_base):
         text(name, 27, MUTED, 18, x=PAD + 130, width=CONTENT - 130)
     team_heading(match['home'])
     team_heading(match['away'], versus=True)
-    text(match['score'], 150, ACCENT, 6)
+    text(match['score'], 100, ACCENT, 6)
     text('洛杉矶开球时间 ' + match['kickoff'][:16].replace('T', ' '), 26, MUTED, 24)
 
     image_credit = '本场无可核实图片，未使用其他比赛照片替代。'
@@ -102,14 +105,16 @@ def draw_poster(match, day, output, fetch, public_base):
                 continue
             original = Image.open(io.BytesIO(data))
             original.load()
-            selected = ImageOps.contain(original.convert('RGB'), (CONTENT, 630))
+            selected = ImageOps.contain(original.convert('RGB'), (CONTENT, 400))
             image_credit = photo.get('caption', '') + ' · ' + photo.get('credit', '')
             break
         except Exception:
             continue
     if selected:
+        breaks.append(y)
         canvas.paste(selected, ((WIDTH - selected.width) // 2, y))
         y += selected.height + 20
+        breaks.append(y)
     else:
         draw.rounded_rectangle((PAD, y, WIDTH - PAD, y + 180), radius=12, fill='#25392e')
         draw.text((PAD + 30, y + 60), '现场图片暂缺', font=font(38), fill=MUTED)
@@ -122,9 +127,9 @@ def draw_poster(match, day, output, fetch, public_base):
                    'Yellow Red Card': '两黄变一红'}
     for event in match['timeline']:
         name = event_names.get(event['type'], event['type'])
-        from players import label
+        from players import label, show_assist
         text(f"{event['minute']}  {name}  ·  " + (label(event['player']) if event.get('player') else event['players']), 30, FG, 10)
-        if event.get('scoring'):
+        if show_assist(event):
             text('助攻：' + (label(event['assist']) if event.get('assist') else '数据源未记录'), 27, MUTED, 20)
     if not match['timeline']:
         text('关键事件资料暂缺，以终场比分为准。', 30, MUTED)
@@ -136,25 +141,42 @@ def draw_poster(match, day, output, fetch, public_base):
     text('积分为抓取时快照；历史补刊不代表当时排名。', 23, MUTED, 10)
     rule()
 
-    target = match['highlights'][0]['url'] if match['highlights'] else f"{public_base}/reports/{day}.html#{match['id']}"
-    qr = qrcode.QRCode(box_size=5, border=2, error_correction=qrcode.constants.ERROR_CORRECT_M)
-    qr.add_data(target)
-    qr.make(fit=True)
-    qr_image = qr.make_image(fill_color='#101b18', back_color='#ffffff').convert('RGB')
-    qr_image = qr_image.resize((204, 204), Image.Resampling.NEAREST)
-    canvas.paste(qr_image, (WIDTH - PAD - 204, y))
-    qr_top = y
-    text('扫码看官方集锦' if match['highlights'] else '扫码看完整战报', 32, ACCENT, 12, width=CONTENT - 250)
-    text('比分、进球、积分与媒体来源\n见完整日报的来源链接。', 25, MUTED, 8, width=CONTENT - 250)
-    y = max(y, qr_top + 226)
-    text(public_base.removeprefix('https://'), 25, MUTED, 8)
-    text('图源版权归原作者；视频封面已在图注标明。', 22, MUTED, 8)
-    y += 42
-    if y > canvas.height:
-        raise RuntimeError('Poster content exceeds safe canvas height')
+    y = breaks[-1] + 12
     output.parent.mkdir(parents=True, exist_ok=True)
     canvas.crop((0, 0, WIDTH, y)).save(output, 'PNG', optimize=True)
-    return {'width': WIDTH, 'height': y, 'image_embedded': bool(selected), 'team_crests_embedded': len(loaded_crests)}
+    return {'width': WIDTH, 'height': y, 'image_embedded': bool(selected), 'team_crests_embedded': len(loaded_crests), '_breaks': breaks}
+
+
+def paginate(path, breaks, title, target=None):
+    original = Image.open(path).convert('RGB')
+    body = 1110
+    positions = sorted(set([0, *breaks, original.height]))
+    pages, start = [], 0
+    while start < original.height:
+        candidates = [p for p in positions if start < p <= start + body]
+        if not candidates:
+            raise RuntimeError('Image block cannot fit fixed portrait page')
+        end = max(candidates)
+        # Never cut photographs, QR codes, or text at an arbitrary pixel row.
+        page = Image.new('RGB', (WIDTH, 1312), BG)
+        d = ImageDraw.Draw(page)
+        heading = title
+        size = 23
+        while font(size).getlength(heading) > CONTENT and size > 12:
+            size -= 1
+        d.text((PAD, 15), heading, font=font(size), fill=MUTED)
+        page.paste(original.crop((0, start, WIDTH, end)), (0, 62))
+        output = path.with_name(path.stem + '-social-' + str(len(pages) + 1) + '.png')
+        d.text((PAD, 1210), f'比赛特辑 / MATCH REPORT · {len(pages) + 1}', font=font(22), fill=ACCENT)
+        if target:
+            qr = qrcode.make(target).convert('RGB').resize((114, 114), Image.Resampling.NEAREST)
+            page.paste(qr, (WIDTH - PAD - 114, 1188))
+            d.text((PAD, 1250), '扫码看官方集锦 / Official highlights', font=font(21), fill=MUTED)
+        page.save(output, 'PNG', optimize=True)
+        pages.append(output)
+        start = end
+    path.unlink()
+    return pages
 
 
 def export(report, out, fetch):
@@ -163,16 +185,21 @@ def export(report, out, fetch):
     base = os.environ.get('PUBLIC_BASE_URL', f'https://{owner.lower()}.github.io/{repo}').rstrip('/')
     prefix = base + '/posters/' + report['day']
     folder = out / 'posters' / report['day']
-    generated = []
+    from cover import draw_covers
+    report['covers'] = draw_covers(report, folder, fetch, prefix)
+    report['cover'] = report['covers'][0]
+    generated = [folder / a['filename'] for a in report['covers']]
     for match in report['matches']:
         path = folder / (match['id'] + '-zh-en.png')
         metadata = draw_poster(match, report['day'], path, fetch, base)
-        match['poster'] = {'url': prefix + '/' + path.name, 'filename': path.name, **metadata}
-        generated.append(path)
+        pages = paginate(path, metadata.pop('_breaks'), TEAM_NAMES.get(match['home'], match['home']) + ' / ' + match['home'] + ' vs ' + TEAM_NAMES.get(match['away'], match['away']) + ' / ' + match['away'], match['highlights'][0]['url'] if match['highlights'] else base + '/reports/' + report['day'] + '.html#' + match['id'])
+        match['poster_pages'] = [{'filename': p.name, 'url': prefix + '/' + p.name} for p in pages]
+        match['poster'] = {**match['poster_pages'][0], **metadata, 'height': 1312}
+        generated.extend(pages)
     from standings_chart import export_tables
     generated.extend(export_tables(report, out, fetch, prefix, folder))
     if generated:
-        bundle = folder / ('football-' + report['day'] + '-zh-en.zip')
+        bundle = folder / ('football-' + report['day'] + '-social.zip')
         with zipfile.ZipFile(bundle, 'w', zipfile.ZIP_DEFLATED) as archive:
             for path in generated:
                 archive.write(path, path.name)

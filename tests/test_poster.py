@@ -25,3 +25,17 @@ class PosterTests(unittest.TestCase):
                 self.assertEqual(image.height, result['height'])
                 self.assertGreater(image.height, 1000)
             self.assertFalse(result['image_embedded'])
+
+    def test_social_pages_preserve_complete_blocks_at_fixed_size(self):
+        from poster import paginate
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'source.png'
+            image = Image.new('RGB', (1080, 2000), '#123456')
+            image.save(path)
+            pages = paginate(path, [0, 800, 1500, 2000], 'Match')
+            self.assertEqual(len(pages), 3)
+            for page in pages:
+                with Image.open(page) as result:
+                    self.assertEqual(result.size, (1080, 1312))
+                    self.assertEqual(result.getpixel((100, 70)), (18, 52, 86))
+            self.assertFalse(path.exists())

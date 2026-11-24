@@ -1,5 +1,5 @@
 import unittest
-from players import timeline, label
+from players import timeline, label, show_assist
 
 
 class PlayerEventsTests(unittest.TestCase):
@@ -17,3 +17,8 @@ class PlayerEventsTests(unittest.TestCase):
         self.assertIsNone(timeline(summary)[0]['assist'])
         summary['rosters'] = []
         self.assertIn('号码未核实', label(timeline(summary)[0]['player']))
+
+    def test_penalty_never_shows_assist_line(self):
+        self.assertFalse(show_assist({'scoring': True, 'type': 'Penalty - Scored'}))
+        self.assertFalse(show_assist({'scoring': True, 'type': 'Goal', 'text': 'converts the penalty'}))
+        self.assertTrue(show_assist({'scoring': True, 'type': 'Goal'}))

@@ -47,3 +47,10 @@ def label(player):
         return '球员资料暂缺'
     number = '#' + str(player['number']) if player.get('number') else '号码未核实'
     return f"{number} {player.get('name_zh') or '中文名待核实'}（{player['name']}）"
+
+
+def show_assist(event):
+    kind = str(event.get('type', '')).lower()
+    detail = str(event.get('text', '')).lower()
+    penalty = 'penalty' in kind or '点球' in kind or 'converts the penalty' in detail or 'from the penalty spot' in detail
+    return bool(event.get('scoring')) and not penalty

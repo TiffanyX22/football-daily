@@ -35,19 +35,22 @@ def groups(paths):
 
 def build_messages(report, folder, sender, recipient):
     day = report['day']
-    paths = [folder / 'posters' / day / m.get('poster', {}).get('filename', m['id'] + '.png') for m in report['matches']]
-    paths += [folder / 'posters' / day / chart['filename'] for chart in report.get('standings_charts', [])]
+    root = folder / 'posters' / day
+    paths = [root / page['filename'] for m in report['matches'] for page in m.get('poster_pages', [m.get('poster', {'filename': m['id'] + '.png'})])]
+    covers = report.get('covers', [report['cover']] if report.get('cover') else [])
+    paths = [root / c['filename'] for c in covers] + paths
+    paths += [root / chart['filename'] for chart in report.get('standings_charts', [])]
     batches = groups(paths) or [[]]
     messages = []
     for index, batch in enumerate(batches, 1):
         msg = EmailMessage()
-        msg['Subject'] = f"男足图文日报 {day} · 双语球员号码助攻版" + (f'（{index}/{len(batches)}）' if len(batches) > 1 else '')
+        msg['Subject'] = f"男足图文日报 {day} · 社媒竖版封面与双语图集" + (f'（{index}/{len(batches)}）' if len(batches) > 1 else '')
         if report.get('partial_day'):
             msg.replace_header('Subject', str(msg['Subject']) + ' · 提前试跑')
         msg['From'], msg['To'] = sender, recipient
         msg['Date'], msg['Message-ID'] = formatdate(localtime=False), make_msgid()
         summary = '\n'.join(f"{m['league']}：{m['home']} {m['score']} {m['away']}" for m in report['matches'])
-        text = f'本期图文已生成。附件包含可直接保存的原尺寸PNG，以及同批图片ZIP。\n\n{summary}\n\n'
+        text = f'本期图文已生成。附件包含可直接保存的1080×1312 竖版PNG，以及同批图片ZIP。\n\n{summary}\n\n'
         if report.get('standings_charts'):
             text += '积分榜图片也已附在邮件和 ZIP 中，按赛事列出积分、排名、场次和净胜球。\n'
         text += '官方集锦链接（按比赛）：\n'
@@ -64,7 +67,7 @@ def build_messages(report, folder, sender, recipient):
             text += '\n本期资料缺项：\n' + '\n'.join(report['errors'])
         msg.set_content(text)
         cid = make_msgid(domain='football-daily.local')[1:-1]
-        markup = '<html><body><h2>男足图文日报 ' + html.escape(day) + '</h2><p>原尺寸 PNG 和 ZIP 均在附件，可直接保存，无需打开网页。</p>'
+        markup = '<html><body><h2>男足图文日报 ' + html.escape(day) + '</h2><p>1080×1312 竖版 PNG 和 ZIP 均在附件，可直接保存，无需打开网页。</p>'
         markup += '<p>' + html.escape(summary).replace('\n', '<br>') + '</p>'
         if report.get('standings_charts'):
             markup += '<p>另附积分榜 PNG：排名、积分、已赛场次与净胜球；浅绿标记本期参赛球队。积分为抓取时快照。</p>'
@@ -98,7 +101,7 @@ def build_messages(report, folder, sender, recipient):
                 msg.add_attachment(path.read_bytes(), maintype='image', subtype='png', filename=path.name)
             suffix = f'-part{index}' if len(batches) > 1 else ''
             msg.add_attachment(bundle.getvalue(), maintype='application', subtype='zip',
-                               filename=f'football-{day}-zh-en{suffix}.zip')
+                               filename=f'football-{day}-social{suffix}.zip')
         if len(msg.as_bytes()) > MAX_EMAIL_BYTES:
             raise ValueError('Encoded email exceeds safe Gmail limit; refusing partial delivery')
         messages.append(msg)

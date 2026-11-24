@@ -23,9 +23,9 @@ class MailReportTests(unittest.TestCase):
             mail = build_messages(report, folder, 'a@example.invalid', 'b@example.invalid')[0]
             parsed = BytesParser(policy=policy.default).parsebytes(mail.as_bytes())
             attachments = {p.get_filename(): p for p in parsed.iter_attachments()}
-            self.assertEqual(set(attachments), {'test.png', 'standings-demo.png', 'football-2026-11-23-zh-en.zip'})
+            self.assertEqual(set(attachments), {'test.png', 'standings-demo.png', 'football-2026-11-23-social.zip'})
             self.assertEqual(attachments['test.png'].get_payload(decode=True), (root / 'test.png').read_bytes())
-            with zipfile.ZipFile(io.BytesIO(attachments['football-2026-11-23-zh-en.zip'].get_payload(decode=True))) as archive:
+            with zipfile.ZipFile(io.BytesIO(attachments['football-2026-11-23-social.zip'].get_payload(decode=True))) as archive:
                 self.assertIn('standings-demo.png', archive.namelist())
                 self.assertEqual(archive.read('test.png'), (root / 'test.png').read_bytes())
             self.assertIn('cid:', parsed.get_body(('html',)).get_content())

@@ -41,9 +41,10 @@ def export_tables(report, out, fetch, prefix, folder):
             report['errors'].append(f'{league}：积分表抓取失败，未生成积分图')
             continue
         played = {m[k] for m in report['matches'] if m['slug'] == slug for k in ('home', 'away')}
+        groups = [{**g, 'name': g['name'] + f' · {i // 7 + 1}/{(len(g["rows"]) + 6) // 7}', 'rows': g['rows'][i:i + 7]} for g in groups for i in range(0, len(g['rows']), 7)]
         for group_index, group in enumerate(groups, 1):
             rows = group['rows']
-            height = 420 + len(rows) * 102 + 170
+            height = 1312
             image = Image.new('RGB', (WIDTH, height), BG)
             draw = ImageDraw.Draw(image)
             draw.text((PAD, 44), 'TABLE / 积分榜', fill=ACCENT, font=font(30))
@@ -85,7 +86,7 @@ def export_tables(report, out, fetch, prefix, folder):
                 report['errors'].append(league + '：队标加载失败：' + ', '.join(missing_logos))
             draw.text((PAD, y + 20), '来源：ESPN · 抓取时积分快照', fill=MUTED, font=font(25))
             draw.text((PAD, y + 65), '非赛前后名次变化；晋级以赛事官方最终规则及结果为准。', fill=MUTED, font=font(22))
-            path = folder / f'standings-{slug}-{group_index}-zh-en-crests.png'
+            path = folder / f'standings-{slug}-{group_index}-zh-en-crests-social.png'
             image.save(path, 'PNG', optimize=True)
             assets.append({'url': prefix + '/' + path.name, 'filename': path.name, 'league': league,
                            'group': group['name'], 'source': source, 'rows': rows,
