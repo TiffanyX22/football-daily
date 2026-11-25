@@ -1,22 +1,22 @@
-import re, sys
+import json, re, sys
 sys.path.insert(0, '.')
-from agent import fetch
-for sm in ['https://www.realmadrid.com/sitemap-es-ES.xml', 'https://www.realmadrid.com/sitemap-en-US.xml']:
-    b = fetch(sm)
-    locs = re.findall(r'<loc>([^<]+)</loc>', b)
-    print('##', sm, len(locs))
-    gal = [l for l in locs if re.search(r'galer|gallery|foto|photo', l, re.I)]
-    print('  gallery-like', len(gal)); print('\n'.join('   ' + g for g in gal[-25:]))
-    psv = [l for l in locs if 'psv' in l.lower()]
-    print('  psv', '\n'.join('   ' + g for g in psv[-15:]))
-    print('  sample', locs[-8:])
-b = fetch('https://www.laliga.com/fotogalerias/home')
-links = sorted(set(re.findall(r'/fotogalerias?/[A-Za-z0-9_-]+', b)))
-print('## laliga fotogalerias', len(links)); print('\n'.join('   ' + l for l in links[:40]))
-rm = [l for l in links if 'real-madrid' in l]
-print('  rm', rm[:10])
-if rm:
-    page = fetch('https://www.laliga.com' + rm[0])
-    imgs = sorted(set(re.findall(r'https://assets\.laliga\.com/assets/[^"\s\']+/large/[^"\s\']+\.jpe?g', page)))
-    print('  ', rm[0], 'large imgs', len(imgs), imgs[:3])
-    m = re.search(r'"(?:date|publishedAt|published_at|datePublished)"\s*:\s*"([^"]+)"', page); print('   date', m and m.group(1))
+from agent import fetch, get_json, BASE
+body = fetch('https://www.uefa.com/uefachampionsleague/match/2049625--real-madrid-vs-psv/')
+for raw in re.findall(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', body, re.S):
+    try: d = json.loads(raw)
+    except ValueError: continue
+    if d.get('@type') != 'LiveBlogPosting': continue
+    ups = d.get('liveBlogUpdate', [])
+    print('updates', len(ups), 'keys', sorted({k for u in ups for k in u}))
+    for u in ups:
+        img = u.get('image')
+        if not img: continue
+        name = (img if isinstance(img, str) else json.dumps(img))[-90:]
+        text = ' | '.join(str(u.get(k, ''))[:160].replace('\n', ' ') for k in ('headline', 'articleBody', 'description', 'caption') if u.get(k))
+        print(u.get('datePublished'), name, '::', text)
+s = get_json(BASE + 'uefa.champions/summary?event=401915298')
+for im in (s.get('article') or {}).get('images', []):
+    print('ESPN', im.get('url'), im.get('width'), im.get('caption') or im.get('alt'), im.get('credit'))
+print('ESPN keys', list(s.keys()))
+for r in s.get('rosters', []):
+    print('ROSTER', r.get('team', {}).get('displayName'), [p.get('athlete', {}).get('lastName') or p.get('athlete', {}).get('displayName') for p in r.get('roster', [])][:30])
