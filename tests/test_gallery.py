@@ -36,7 +36,7 @@ class GalleryTests(unittest.TestCase):
         self.assertIn('暂未取得可核实的比赛照片', page)
 
     def test_uefa_photo_limit_is_configurable(self):
-        posts = [{'image': f'https://editorial.uefa.com/resources/p{n}.jpeg', 'datePublished': '2026-11-24T20:30Z'} for n in range(8)]
+        posts = [{'image': f'https://editorial.uefa.com/resources/a_v_b_{n}.jpeg', 'datePublished': '2026-11-24T20:30Z'} for n in range(8)]
         body = '<script type="application/ld+json">' + json.dumps({'@type': 'LiveBlogPosting', 'liveBlogUpdate': posts}) + '</script>'
         fetch = lambda url, binary=False: (b'x', 'image/jpeg') if binary else body
         args = ('A', 'B', dt.datetime(2026, 11, 24, 20, tzinfo=dt.timezone.utc),
@@ -57,15 +57,18 @@ class GalleryTests(unittest.TestCase):
 
 class GalleryWindowTests(unittest.TestCase):
     def test_gallery_mode_keeps_post_match_and_image_objects_but_daily_does_not(self):
-        posts = [{'image': 'https://editorial.uefa.com/resources/live.jpeg', 'datePublished': '2026-11-24T20:30Z'},
-                 {'image': {'@type': 'ImageObject', 'url': 'https://editorial.uefa.com/resources/obj.jpeg'}, 'datePublished': '2026-11-24T21:00Z'},
-                 {'image': 'https://editorial.uefa.com/resources/after.jpeg', 'datePublished': '2026-11-24T23:30Z'},
+        posts = [{'image': 'https://editorial.uefa.com/resources/live/real_madrid_c.f._v_psv_eindhoven_md5.jpeg', 'datePublished': '2026-11-24T20:30Z'},
+                 {'image': {'@type': 'ImageObject', 'url': 'https://editorial.uefa.com/resources/obj/fbl-eur-c1-real_madrid-psv.jpeg'}, 'datePublished': '2026-11-24T21:00Z'},
+                 {'image': 'https://editorial.uefa.com/resources/after/topshot-fbl-eur-c1-real_madrid-psv.jpeg', 'datePublished': '2026-11-24T23:30Z'},
+                 {'image': 'https://editorial.uefa.com/resources/other/fbl-fc_porto-eur-c1-feyenoord-porto.jpeg', 'datePublished': '2026-11-24T21:10Z'},
+                 {'image': 'https://editorial.uefa.com/resources/promo/ucl_24x27_-_goal_of_the_day_x4.jpeg', 'datePublished': '2026-11-24T22:30Z'},
+                 {'image': 'https://editorial.uefa.com/resources/getty/gettyimages-2306715922.jpeg', 'datePublished': '2026-11-24T21:20Z'},
                  {'image': 'https://editorial.uefa.com/resources/nextday.jpeg', 'datePublished': '2026-11-25T09:00Z'}]
         body = '<script type="application/ld+json">' + json.dumps({'@type': 'LiveBlogPosting', 'liveBlogUpdate': posts}) + '</script>'
         fetch = lambda url, binary=False: (b'x', 'image/jpeg') if binary else body
         args = ('A', 'B', dt.datetime(2026, 11, 24, 20, tzinfo=dt.timezone.utc),
                 dt.datetime(2026, 11, 24, 22, tzinfo=dt.timezone.utc), fetch, 'https://www.uefa.com/m/')
-        self.assertEqual([p['url'].rsplit('/', 1)[1] for p in uefa_photos(*args)], ['live.jpeg', 'obj.jpeg'])
-        gallery = uefa_photos(*args, limit=30)
-        self.assertEqual([p['url'].rsplit('/', 1)[1] for p in gallery], ['live.jpeg', 'obj.jpeg', 'after.jpeg'])
+        self.assertEqual(len(uefa_photos(*args)), 2)
+        gallery = uefa_photos('Real Madrid', 'PSV Eindhoven', *args[2:], limit=30)
+        self.assertEqual([p['url'].split('/')[4] for p in gallery], ['live', 'obj', 'after'])
         self.assertIn('终场后', gallery[2]['caption'])

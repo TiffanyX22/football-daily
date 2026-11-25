@@ -91,6 +91,14 @@ def uefa_match_urls(fetch):
 POST_MATCH = dt.timedelta(hours=3)
 
 
+def shows_match(image, home, away):
+    """Gallery mode: the match live blog also carries other fixtures, promos and
+    player cutouts. Keep only files whose agency filename names both teams
+    (e.g. real_madrid_c.f._v_psv_eindhoven..., fbl-eur-c1-real_madrid-psv...)."""
+    name = key(image.rsplit('/', 1)[-1])
+    return all(any(k and k in name for k in {key(team), key(ALIASES.get(team, team))}) for team in (home, away))
+
+
 def image_urls(value):
     """liveBlogUpdate.image may be a URL, an ImageObject, or a list of either."""
     if isinstance(value, str):
@@ -127,6 +135,8 @@ def uefa_photos(home, away, kickoff, finished, fetch, reviewed_url=None, limit=2
                     published = dt.datetime.fromisoformat(post['datePublished'].replace('Z', '+00:00'))
                     # Gallery mode (limit > 2) also keeps full-time celebrations posted soon after the whistle.
                     if not kickoff <= published <= finished + (POST_MATCH if limit > 2 else dt.timedelta(0)):
+                        continue
+                    if limit > 2 and not shows_match(image, home, away):
                         continue
                     if image in {p['url'] for p in photos}:
                         continue
