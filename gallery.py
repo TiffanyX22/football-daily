@@ -25,13 +25,6 @@ figure a.full{{display:block}}img{{display:block;width:100%;height:auto;backgrou
     if match.get('club_album'):
         parts.append(f' · <a href="{esc(match["club_album"])}">皇马官网完整相册</a>')
     parts.append('</p>')
-    post = match.get('instagram_post')
-    if post:
-        url = post['url'].rstrip('/') + '/'
-        parts.append(f'<section><h2>{esc(post["caption"])}</h2>'
-                     f'<iframe title="{esc(post["caption"])}" src="{esc(url)}embed/" loading="lazy" '
-                     f'style="width:min(100%,540px);height:690px;border:0"></iframe>'
-                     f'<p><a href="{esc(url)}">在 Instagram 查看完整轮播</a></p></section>')
     if not photos:
         parts.append('<p class="missing">本场暂未取得可核实的比赛照片；不使用其他比赛或资料图替代。</p>')
     parts.append('<div class="grid">')

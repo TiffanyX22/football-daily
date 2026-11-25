@@ -126,48 +126,6 @@
     ],
     "madrid_gallery": {
       "club_report": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026",
-      "instagram_post": {
-        "caption": "贝林厄姆拉起球衣庆祝 · 球员赛后轮播",
-        "url": "https://www.instagram.com/p/DgJNB9Pgh9i/"
-      },
-      "photos": [
-        {
-          "url": "https://media.zenfs.com/en/cp_sports_913/0b1685de7f8940f7251e06ecc9848b6e.jpg",
-          "caption": "姆巴佩与 PSV 4 号奥比斯波对抗",
-          "credit": "Manu Fernandez / AP",
-          "source": "https://ca.sports.yahoo.com/news/bellingham-scores-wonder-goal-ignite-231403430.html"
-        },
-        {
-          "url": "https://assets.realmadrid.com/is/image/realmadrid/035_1VC3661?wid=1200",
-          "caption": "巴尔韦德举手庆祝",
-          "credit": "Real Madrid",
-          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
-        },
-        {
-          "url": "https://assets.realmadrid.com/is/image/realmadrid/002_AV18742?wid=1200",
-          "caption": "贝林厄姆和队友拥抱庆祝",
-          "credit": "Real Madrid",
-          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
-        },
-        {
-          "url": "https://assets.realmadrid.com/is/image/realmadrid/047_DB30759?wid=1200",
-          "caption": "贝林厄姆张开双臂",
-          "credit": "Real Madrid",
-          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
-        },
-        {
-          "url": "https://assets.realmadrid.com/is/image/realmadrid/006_DB16531?wid=1200",
-          "caption": "姆巴佩与队友拥抱",
-          "credit": "Real Madrid",
-          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
-        },
-        {
-          "url": "https://assets.realmadrid.com/is/image/realmadrid/061_DB16432?wid=1200",
-          "caption": "姆巴佩带球越过出击的门将",
-          "credit": "Real Madrid",
-          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
-        }
-      ],
       "exclude": [
         "https://editorial.uefa.com/resources/02ab-22269822d6e7-b0e6b7fde991-1000/real_madrid_c.f._v_psv_eindhoven_-_uefa_champions_league_2026_27_league_phase_md5.jpeg"
       ]
