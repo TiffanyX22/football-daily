@@ -1,8 +1,8 @@
 {
   "day": "2026-11-24",
   "start": "2026-11-24T00:00:00-08:00",
-  "end": "2026-11-25T01:59:16.651068-08:00",
-  "generated": "2026-11-25T01:59:16.651068-08:00",
+  "end": "2026-11-25T02:16:56.116116-08:00",
+  "generated": "2026-11-25T02:16:56.116116-08:00",
   "matches": [
     {
       "id": "401915298",
@@ -133,12 +133,10 @@
           "source": "https://www.espn.com/soccer/report/_/gameId/401915298"
         },
         {
-          "url": "https://editorial.uefa.com/resources/02ab-22269822d6e7-b0e6b7fde991-1000/real_madrid_c.f._v_psv_eindhoven_-_uefa_champions_league_2026_27_league_phase_md5.jpeg",
-          "caption": "Real Madrid vs PSV Eindhoven · 终场后照片",
-          "credit": "UEFA 官方比赛中心 / 原摄影机构",
-          "source": "https://www.uefa.com/uefachampionsleague/match/2049625--real-madrid-vs-psv/#02a8-2226978d9223-500415007c53-10ff",
-          "kind": "match-photo",
-          "published": "2026-11-24T23:01:00+00:00"
+          "url": "https://media.zenfs.com/en/cp_sports_913/0b1685de7f8940f7251e06ecc9848b6e.jpg",
+          "caption": "姆巴佩与 PSV 4 号奥比斯波对抗",
+          "credit": "Manu Fernandez / AP",
+          "source": "https://ca.sports.yahoo.com/news/bellingham-scores-wonder-goal-ignite-231403430.html"
         }
       ],
       "team_logos": {
@@ -161,18 +159,46 @@
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "gallery": [
         {
+          "url": "https://media.zenfs.com/en/cp_sports_913/0b1685de7f8940f7251e06ecc9848b6e.jpg",
+          "caption": "姆巴佩与 PSV 4 号奥比斯波对抗",
+          "credit": "Manu Fernandez / AP",
+          "source": "https://ca.sports.yahoo.com/news/bellingham-scores-wonder-goal-ignite-231403430.html"
+        },
+        {
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/035_1VC3661?wid=1200",
+          "caption": "巴尔韦德举手庆祝",
+          "credit": "Real Madrid",
+          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
+        },
+        {
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/002_AV18742?wid=1200",
+          "caption": "贝林厄姆和队友拥抱庆祝",
+          "credit": "Real Madrid",
+          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
+        },
+        {
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/047_DB30759?wid=1200",
+          "caption": "贝林厄姆张开双臂",
+          "credit": "Real Madrid",
+          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
+        },
+        {
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/006_DB16531?wid=1200",
+          "caption": "姆巴佩与队友拥抱",
+          "credit": "Real Madrid",
+          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
+        },
+        {
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/061_DB16432?wid=1200",
+          "caption": "姆巴佩带球越过出击的门将",
+          "credit": "Real Madrid",
+          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
+        },
+        {
           "url": "https://a.espncdn.com/photo/2026/1124/r1750810_1296x729_16-9.jpg",
           "caption": "Bellingham celeb [1296x729]",
           "credit": "Photo by Kiko Huesca/EPA/Shutterstock",
           "source": "https://www.espn.com/soccer/report/_/gameId/401915298"
-        },
-        {
-          "url": "https://editorial.uefa.com/resources/02ab-22269822d6e7-b0e6b7fde991-1000/real_madrid_c.f._v_psv_eindhoven_-_uefa_champions_league_2026_27_league_phase_md5.jpeg",
-          "caption": "Real Madrid vs PSV Eindhoven · 终场后照片",
-          "credit": "UEFA 官方比赛中心 / 原摄影机构",
-          "source": "https://www.uefa.com/uefachampionsleague/match/2049625--real-madrid-vs-psv/#02a8-2226978d9223-500415007c53-10ff",
-          "kind": "match-photo",
-          "published": "2026-11-24T23:01:00+00:00"
         },
         {
           "url": "https://editorial.uefa.com/resources/02ab-222697540338-dcb643838aaf-1000/real_madrid_c.f._v_psv_eindhoven_-_uefa_champions_league_2026_27_league_phase_md5.jpeg",
@@ -295,6 +321,11 @@
           "published": "2026-11-24T21:42:20+00:00"
         }
       ],
+      "club_album": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026",
+      "instagram_post": {
+        "caption": "贝林厄姆拉起球衣庆祝 · 球员赛后轮播",
+        "url": "https://www.instagram.com/p/DgJNB9Pgh9i/"
+      },
       "gallery_url": "https://tiffanyx22.github.io/football-daily/real-madrid/401915298-gallery.html",
       "poster": {
         "filename": "madrid-401915298-zh-en.png",
