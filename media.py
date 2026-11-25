@@ -88,7 +88,7 @@ def uefa_match_urls(fetch):
                              re.findall(r'(/uefachampionsleague/match/\d+--[a-z0-9-]+/)', body)))
 
 
-def uefa_photos(home, away, kickoff, finished, fetch, reviewed_url=None):
+def uefa_photos(home, away, kickoff, finished, fetch, reviewed_url=None, limit=2):
     try:
         names = [key(ALIASES.get(n, n)) for n in (home, away)]
         url = reviewed_url or next((u for u in uefa_match_urls(fetch) if all(n in key(u.split('--')[-1]) for n in names)), None)
@@ -119,7 +119,7 @@ def uefa_photos(home, away, kickoff, finished, fetch, reviewed_url=None):
                 photos.append({'url': image, 'caption': f'{home} vs {away} · 本场赛中照片',
                                'credit': 'UEFA 官方比赛中心 / 原摄影机构', 'source': post.get('url', url),
                                'kind': 'match-photo', 'published': published.isoformat()})
-                if len(photos) == 2:
+                if len(photos) >= limit:
                     return photos
         return photos
     except Exception:
