@@ -53,3 +53,19 @@ class GalleryTests(unittest.TestCase):
             meta = draw_match(match, '2026-11-24', path, lambda url, binary=False: (jpeg(), 'image/jpeg'), 'https://example.invalid')
             self.assertEqual(Image.open(path).size, (1080, 1312))
             self.assertTrue(meta['image_embedded'])
+
+
+class GalleryWindowTests(unittest.TestCase):
+    def test_gallery_mode_keeps_post_match_and_image_objects_but_daily_does_not(self):
+        posts = [{'image': 'https://editorial.uefa.com/resources/live.jpeg', 'datePublished': '2026-11-24T20:30Z'},
+                 {'image': {'@type': 'ImageObject', 'url': 'https://editorial.uefa.com/resources/obj.jpeg'}, 'datePublished': '2026-11-24T21:00Z'},
+                 {'image': 'https://editorial.uefa.com/resources/after.jpeg', 'datePublished': '2026-11-24T23:30Z'},
+                 {'image': 'https://editorial.uefa.com/resources/nextday.jpeg', 'datePublished': '2026-11-25T09:00Z'}]
+        body = '<script type="application/ld+json">' + json.dumps({'@type': 'LiveBlogPosting', 'liveBlogUpdate': posts}) + '</script>'
+        fetch = lambda url, binary=False: (b'x', 'image/jpeg') if binary else body
+        args = ('A', 'B', dt.datetime(2026, 11, 24, 20, tzinfo=dt.timezone.utc),
+                dt.datetime(2026, 11, 24, 22, tzinfo=dt.timezone.utc), fetch, 'https://www.uefa.com/m/')
+        self.assertEqual([p['url'].rsplit('/', 1)[1] for p in uefa_photos(*args)], ['live.jpeg', 'obj.jpeg'])
+        gallery = uefa_photos(*args, limit=30)
+        self.assertEqual([p['url'].rsplit('/', 1)[1] for p in gallery], ['live.jpeg', 'obj.jpeg', 'after.jpeg'])
+        self.assertIn('终场后', gallery[2]['caption'])

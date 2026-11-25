@@ -60,6 +60,6 @@ Gmail 应用专用密码由用户在 Google 安全页面创建并直接填入 Gi
 
 `real-madrid.yml` 每10分钟检查ESPN皇马男足球队ID86的跨赛事赛程，GitHub排队可能延迟。只处理2026-11-24启用后的近3天已完赛比赛，首次启用会用当天比赛验证。每场生成一张1080×1312深绿双语图，向原邮箱发PNG与ZIP；无比赛不发信，真实比赛照片尚未加载则下一次重试，集锦未发布会标明。下午4点的全量日报保持独立。
 
-**比赛图集**：皇马任务最多收集12张已核实的本场照片（ESPN 与该比赛ID绑定的战报图、UEFA 比赛中心开球至终场间发布的赛中照片），生成 `docs/real-madrid/<比赛ID>-gallery.html`（最新一场另有 `latest-gallery.html`）。图片卡底部有两个二维码：左为比赛图集，右为官方视频集锦（未发布时为完整战报）；邮件正文和网页也附图集链接。照片只外链原站并注明来源，不转存；取不到时不用其他比赛照片替代。已发过邮件的比赛可在 Actions → Real Madrid full-time graphic → Run workflow 填 `event_id` 补跑：只重新生成卡片和图集页并发布；勾选 `resend` 才会补发邮件（主题前加“补发·含图集”）。
+**比赛图集**：皇马任务最多收集30张已核实的本场照片（ESPN 与该比赛ID绑定的战报图、UEFA 比赛中心开球至终场后3小时内发布的照片，终场后的标为“终场后照片”），生成 `docs/real-madrid/<比赛ID>-gallery.html`（最新一场另有 `latest-gallery.html`）。图片卡底部有两个二维码：左为比赛图集，右为官方视频集锦（未发布时为完整战报）；邮件正文和网页也附图集链接。照片只外链原站并注明来源，不转存；取不到时不用其他比赛照片替代。已发过邮件的比赛可在 Actions → Real Madrid full-time graphic → Run workflow 填 `event_id` 补跑：只重新生成卡片和图集页并发布；勾选 `resend` 才会补发邮件（主题前加“补发·含图集”）。
 
 `data/madrid-delivery.json` 按比赛ID持久去重。SMTP发送前先持久记录reservation；若发送过程异常或被中断，`reserved` / `needs_review` 不自动重发，需要先核对收件箱后人工处理，避免重复。最新静态只读JSON API：`https://tiffanyx22.github.io/football-daily/real-madrid/latest.json`，历史使用比赛ID替换latest；不提供公开触发发信接口。

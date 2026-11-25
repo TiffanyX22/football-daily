@@ -15,7 +15,7 @@ from mail_report import build_messages
 from social_match import draw_match
 
 STATE = Path('data/madrid-delivery.json')
-GALLERY_LIMIT = 12  # verified photos of this exact match on the 图集 page
+GALLERY_LIMIT = 30  # verified photos of this exact match on the 图集 page
 
 
 def eligible(event, now, since, deliveries):

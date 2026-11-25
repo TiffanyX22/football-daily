@@ -88,6 +88,20 @@ def uefa_match_urls(fetch):
                              re.findall(r'(/uefachampionsleague/match/\d+--[a-z0-9-]+/)', body)))
 
 
+POST_MATCH = dt.timedelta(hours=3)
+
+
+def image_urls(value):
+    """liveBlogUpdate.image may be a URL, an ImageObject, or a list of either."""
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, dict):
+        return [u for u in (value.get('url') or value.get('contentUrl'),) if isinstance(u, str)]
+    if isinstance(value, list):
+        return [u for item in value for u in image_urls(item)]
+    return []
+
+
 def uefa_photos(home, away, kickoff, finished, fetch, reviewed_url=None, limit=2):
     try:
         names = [key(ALIASES.get(n, n)) for n in (home, away)]
@@ -104,23 +118,26 @@ def uefa_photos(home, away, kickoff, finished, fetch, reviewed_url=None, limit=2
             if data.get('@type') != 'LiveBlogPosting':
                 continue
             for post in data.get('liveBlogUpdate', []):
-                image = post.get('image', '')
-                if not isinstance(image, str) or not image.startswith('https://editorial.uefa.com/resources/'):
-                    continue
-                # Exclude player-card cutouts, training, and prior-match photos.
-                if not image.lower().endswith(('.jpg', '.jpeg')):
-                    continue
-                published = dt.datetime.fromisoformat(post['datePublished'].replace('Z', '+00:00'))
-                if not kickoff <= published <= finished:
-                    continue
-                _, mime = fetch(image, binary=True)
-                if not mime.startswith('image/') or image in {p['url'] for p in photos}:
-                    continue
-                photos.append({'url': image, 'caption': f'{home} vs {away} · 本场赛中照片',
+                for image in image_urls(post.get('image')):
+                    if not image.startswith('https://editorial.uefa.com/resources/'):
+                        continue
+                    # Exclude player-card cutouts, training, and prior-match photos.
+                    if not image.lower().endswith(('.jpg', '.jpeg')):
+                        continue
+                    published = dt.datetime.fromisoformat(post['datePublished'].replace('Z', '+00:00'))
+                    # Gallery mode (limit > 2) also keeps full-time celebrations posted soon after the whistle.
+                    if not kickoff <= published <= finished + (POST_MATCH if limit > 2 else dt.timedelta(0)):
+                        continue
+                    if image in {p['url'] for p in photos}:
+                        continue
+                    _, mime = fetch(image, binary=True)
+                    if not mime.startswith('image/'):
+                        continue
+                    photos.append({'url': image, 'caption': f'{home} vs {away} · ' + ('本场赛中照片' if published <= finished else '终场后照片'),
                                'credit': 'UEFA 官方比赛中心 / 原摄影机构', 'source': post.get('url', url),
-                               'kind': 'match-photo', 'published': published.isoformat()})
-                if len(photos) >= limit:
-                    return photos
+                                   'kind': 'match-photo', 'published': published.isoformat()})
+                    if len(photos) >= limit:
+                        return photos
         return photos
     except Exception:
         return []
