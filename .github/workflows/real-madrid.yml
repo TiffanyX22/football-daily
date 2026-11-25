@@ -8,6 +8,10 @@ on:
         description: 'Optional ESPN match ID to re-render card + gallery (no email)'
         required: false
         default: ''
+      resend:
+        description: 'With event_id: also email it again'
+        type: boolean
+        default: false
 permissions:
   contents: write
   pages: write
@@ -40,7 +44,12 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
           EVENT_ID: ${{ inputs.event_id }}
-        run: python madrid_agent.py --send ${EVENT_ID:+--event "$EVENT_ID"}
+          RESEND: ${{ inputs.resend }}
+        run: |
+          args=(--send)
+          if [ -n "$EVENT_ID" ]; then args+=(--event "$EVENT_ID"); fi
+          if [ -n "$EVENT_ID" ] && [ "$RESEND" = "true" ]; then args+=(--resend); fi
+          python madrid_agent.py "${args[@]}"
       - uses: actions/upload-pages-artifact@v3
         if: steps.changed.outputs.publish == 'true'
         with:

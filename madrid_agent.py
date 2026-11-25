@@ -50,7 +50,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--send', action='store_true')
     parser.add_argument('--out', default='docs')
-    parser.add_argument('--event', help='Re-render one already-delivered match (card + gallery + pages); never emails')
+    parser.add_argument('--event', help='Re-render one already-delivered match (card + gallery + pages)')
+    parser.add_argument('--resend', action='store_true', help='With --event and --send: email the re-rendered match again on explicit request')
     args = parser.parse_args()
     now = dt.datetime.now(UTC)
     state = json.loads(STATE.read_text())
@@ -103,9 +104,23 @@ def main():
         for msg in messages:
             msg.replace_header('Message-ID', f"<real-madrid-{match['id']}@football-daily.local>")
         if args.event:
-            # Backfill: publish refreshed files only; delivery state and inbox untouched.
+            # Backfill: publish refreshed files; email only on explicit manual --resend.
             state['deliveries'].setdefault(match['id'], {})['rerendered_at'] = now.isoformat()
             checkpoint(state)
+            if args.resend and args.send:
+                sender, password, recipient = [os.environ.get(k) for k in ('SMTP_USERNAME', 'SMTP_PASSWORD', 'REPORT_EMAIL')]
+                if not all((sender, password, recipient)):
+                    raise RuntimeError('SMTP secrets required')
+                for msg in messages:
+                    msg.replace_header('Message-ID', f"<real-madrid-{match['id']}-resend-{int(now.timestamp())}@football-daily.local>")
+                    msg.replace_header('Subject', '（补发·含图集）' + str(msg['Subject']))
+                with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=ssl.create_default_context(), timeout=60) as smtp:
+                    smtp.login(sender, password.replace(' ', ''))
+                    for msg in messages:
+                        smtp.send_message(msg)
+                state['deliveries'][match['id']]['resent_at'] = dt.datetime.now(UTC).isoformat()
+                checkpoint(state)
+                print('Resent Real Madrid graphic on manual request:', match['id'])
             if os.environ.get('GITHUB_OUTPUT'):
                 with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
                     output.write('publish=true\n')
