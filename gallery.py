@@ -15,14 +15,23 @@ def render_gallery(match, day, report_url):
 <title>比赛图集 · {esc(title)}</title><style>
 body{{margin:0;background:#101715;color:#edf5ed;font:17px/1.6 system-ui,sans-serif}}main{{max-width:1100px;margin:auto;padding:28px 18px}}a{{color:#a8e5ba}}
 h1{{font-size:34px;line-height:1.25;margin:6px 0}}.eyebrow{{color:#a4cc70;letter-spacing:3px;margin:0}}.muted,figcaption{{color:#a8b8ac;font-size:14px}}
-.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:24px}}figure{{margin:0;background:#18231f;border-radius:12px;overflow:hidden}}
-figure a.full{{display:block}}img{{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#22302a}}figcaption{{padding:10px 12px}}.missing{{padding:12px 16px;background:#302b20;border-radius:8px;color:#edd9aa}}
+.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:18px;margin-top:24px}}figure{{margin:0;background:#18231f;border-radius:12px;overflow:hidden}}
+figure a.full{{display:block}}img{{display:block;width:100%;height:auto;background:#22302a}}figcaption{{padding:10px 12px}}.missing{{padding:12px 16px;background:#302b20;border-radius:8px;color:#edd9aa}}
 </style><main><p class="eyebrow">{esc(match['league'])} · PHOTO GALLERY / 比赛图集</p><h1>{esc(title)}</h1>
 <p class="muted">{esc(day)} · 洛杉矶开球 {esc(match['kickoff'][:16].replace('T', ' '))} · 共 {len(photos)} 张本场照片 · 点图看原图</p>
 <p><a href="{esc(report_url)}">← 返回本场图文战报</a>''']
     for clip in match.get('highlights', [])[:1]:
         parts.append(f' · <a href="{esc(clip["url"])}">官方视频集锦</a>')
+    if match.get('club_album'):
+        parts.append(f' · <a href="{esc(match["club_album"])}">皇马官网完整相册</a>')
     parts.append('</p>')
+    post = match.get('instagram_post')
+    if post:
+        url = post['url'].rstrip('/') + '/'
+        parts.append(f'<section><h2>{esc(post["caption"])}</h2>'
+                     f'<iframe title="{esc(post["caption"])}" src="{esc(url)}embed/" loading="lazy" '
+                     f'style="width:min(100%,540px);height:690px;border:0"></iframe>'
+                     f'<p><a href="{esc(url)}">在 Instagram 查看完整轮播</a></p></section>')
     if not photos:
         parts.append('<p class="missing">本场暂未取得可核实的比赛照片；不使用其他比赛或资料图替代。</p>')
     parts.append('<div class="grid">')

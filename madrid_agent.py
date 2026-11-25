@@ -11,6 +11,7 @@ import subprocess
 
 from agent import LA, UTC, LEAGUES, get_json, instant, make_match, fetch, render
 from gallery import render_gallery
+from madrid_gallery import enrich_gallery
 from mail_report import build_messages
 from social_match import draw_match
 
@@ -76,6 +77,7 @@ def main():
         match = make_match(slug, normalize(event), since, now, rules, GALLERY_LIMIT, focus_team_id='86')
         if not match:
             continue
+        enrich_gallery(match, GALLERY_LIMIT, fetch)
         day = instant(match['finished']).astimezone(LA).date().isoformat()
         root = out / 'posters' / day
         path = root / f"madrid-{match['id']}-zh-en.png"

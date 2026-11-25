@@ -62,4 +62,6 @@ Gmail 应用专用密码由用户在 Google 安全页面创建并直接填入 Gi
 
 **比赛图集**：皇马任务最多收集30张已核实的本场照片（ESPN 与该比赛ID绑定的战报图、UEFA 比赛中心开球至终场后3小时内发布的照片，终场后的标为“终场后照片”；UEFA 直播流里混有其他比赛、宣传图和球员抠图，图集只收文件名同时写明两队的照片，无法确认的一律不收；并且只要皇马：按每张图配的文字/图注，最先提到皇马球员或皇马的才收，对手球员、教练相关的图不收），生成 `docs/real-madrid/<比赛ID>-gallery.html`（最新一场另有 `latest-gallery.html`）。图片卡底部有两个二维码：左为比赛图集，右为官方视频集锦（未发布时为完整战报）；邮件正文和网页也附图集链接。照片只外链原站并注明来源，不转存；取不到时不用其他比赛照片替代。已发过邮件的比赛可在 Actions → Real Madrid full-time graphic → Run workflow 填 `event_id` 补跑：只重新生成卡片和图集页并发布；勾选 `resend` 才会补发邮件（主题前加“补发·含图集”）。
 
+皇马图集支持按比赛 ID 在 `reviewed-media.json` 的 `madrid_gallery` 中维护人工核对的照片、排除的图片地址、官网相册和球员 Instagram 轮播。精选照优先展示，竖图保留原比例。未指定官网相册时，任务会查找皇马男足一线队首页列出的同日战报，核对主客队及相册后添加入口。球员轮播通过 Instagram 官方嵌入展示，并附原帖链接。
+
 `data/madrid-delivery.json` 按比赛ID持久去重。SMTP发送前先持久记录reservation；若发送过程异常或被中断，`reserved` / `needs_review` 不自动重发，需要先核对收件箱后人工处理，避免重复。最新静态只读JSON API：`https://tiffanyx22.github.io/football-daily/real-madrid/latest.json`，历史使用比赛ID替换latest；不提供公开触发发信接口。
