@@ -1,0 +1,176 @@
+{
+  "day": "2026-11-24",
+  "start": "2026-11-24T00:00:00-08:00",
+  "end": "2026-11-24T16:02:38.802845-08:00",
+  "generated": "2026-11-24T16:02:38.802845-08:00",
+  "matches": [
+    {
+      "id": "401915298",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Real Madrid",
+      "away": "PSV Eindhoven",
+      "score": "5–1",
+      "kickoff": "2026-11-24T12:00:00-08:00",
+      "finished": "2026-11-24T13:52:20-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915298/psv-eindhoven-real-madrid",
+      "timeline": [
+        {
+          "minute": "32'",
+          "type": "Penalty - Scored",
+          "players": "Ivan Perisic",
+          "player": {
+            "id": "103485",
+            "name": "Ivan Perisic",
+            "name_zh": "伊万·佩里西奇",
+            "number": "5"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Real Madrid 0, PSV Eindhoven 1. Ivan Perisic (PSV Eindhoven) converts the penalty with a right footed shot to the bottom right corner."
+        },
+        {
+          "minute": "50'",
+          "type": "Goal",
+          "players": "Federico Valverde",
+          "player": {
+            "id": "235818",
+            "name": "Federico Valverde",
+            "name_zh": "费德里科·巴尔韦德",
+            "number": "8"
+          },
+          "assist": {
+            "id": "310452",
+            "name": "Arda Güler",
+            "name_zh": "阿尔达·居莱尔",
+            "number": "15"
+          },
+          "scoring": true,
+          "text": "Goal! Real Madrid 1, PSV Eindhoven 1. Federico Valverde (Real Madrid) right footed shot from the centre of the box to the bottom right corner. Assisted by Arda Güler."
+        },
+        {
+          "minute": "60'",
+          "type": "Goal - Volley",
+          "players": "Jude Bellingham",
+          "player": {
+            "id": "291281",
+            "name": "Jude Bellingham",
+            "name_zh": "裘德·贝林厄姆",
+            "number": "5"
+          },
+          "assist": {
+            "id": "231388",
+            "name": "Kylian Mbappé",
+            "name_zh": "基利安·姆巴佩",
+            "number": "10"
+          },
+          "scoring": true,
+          "text": "Goal! Real Madrid 2, PSV Eindhoven 1. Jude Bellingham (Real Madrid) right footed shot from outside the box to the bottom right corner. Assisted by Kylian Mbappé."
+        },
+        {
+          "minute": "64'",
+          "type": "Goal",
+          "players": "Kylian Mbappé",
+          "player": {
+            "id": "231388",
+            "name": "Kylian Mbappé",
+            "name_zh": "基利安·姆巴佩",
+            "number": "10"
+          },
+          "assist": {
+            "id": "310452",
+            "name": "Arda Güler",
+            "name_zh": "阿尔达·居莱尔",
+            "number": "15"
+          },
+          "scoring": true,
+          "text": "Goal! Real Madrid 3, PSV Eindhoven 1. Kylian Mbappé (Real Madrid) right footed shot from the centre of the box to the top left corner. Assisted by Arda Güler."
+        },
+        {
+          "minute": "84'",
+          "type": "Goal",
+          "players": "Kylian Mbappé",
+          "player": {
+            "id": "231388",
+            "name": "Kylian Mbappé",
+            "name_zh": "基利安·姆巴佩",
+            "number": "10"
+          },
+          "assist": {
+            "id": "246532",
+            "name": "Brahim Díaz",
+            "name_zh": "布拉欣·迪亚斯",
+            "number": "21"
+          },
+          "scoring": true,
+          "text": "Goal! Real Madrid 4, PSV Eindhoven 1. Kylian Mbappé (Real Madrid) right footed shot from the centre of the box to the bottom right corner. Assisted by Brahim Díaz with a through ball."
+        },
+        {
+          "minute": "87'",
+          "type": "Goal",
+          "players": "Vinícius Júnior",
+          "player": {
+            "id": "252107",
+            "name": "Vinícius Júnior",
+            "name_zh": "维尼修斯·儒尼奥尔",
+            "number": "7"
+          },
+          "assist": {
+            "id": "291281",
+            "name": "Jude Bellingham",
+            "name_zh": "裘德·贝林厄姆",
+            "number": "5"
+          },
+          "scoring": true,
+          "text": "Goal! Real Madrid 5, PSV Eindhoven 1. Vinícius Júnior (Real Madrid) right footed shot from the centre of the box to the centre of the goal. Assisted by Jude Bellingham following a fast break."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://a.espncdn.com/photo/2026/1124/r1750810_1296x729_16-9.jpg",
+          "caption": "Bellingham celeb [1296x729]",
+          "credit": "Photo by Kiko Huesca/EPA/Shutterstock",
+          "source": "https://www.espn.com/soccer/report/_/gameId/401915298"
+        },
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-222674354317-5e90afaefc9c-1000/fbl-eur-c1-real_madrid-psv.jpeg",
+          "caption": "Real Madrid vs PSV Eindhoven · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049625--real-madrid-vs-psv/#02ab-2226743538f6-1cf8e9706288-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-24T21:32:17+00:00"
+        }
+      ],
+      "team_logos": {
+        "Real Madrid": "https://a.espncdn.com/i/teamlogos/soccer/500/86.png",
+        "PSV Eindhoven": "https://a.espncdn.com/i/teamlogos/soccer/500/148.png"
+      },
+      "highlights": [
+        {
+          "url": "https://www.youtube.com/watch?v=shSau4ZXUtU",
+          "title": "Real Madrid vs. PSV: Extended Highlights | UCL League Phase MD 5 | CBS Sports Golazo",
+          "publisher": "CBS Sports Golazo（官方转播方，美国可看）",
+          "channel_id": "UCET00YnetHT7tOpu12v8jxg",
+          "published": "2026-11-24T14:33:39-08:00"
+        }
+      ],
+      "standings": [
+        "Real Madrid：15分，第1名，已赛5场，距本组榜首0分。",
+        "PSV Eindhoven：4分，第28名，已赛5场，距本组榜首11分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster": {
+        "filename": "madrid-401915298-zh-en.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-24/madrid-401915298-zh-en.png",
+        "width": 1080,
+        "height": 1312,
+        "image_embedded": true,
+        "team_crests_embedded": 2
+      }
+    }
+  ],
+  "errors": [],
+  "partial_day": false,
+  "coverage": "皇马男足赛后独立图文",
+  "email_subject": "皇马赛后特辑 · Real Madrid 5–1 PSV Eindhoven · 2026-11-24"
+}

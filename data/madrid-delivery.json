@@ -1,1 +1,10 @@
-{"enabled_at":"2026-11-24T00:00:00-08:00","deliveries":{}}
+{
+  "enabled_at": "2026-11-24T00:00:00-08:00",
+  "deliveries": {
+    "401915298": {
+      "status": "reserved",
+      "reserved_at": "2026-11-25T00:02:38.802845+00:00",
+      "note": "Do not automatically resend reserved deliveries; inspect mailbox after an interrupted send."
+    }
+  }
+}
