@@ -55,3 +55,9 @@ Gmail 应用专用密码由用户在 Google 安全页面创建并直接填入 Gi
 关键事件保留球员英文名，并补充中文名及本场名单中的球衣号码；仅在进球事件文字明确记录 Assisted by 时列助攻，未记录则标明“数据源未记录”。中文译名按球员 ID 维护在 player-names.json，缺失不猜填。
 
 所有新图片统一为1080×1312竖版：每日双语赛果封面、每场一张比赛特辑、每个积分组一张双语积分榜。邮件及ZIP只包含本期新尺寸图片。点球进球不显示助攻行。
+
+## 皇马男足赛后独立任务
+
+`real-madrid.yml` 每10分钟检查ESPN皇马男足球队ID86的跨赛事赛程，GitHub排队可能延迟。只处理2026-11-24启用后的近3天已完赛比赛，首次启用会用当天比赛验证。每场生成一张1080×1312深绿双语图，向原邮箱发PNG与ZIP；无比赛不发信，真实比赛照片尚未加载则下一次重试，集锦未发布会标明。下午4点的全量日报保持独立。
+
+`data/madrid-delivery.json` 按比赛ID持久去重。SMTP发送前先持久记录reservation；若发送过程异常或被中断，`reserved` / `needs_review` 不自动重发，需要先核对收件箱后人工处理，避免重复。最新静态只读JSON API：`https://tiffanyx22.github.io/football-daily/real-madrid/latest.json`，历史使用比赛ID替换latest；不提供公开触发发信接口。

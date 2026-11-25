@@ -1,0 +1,54 @@
+name: Real Madrid full-time graphic
+on:
+  schedule:
+    - cron: '3,13,23,33,43,53 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: football-daily
+  cancel-in-progress: false
+jobs:
+  madrid:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image tools
+        run: |
+          pip install -r requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Validate matching and delivery rules
+        run: python -m unittest discover -s tests -q
+      - name: Detect completed matches and send one graphic
+        id: changed
+        env:
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+        run: python madrid_agent.py --send
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.changed.outputs.publish == 'true'
+        with:
+          path: docs
+          retention-days: 1
+      - name: Wait for Pages artifact
+        if: steps.changed.outputs.publish == 'true'
+        run: sleep 15
+      - uses: actions/deploy-pages@v4
+        id: deploy
+        continue-on-error: true
+        if: steps.changed.outputs.publish == 'true'
+      - name: Wait before retrying Pages
+        if: steps.deploy.outcome == 'failure'
+        run: sleep 15
+      - uses: actions/deploy-pages@v4
+        if: steps.deploy.outcome == 'failure'
