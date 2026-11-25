@@ -3,6 +3,8 @@ on:
   schedule:
     - cron: '0 16 * * *'
       timezone: America/Los_Angeles
+    - cron: '0 9,13,19,22 * * *'
+      timezone: America/Los_Angeles
   workflow_dispatch:
     inputs:
       report_date:
@@ -15,7 +17,7 @@ on:
         default: false
         type: boolean
       require_complete_media:
-        description: 'Do not email until every match has a loaded photo and verified highlights'
+        description: 'Manual only: hold initial email until media complete (scheduled runs send clearly marked gaps)'
         required: false
         default: false
         type: boolean
@@ -39,6 +41,8 @@ jobs:
       url: ${{ steps.publish.outputs.page_url || steps.publish_retry.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -51,29 +55,47 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Lock report date and build timestamp
         env:
+          RETRY_SCHEDULE: ${{ github.event_name == 'schedule' && github.event.schedule != '0 16 * * *' }}
           REQUESTED_DATE: ${{ inputs.report_date }}
+          PREVIEW: ${{ inputs.partial_day }}
         run: |
           python - <<'PY'
           import datetime as dt, os
           from agent import LA
+          from daily_delivery import load, next_pending
           now = dt.datetime.now(LA)
           requested = os.environ.get('REQUESTED_DATE')
           day = dt.date.fromisoformat(requested) if requested else now.date() - dt.timedelta(days=now.hour < 16)
+          retry = os.environ['RETRY_SCHEDULE'] == 'true'
+          if retry:
+              day = next_pending(load())
+          elif os.environ.get('PREVIEW') != 'true' and str(day) in load() and load()[str(day)].get('status') in ('pending', 'waiting'):
+              retry = True
           with open(os.environ['GITHUB_ENV'], 'a') as f:
-              f.write(f'REPORT_DATE={day}\nBUILD_STARTED={now.isoformat()}\n')
+              f.write(f'REPORT_DATE={day}\nBUILD_STARTED={now.isoformat()}\nMEDIA_RETRY={str(retry).lower()}\n')
+          if retry and day:
+              import subprocess
+              subprocess.run(['git', 'config', 'user.name', 'github-actions[bot]'], check=True)
+              subprocess.run(['git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'], check=True)
+              from daily_delivery import retry_attempt
+              retry_attempt(day)
           PY
       - name: Generate report
+        if: env.REPORT_DATE != ''
         id: generate
         continue-on-error: true
         env:
           PARTIAL_DAY: ${{ inputs.partial_day }}
         run: |
-          if [ "$PARTIAL_DAY" = 'true' ]; then
+          if [ "$MEDIA_RETRY" = 'true' ]; then
+            python agent.py --date "$REPORT_DATE" --refresh-media
+          elif [ "$PARTIAL_DAY" = 'true' ]; then
             python agent.py --date "$REPORT_DATE" --partial-day
           else
             python agent.py --date "$REPORT_DATE"
           fi
       - name: Preserve daily history
+        if: env.REPORT_DATE != ''
         run: |
           python - <<'PY'
           import datetime as dt, json, os
@@ -84,16 +106,33 @@ jobs:
           PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if [ '${{ inputs.partial_day }}' = 'true' ]; then
+            echo 'Manual preview is not published or emailed.'
+            exit 0
+          fi
           git add docs
           if ! git diff --cached --quiet; then
             git commit -m 'Publish daily football report'
             git push
           fi
+      - name: Queue delivery before Pages deployment
+        if: env.REPORT_DATE != '' && inputs.partial_day != true
+        env:
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+          REQUIRE_COMPLETE_MEDIA: ${{ inputs.require_complete_media }}
+        run: |
+          if [ -n "$SMTP_USERNAME" ] && [ -n "$SMTP_PASSWORD" ] && [ -n "$REPORT_EMAIL" ]; then
+            python -c "import os; from daily_delivery import waiting; waiting(os.environ['REPORT_DATE'], os.environ['REQUIRE_COMPLETE_MEDIA'] == 'true')"
+          fi
       - uses: actions/upload-pages-artifact@v3
+        if: env.REPORT_DATE != '' && inputs.partial_day != true
         with:
           path: docs
           retention-days: 1
       - name: Wait for uploaded artifact to become visible to Pages
+        if: env.REPORT_DATE != '' && inputs.partial_day != true
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -111,17 +150,19 @@ jobs:
               raise RuntimeError('Pages artifact not available after upload')
           PY
       - name: Publish report
+        if: env.REPORT_DATE != '' && inputs.partial_day != true
         id: publish
         continue-on-error: true
         uses: actions/deploy-pages@v4
       - name: Allow Pages artifact listing to settle before retry
-        if: steps.publish.outcome == 'failure'
+        if: env.REPORT_DATE != '' && steps.publish.outcome == 'failure'
         run: sleep 15
       - name: Retry transient Pages deployment failure once
-        if: steps.publish.outcome == 'failure'
+        if: env.REPORT_DATE != '' && steps.publish.outcome == 'failure'
         id: publish_retry
         uses: actions/deploy-pages@v4
       - name: Notify personal account after publishing
+        if: env.REPORT_DATE != '' && env.MEDIA_RETRY != 'true' && inputs.partial_day != true
         env:
           GH_TOKEN: ${{ github.token }}
           PAGE_URL: ${{ steps.publish.outputs.page_url || steps.publish_retry.outputs.page_url }}
@@ -135,29 +176,33 @@ jobs:
             echo 'Attachment email enabled; skipping duplicate GitHub notification.'
           fi
       - name: Email PNG and ZIP attachments
+        if: env.REPORT_DATE != '' && inputs.partial_day != true
         env:
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
           REQUIRE_COMPLETE_MEDIA: ${{ inputs.require_complete_media }}
         run: |
-          if [ "$REQUIRE_COMPLETE_MEDIA" = 'true' ]; then
-            python - <<'PY'
-          import json, os
-          from pathlib import Path
-          p = json.loads(Path(f'docs/reports/{os.environ["REPORT_DATE"]}.json').read_text())
-          missing = [m['home'] + ' vs ' + m['away'] for m in p['matches'] if not m['photos'] or not m['highlights'] or not m.get('poster', {}).get('image_embedded')]
-          if not p['matches'] or missing:
-              raise SystemExit('Email held: incomplete verified match media: ' + ', '.join(missing))
-          PY
-          fi
           if [ -n "$SMTP_USERNAME" ] && [ -n "$SMTP_PASSWORD" ] && [ -n "$REPORT_EMAIL" ]; then
             python mail_report.py --date "$REPORT_DATE"
           else
             echo '::notice::Attachment email is awaiting Gmail authorization. GitHub notification remains active.'
           fi
+      - name: Surface pending or exhausted media retries
+        if: env.REPORT_DATE != '' && inputs.partial_day != true
+        run: |
+          python - <<'PY'
+          import os
+          from daily_delivery import load, MAX_RETRIES
+          entry = load().get(os.environ['REPORT_DATE'], {})
+          if entry.get('status') in ('pending', 'waiting'):
+              attempts = entry.get('attempts', 0)
+              print(f'::warning::Report delivery pending; media retry attempts {attempts}/{MAX_RETRIES}')
+              if attempts >= MAX_RETRIES:
+                  raise SystemExit('Media retry budget exhausted; review pending report and rerun manually')
+          PY
       - name: Surface incomplete data as a failed check
-        if: steps.generate.outcome == 'failure'
+        if: env.REPORT_DATE != '' && steps.generate.outcome == 'failure'
         run: |
           echo 'Report published with explicit data gaps. See report and owner notification.'
           exit 1

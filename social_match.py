@@ -88,7 +88,7 @@ def draw_match(match, day, path, fetch, public_base):
     else:
         qr = qrcode.make(target).convert('RGB').resize((112,112),Image.Resampling.NEAREST)
         image.paste(qr,(916,1184))
-        text('扫码看官方集锦 / Official highlights' if match['highlights'] else '扫码看完整战报 / Full report',52,1190,22,ACCENT,835)
+        text('扫码看官方集锦 / Official highlights' if match['highlights'] else '集锦暂缺 · 扫码看战报 / Highlights pending',52,1190,22,ACCENT,835)
         text('积分为抓取时快照 · 图源版权归原作者',52,1232,18,MUTED,835)
         text('tiffanyx22.github.io/football-daily',52,1265,18,MUTED,835)
     path.parent.mkdir(parents=True, exist_ok=True)
