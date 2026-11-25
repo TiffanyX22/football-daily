@@ -179,17 +179,21 @@ def paginate(path, breaks, title, target=None):
     return pages
 
 
-def export(report, out, fetch):
+def export(report, out, fetch, refresh_ids=None):
     repository = os.environ.get('GITHUB_REPOSITORY', 'TiffanyX22/football-daily')
     owner, repo = repository.split('/', 1)
     base = os.environ.get('PUBLIC_BASE_URL', f'https://{owner.lower()}.github.io/{repo}').rstrip('/')
     prefix = base + '/posters/' + report['day']
     folder = out / 'posters' / report['day']
     from cover import draw_covers
-    report['covers'] = draw_covers(report, folder, fetch, prefix)
-    report['cover'] = report['covers'][0]
+    if refresh_ids is None:
+        report['covers'] = draw_covers(report, folder, fetch, prefix)
+        report['cover'] = report['covers'][0]
     generated = [folder / a['filename'] for a in report['covers']]
     for match in report['matches']:
+        if refresh_ids is not None and str(match['id']) not in refresh_ids:
+            generated.extend(folder / page['filename'] for page in match['poster_pages'])
+            continue
         path = folder / (match['id'] + '-zh-en.png')
         from social_match import draw_match
         metadata = draw_match(match, report['day'], path, fetch, base)
@@ -197,7 +201,10 @@ def export(report, out, fetch):
         match['poster'] = {**match['poster_pages'][0], **metadata}
         generated.append(path)
     from standings_chart import export_tables
-    generated.extend(export_tables(report, out, fetch, prefix, folder))
+    if refresh_ids is None:
+        generated.extend(export_tables(report, out, fetch, prefix, folder))
+    else:
+        generated.extend(folder / chart['filename'] for chart in report.get('standings_charts', []))
     if generated:
         bundle = folder / ('football-' + report['day'] + '-social.zip')
         with zipfile.ZipFile(bundle, 'w', zipfile.ZIP_DEFLATED) as archive:
