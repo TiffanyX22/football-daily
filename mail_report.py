@@ -34,6 +34,10 @@ def groups(paths):
 
 
 def build_messages(report, folder, sender, recipient):
+    from daily_delivery import missing_media
+    missing = missing_media(report)
+    media_notice = '\n'.join(f"{m['home']} vs {m['away']}：{'、'.join(missing[str(m['id'])])}"
+                             for m in report['matches'] if str(m['id']) in missing)
     day = report['day']
     root = folder / 'posters' / day
     paths = [root / page['filename'] for m in report['matches'] for page in m.get('poster_pages', [m.get('poster', {'filename': m['id'] + '.png'})])]
@@ -45,6 +49,10 @@ def build_messages(report, folder, sender, recipient):
     for index, batch in enumerate(batches, 1):
         msg = EmailMessage()
         msg['Subject'] = report.get('email_subject', f"男足图文日报 {day} · 社媒竖版封面与双语图集") + (f'（{index}/{len(batches)}）' if len(batches) > 1 else '')
+        if media_notice:
+            msg.replace_header('Subject', str(msg['Subject']) + ' · 媒体待补')
+        if report.get('delivery_phase') == 'supplement':
+            msg.replace_header('Subject', '媒体补发 · ' + str(msg['Subject']))
         if report.get('partial_day'):
             msg.replace_header('Subject', str(msg['Subject']) + ' · 提前试跑')
         msg['From'], msg['To'] = sender, recipient
@@ -53,6 +61,8 @@ def build_messages(report, folder, sender, recipient):
         text = f'本期图文已生成。附件包含可直接保存的1080×1312 竖版PNG，以及同批图片ZIP。\n\n{summary}\n\n'
         if report.get('standings_charts'):
             text += '积分榜图片也已附在邮件和 ZIP 中，按赛事列出积分、排名、场次和净胜球。\n'
+        if media_notice:
+            text += '\n媒体待补（所有比赛仍保留）：\n' + media_notice + '\n\n'
         text += '官方集锦链接（按比赛）：\n'
         for match in report['matches']:
             text += f"\n{match['home']} vs {match['away']}（附件 {match.get('poster', {}).get('filename', match['id'] + '.png')}）\n"
@@ -73,6 +83,8 @@ def build_messages(report, folder, sender, recipient):
         markup += '<p>' + html.escape(summary).replace('\n', '<br>') + '</p>'
         if report.get('standings_charts'):
             markup += '<p>另附积分榜 PNG：排名、积分、已赛场次与净胜球；浅绿标记本期参赛球队。积分为抓取时快照。</p>'
+        if media_notice:
+            markup += '<h3>媒体待补（所有比赛仍保留）</h3><p>' + html.escape(media_notice).replace('\n', '<br>') + '</p>'
         markup += '<h3>官方集锦 · 点击观看</h3><ul>'
         for match in report['matches']:
             markup += '<li><strong>' + html.escape(match['home'] + ' vs ' + match['away']) + '</strong><br>'
@@ -87,6 +99,8 @@ def build_messages(report, folder, sender, recipient):
         markup += '</ul>'
         if batch:
             markup += '<p>本批首张预览：</p><img style="width:100%;max-width:540px;height:auto" src="cid:' + cid + '">'
+        if report.get('errors'):
+            markup += '<h3>本期资料缺项</h3><p>' + html.escape('\n'.join(report['errors'])).replace('\n', '<br>') + '</p>'
         markup += '<p>图片含来源说明；部分配图为已标明的官方视频封面。完整文件请保存附件。</p></body></html>'
         msg.add_alternative(markup, subtype='html')
         if batch:
@@ -122,14 +136,19 @@ def main():
         parser.error('Report date is required')
     folder = Path(args.out)
     report = json.loads((folder / 'reports' / f'{args.date}.json').read_text())
-    requirements_file = Path(__file__).with_name('delivery-requirements.json')
-    requirements = json.loads(requirements_file.read_text()) if requirements_file.exists() else {}
-    strict = requirements.get(args.date, {}).get('require_complete_media') or os.environ.get('REQUIRE_COMPLETE_MEDIA') == 'true'
-    if strict:
-        missing = [m['home'] + ' vs ' + m['away'] for m in report['matches']
-                   if not m['photos'] or not m['highlights'] or not m.get('poster', {}).get('image_embedded')]
-        if not report['matches'] or missing:
-            raise RuntimeError('Email held until all verified match photos and highlights exist: ' + ', '.join(missing))
+    from daily_delivery import load, save, phase, missing_media, waiting
+    strict = os.environ.get('REQUIRE_COMPLETE_MEDIA') == 'true'
+    if not args.dry_run:
+        state = load()
+        selected = phase(report, state, strict)
+        if not selected:
+            if strict and missing_media(report) and not report.get('partial_day'):
+                waiting(report['day'], strict=True)
+            print('No new email delivery eligible')
+            return
+        report['delivery_phase'] = selected
+        waiting(report['day'], strict=strict)
+        state = load()
     sender = os.environ.get('SMTP_USERNAME', '')
     password = os.environ.get('SMTP_PASSWORD', '')
     recipient = os.environ.get('REPORT_EMAIL', sender)
@@ -149,8 +168,24 @@ def main():
     # Fixed official endpoint, certificate validation mandatory. Never log credentials.
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=ssl.create_default_context(), timeout=60) as smtp:
         smtp.login(sender, password.replace(' ', ''))
-        for message in messages:
-            smtp.send_message(message)
+        entry = state[report['day']]
+        # Reserve the entire immutable batch before any SMTP DATA. A crash or
+        # ambiguous SMTP response must never cause an automatic duplicate.
+        entry.update(status='reserved', phase=selected, total=len(messages), accepted=0)
+        save(state)
+        try:
+            for message in messages:
+                refused = smtp.send_message(message)
+                if refused:
+                    raise RuntimeError('SMTP refused recipient')
+                entry['accepted'] += 1
+                save(state)
+        except Exception:
+            entry['status'] = 'needs_review'
+            save(state)
+            raise
+        entry['status'] = 'pending' if missing_media(report) else 'complete'
+        save(state)
     print(f'Sent {len(messages)} attachment email(s)')
 
 
