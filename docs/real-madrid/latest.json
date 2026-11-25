@@ -1,8 +1,8 @@
 {
   "day": "2026-11-24",
   "start": "2026-11-24T00:00:00-08:00",
-  "end": "2026-11-25T02:16:56.116116-08:00",
-  "generated": "2026-11-25T02:16:56.116116-08:00",
+  "end": "2026-11-25T02:22:10.089711-08:00",
+  "generated": "2026-11-25T02:22:10.089711-08:00",
   "matches": [
     {
       "id": "401915298",
@@ -133,10 +133,10 @@
           "source": "https://www.espn.com/soccer/report/_/gameId/401915298"
         },
         {
-          "url": "https://media.zenfs.com/en/cp_sports_913/0b1685de7f8940f7251e06ecc9848b6e.jpg",
-          "caption": "姆巴佩与 PSV 4 号奥比斯波对抗",
-          "credit": "Manu Fernandez / AP",
-          "source": "https://ca.sports.yahoo.com/news/bellingham-scores-wonder-goal-ignite-231403430.html"
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/001_MJ10552?wid=1200",
+          "caption": "皇马官方比赛图集",
+          "credit": "Real Madrid",
+          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
         }
       ],
       "team_logos": {
@@ -159,38 +159,50 @@
       "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
       "gallery": [
         {
-          "url": "https://media.zenfs.com/en/cp_sports_913/0b1685de7f8940f7251e06ecc9848b6e.jpg",
-          "caption": "姆巴佩与 PSV 4 号奥比斯波对抗",
-          "credit": "Manu Fernandez / AP",
-          "source": "https://ca.sports.yahoo.com/news/bellingham-scores-wonder-goal-ignite-231403430.html"
-        },
-        {
-          "url": "https://assets.realmadrid.com/is/image/realmadrid/035_1VC3661?wid=1200",
-          "caption": "巴尔韦德举手庆祝",
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/001_MJ10552?wid=1200",
+          "caption": "皇马官方比赛图集",
           "credit": "Real Madrid",
           "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
         },
         {
           "url": "https://assets.realmadrid.com/is/image/realmadrid/002_AV18742?wid=1200",
-          "caption": "贝林厄姆和队友拥抱庆祝",
+          "caption": "皇马官方比赛图集",
           "credit": "Real Madrid",
           "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
         },
         {
-          "url": "https://assets.realmadrid.com/is/image/realmadrid/047_DB30759?wid=1200",
-          "caption": "贝林厄姆张开双臂",
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/003_DB30234?wid=1200",
+          "caption": "皇马官方比赛图集",
+          "credit": "Real Madrid",
+          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
+        },
+        {
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/004_DB30594?wid=1200",
+          "caption": "皇马官方比赛图集",
+          "credit": "Real Madrid",
+          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
+        },
+        {
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/005_AV15083?wid=1200",
+          "caption": "皇马官方比赛图集",
           "credit": "Real Madrid",
           "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
         },
         {
           "url": "https://assets.realmadrid.com/is/image/realmadrid/006_DB16531?wid=1200",
-          "caption": "姆巴佩与队友拥抱",
+          "caption": "皇马官方比赛图集",
           "credit": "Real Madrid",
           "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
         },
         {
-          "url": "https://assets.realmadrid.com/is/image/realmadrid/061_DB16432?wid=1200",
-          "caption": "姆巴佩带球越过出击的门将",
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/007_AV18691?wid=1200",
+          "caption": "皇马官方比赛图集",
+          "credit": "Real Madrid",
+          "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
+        },
+        {
+          "url": "https://assets.realmadrid.com/is/image/realmadrid/008_AV13119?wid=1200",
+          "caption": "皇马官方比赛图集",
           "credit": "Real Madrid",
           "source": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026"
         },
@@ -322,10 +334,6 @@
         }
       ],
       "club_album": "https://www.realmadrid.com/en-US/news/football/first-team/reports/cronica-real-madrid-psv-j5-champions-league-24-11-2026",
-      "instagram_post": {
-        "caption": "贝林厄姆拉起球衣庆祝 · 球员赛后轮播",
-        "url": "https://www.instagram.com/p/DgJNB9Pgh9i/"
-      },
       "gallery_url": "https://tiffanyx22.github.io/football-daily/real-madrid/401915298-gallery.html",
       "poster": {
         "filename": "madrid-401915298-zh-en.png",
