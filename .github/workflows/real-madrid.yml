@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '3,13,23,33,43,53 * * * *'
   workflow_dispatch:
+    inputs:
+      event_id:
+        description: 'Optional ESPN match ID to re-render card + gallery (no email)'
+        required: false
+        default: ''
 permissions:
   contents: write
   pages: write
@@ -34,7 +39,8 @@ jobs:
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
-        run: python madrid_agent.py --send
+          EVENT_ID: ${{ inputs.event_id }}
+        run: python madrid_agent.py --send ${EVENT_ID:+--event "$EVENT_ID"}
       - uses: actions/upload-pages-artifact@v3
         if: steps.changed.outputs.publish == 'true'
         with:

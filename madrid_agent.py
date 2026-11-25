@@ -50,12 +50,19 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--send', action='store_true')
     parser.add_argument('--out', default='docs')
+    parser.add_argument('--event', help='Re-render one already-delivered match (card + gallery + pages); never emails')
     args = parser.parse_args()
     now = dt.datetime.now(UTC)
     state = json.loads(STATE.read_text())
     since = instant(state['enabled_at'])
     events = get_json('https://site.api.espn.com/apis/site/v2/sports/soccer/all/teams/86/schedule')['events']
-    candidates = sorted([e for e in events if eligible(e, now, since, state['deliveries'])], key=lambda e: e['date'])
+    if args.event:
+        candidates = [e for e in events if str(e.get('id')) == args.event
+                      and e['competitions'][0].get('status', {}).get('type', {}).get('completed')]
+        if not candidates:
+            raise SystemExit(f'Completed Real Madrid match {args.event} not found in schedule')
+    else:
+        candidates = sorted([e for e in events if eligible(e, now, since, state['deliveries'])], key=lambda e: e['date'])
     if not candidates:
         print('No new completed Real Madrid men matches; no email sent')
         return
@@ -95,6 +102,16 @@ def main():
                                   os.environ.get('REPORT_EMAIL', 'test@example.invalid'))
         for msg in messages:
             msg.replace_header('Message-ID', f"<real-madrid-{match['id']}@football-daily.local>")
+        if args.event:
+            # Backfill: publish refreshed files only; delivery state and inbox untouched.
+            state['deliveries'].setdefault(match['id'], {})['rerendered_at'] = now.isoformat()
+            checkpoint(state)
+            if os.environ.get('GITHUB_OUTPUT'):
+                with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+                    output.write('publish=true\n')
+            print(json.dumps({'event': match['id'], 'rerendered': True, 'gallery': len(match.get('gallery', [])),
+                              'gallery_url': match.get('gallery_url'), 'image': str(path)}))
+            continue
         if not args.send:
             print(json.dumps({'event': match['id'], 'photo': True, 'crests': metadata['team_crests_embedded'],
                               'highlights': len(match['highlights']),
