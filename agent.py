@@ -283,6 +283,50 @@ def standings(summary, competitors):
     return result
 
 
+def discover_media(summary, event, slug, home, away, finished, rules, photo_limit=2, focus=None):
+    from media import uefa_photos, broadcast_highlights, first_side
+    pictures = photos(summary, event['id'], photo_limit)
+    if focus:
+        # Recap photos: drop any whose caption is about the opponent.
+        pictures = [p for p in pictures if first_side(p.get('caption', ''), *focus) != 'other']
+    if slug == 'uefa.champions':
+        reviewed = json.loads(Path(__file__).with_name('reviewed-media.json').read_text()).get(event['id'], {})
+        pictures += uefa_photos(home, away, instant(event['date']), finished, fetch, reviewed.get('uefa_url'), photo_limit, focus)
+    reviewed_images, reviewed_videos = curated_assets(event['id'], home, away)
+    pictures = pictures + [p for p in reviewed_images if p['url'] not in {x['url'] for x in pictures}]
+    clips = reviewed_videos or official_highlights(home, away, instant(event['date']).astimezone(LA).date(), rules, slug)
+    if not clips:
+        clips = broadcast_highlights(home, away, instant(event['date']), fetch)
+    if not clips:
+        reviewed = json.loads(Path(__file__).with_name('reviewed-media.json').read_text()).get(event['id'], {})
+        clips = [v for v in reviewed.get('verified_highlights', [])
+                 if instant(event['date']) <= instant(v['published']) <= instant(event['date']) + dt.timedelta(days=2)
+                 and v.get('channel_id') == 'UCET00YnetHT7tOpu12v8jxg']
+    return pictures, clips
+
+
+def refresh_media(report, rules):
+    """Only change missing media, never recalculate the historical match set."""
+    from daily_delivery import missing_media
+    pending = missing_media(report)
+    def refresh(match):
+        try:
+            summary = get_json(BASE + match['slug'] + '/summary?event=' + match['id'])
+            event = {'id': match['id'], 'date': match['kickoff']}
+            pictures, clips = discover_media(summary, event, match['slug'], match['home'],
+                                              match['away'], instant(match['finished']), rules)
+            if pictures:
+                old = match.get('photos', [])
+                match['photos'] = pictures + [p for p in old if p['url'] not in {x['url'] for x in pictures}]
+            if clips and not match.get('highlights'):
+                match['highlights'] = clips
+        except Exception as exc:
+            print(f"Media retry {match['id']}: {type(exc).__name__}")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+        list(pool.map(refresh, [m for m in report['matches'] if str(m['id']) in pending]))
+    return report
+
+
 def make_match(slug, event, start, end, rules, photo_limit=2, focus_team_id=None):
     """photo_limit > 2 also returns a verified per-match photo `gallery` (Real Madrid job).
 
@@ -305,9 +349,9 @@ def make_match(slug, event, start, end, rules, photo_limit=2, focus_team_id=None
     win_points = [1, 1] if scores[0] == scores[1] else ([3, 0] if int(scores[0]) > int(scores[1]) else [0, 3])
     impact = (f'{home}本场获得{win_points[0]}分，{away}获得{win_points[1]}分。'
               if slug in ('eng.1', 'esp.1', 'ita.1', 'ger.1', 'fra.1') else '杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。')
-    from media import uefa_photos, broadcast_highlights, first_side, focus_terms
     focus = None
     if focus_team_id:
+        from media import focus_terms
         own, other = [], []
         for roster in summary.get('rosters', []):
             team = roster.get('team', {})
@@ -320,23 +364,13 @@ def make_match(slug, event, start, end, rules, photo_limit=2, focus_team_id=None
             if str(focus_team_id) == '86':
                 own += ['Real Madrid', 'Madrid', 'Los Blancos', 'Merengues']
             focus = (focus_terms(own), focus_terms(other))
-    pictures = photos(summary, event['id'], photo_limit)
-    if focus:
-        # Recap photos: drop any whose caption is about the opponent.
-        pictures = [p for p in pictures if first_side(p.get('caption', ''), *focus) != 'other']
-    if slug == 'uefa.champions':
-        reviewed = json.loads(Path(__file__).with_name('reviewed-media.json').read_text()).get(event['id'], {})
-        pictures += uefa_photos(home, away, instant(event['date']), finished, fetch, reviewed.get('uefa_url'), photo_limit, focus)
-    reviewed_images, reviewed_videos = curated_assets(event['id'], home, away)
-    pictures = pictures + [p for p in reviewed_images if p['url'] not in {x['url'] for x in pictures}]
-    clips = reviewed_videos or official_highlights(home, away, instant(event['date']).astimezone(LA).date(), rules, slug)
-    if not clips:
-        clips = broadcast_highlights(home, away, instant(event['date']), fetch)
-    if not clips:
-        reviewed = json.loads(Path(__file__).with_name('reviewed-media.json').read_text()).get(event['id'], {})
-        clips = [v for v in reviewed.get('verified_highlights', [])
-                 if instant(event['date']) <= instant(v['published']) <= instant(event['date']) + dt.timedelta(days=2)
-                 and v.get('channel_id') == 'UCET00YnetHT7tOpu12v8jxg']
+    try:
+        pictures, clips = discover_media(summary, event, slug, home, away, finished, rules, photo_limit, focus)
+    except Exception as exc:
+        print(f"Media discovery {event['id']}: {type(exc).__name__}")
+        if focus_team_id:
+            raise
+        pictures, clips = [], []
     match = {'id': event['id'], 'league': LEAGUES[slug], 'slug': slug, 'home': home, 'away': away,
             'score': '–'.join(scores), 'kickoff': instant(event['date']).astimezone(LA).isoformat(),
             'finished': finished.astimezone(LA).isoformat(), 'source': source_url(event),
@@ -388,6 +422,8 @@ body{{margin:0;background:#101715;color:#edf5ed;font:17px/1.7 system-ui,sans-ser
             parts.append('<p><a download href="' + esc(page['url']) + '">下载本场下一张竖版图片</a></p>')
         for p in m['photos']:
             parts.append(f'<figure><img src="{esc(p["url"])}" alt="{esc(p["caption"])}" referrerpolicy="no-referrer" onerror="this.hidden=true;this.nextElementSibling.textContent=\'照片加载失败，请打开来源查看\'"><figcaption>{esc(p["caption"])} · {esc(p["credit"])} · <a href="{esc(p["source"])}">战报照片来源</a></figcaption></figure>')
+        if m.get('media_missing'):
+            parts.append('<p class="missing">媒体缺项 / Media pending: ' + esc('；'.join(m['media_missing'])) + '</p>')
         if not m['photos']:
             parts.append('<p class="missing">本场暂缺可核实照片；未使用队徽或其他比赛照片替代。</p>')
         parts.append('<h3>关键时刻</h3><ul>')
@@ -418,6 +454,7 @@ def main():
     parser.add_argument('--out', default='docs')
     parser.add_argument('--leagues', help='Comma-separated subset for diagnostics')
     parser.add_argument('--partial-day', action='store_true', help='Explicit manual preview before 16:00; cutoff at actual run time')
+    parser.add_argument('--refresh-media', action='store_true', help='Refresh media of an existing fixed-window report only')
     args = parser.parse_args()
     now = dt.datetime.now(LA)
     day = dt.date.fromisoformat(args.date) if args.date else now.date()
@@ -430,41 +467,58 @@ def main():
     if end > now:
         parser.error('Cannot generate a future cutoff before 16:00 LA; use a completed reporting day')
     rules = json.loads(Path(__file__).with_name('publishers.json').read_text())
-    events, errors, scans = collect(day, args.leagues.split(',') if args.leagues else None)
-    matches = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
-        futures = {pool.submit(make_match, slug, event, start, end, rules): event
-                   for (slug, _), event in events.items()}
-        for future in concurrent.futures.as_completed(futures):
-            try:
-                match = future.result()
-                if match:
-                    matches.append(match)
-            except Exception as e:
-                errors.append(f'{futures[future]["name"]}: {type(e).__name__}: {e}')
-    matches.sort(key=lambda m: (m['kickoff'], m['slug'], m['id']))
-    ids = [m['id'] for m in matches]
-    if len(ids) != len(set(ids)):
-        raise RuntimeError('Duplicate event IDs across competitions; publication stopped')
-    try:
-        audit = reconcile(day, matches, args.leagues.split(',') if args.leagues else LEAGUES)
-        errors.extend(audit['findings'])
-    except Exception as e:
-        audit = {'findings': [str(e)], 'scope': '独立赛果核对失败'}
-        errors.append('独立赛果源不可用，无法完成交叉核对')
-    report = {'day': str(day), 'start': start.isoformat(), 'end': end.isoformat(), 'partial_day': partial_day,
-              'generated': now.isoformat(), 'matches': matches, 'errors': errors,
-              'scans': sorted(scans, key=lambda x: (x['league'], x['date'])),
-              'audit': audit, 'coverage': audit['scope']}
+    if args.refresh_media:
+        report = json.loads((Path(args.out) / 'reports' / f'{day}.json').read_text())
+        if report['day'] != str(day) or report.get('partial_day') or report['start'] != start.isoformat() or report['end'] != end.isoformat():
+            raise RuntimeError('Refusing to refresh a non-final report or mismatched window')
+        from daily_delivery import missing_media
+        refresh_ids = set(missing_media(report))
+        refresh_media(report, rules)
+        report['generated'] = now.isoformat()
+        matches, errors = report['matches'], report['errors']
+    else:
+        events, errors, scans = collect(day, args.leagues.split(',') if args.leagues else None)
+        matches = []
+        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+            futures = {pool.submit(make_match, slug, event, start, end, rules): event
+                       for (slug, _), event in events.items()}
+            for future in concurrent.futures.as_completed(futures):
+                try:
+                    match = future.result()
+                    if match:
+                        matches.append(match)
+                except Exception as e:
+                    errors.append(f'{futures[future]["name"]}: {type(e).__name__}: {e}')
+        matches.sort(key=lambda m: (m['kickoff'], m['slug'], m['id']))
+        ids = [m['id'] for m in matches]
+        if len(ids) != len(set(ids)):
+            raise RuntimeError('Duplicate event IDs across competitions; publication stopped')
+        try:
+            audit = reconcile(day, matches, args.leagues.split(',') if args.leagues else LEAGUES)
+            errors.extend(audit['findings'])
+        except Exception as e:
+            audit = {'findings': [str(e)], 'scope': '独立赛果核对失败'}
+            errors.append('独立赛果源不可用，无法完成交叉核对')
+        report = {'day': str(day), 'start': start.isoformat(), 'end': end.isoformat(), 'partial_day': partial_day,
+                  'generated': now.isoformat(), 'matches': matches, 'errors': errors,
+                  'scans': sorted(scans, key=lambda x: (x['league'], x['date'])),
+                  'audit': audit, 'coverage': audit['scope']}
     out = Path(args.out)
     (out / 'reports').mkdir(parents=True, exist_ok=True)
     from poster import export
-    export(report, out, fetch)
+    if args.refresh_media:
+        export(report, out, fetch, refresh_ids=refresh_ids)
+    else:
+        export(report, out, fetch)
+    from daily_delivery import annotate
+    annotate(report)
     payload = json.dumps(report, ensure_ascii=False, indent=2)
     (out / 'reports' / f'{day}.json').write_text(payload)
     page = render(report)
     (out / 'reports' / f'{day}.html').write_text(page)
-    (out / 'index.html').write_text(page)
+    index = out / 'index.html'
+    if not any(p.stem > str(day) for p in (out / 'reports').glob('*.json')):
+        index.write_text(page)
     (out / '.nojekyll').touch()
     print(json.dumps({'date': str(day), 'matches': len(matches),
                       'photos': sum(len(m['photos']) for m in matches),
