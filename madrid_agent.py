@@ -10,10 +10,12 @@ import ssl
 import subprocess
 
 from agent import LA, UTC, LEAGUES, get_json, instant, make_match, fetch, render
+from gallery import render_gallery
 from mail_report import build_messages
 from social_match import draw_match
 
 STATE = Path('data/madrid-delivery.json')
+GALLERY_LIMIT = 12  # verified photos of this exact match on the 图集 page
 
 
 def eligible(event, now, since, deliveries):
@@ -63,13 +65,15 @@ def main():
         slug = event['league']['slug']
         LEAGUES.setdefault(slug, {'esp.copa_del_rey': '西班牙国王杯', 'esp.super_cup': '西班牙超级杯',
                                  'fifa.club': '世俱杯', 'uefa.super_cup': '欧洲超级杯'}.get(slug, event['league']['name']))
-        match = make_match(slug, normalize(event), since, now, rules)
+        match = make_match(slug, normalize(event), since, now, rules, GALLERY_LIMIT)
         if not match:
             continue
         day = instant(match['finished']).astimezone(LA).date().isoformat()
         root = out / 'posters' / day
         path = root / f"madrid-{match['id']}-zh-en.png"
         base = 'https://tiffanyx22.github.io/football-daily'
+        if match.get('gallery'):
+            match['gallery_url'] = f"{base}/real-madrid/{match['id']}-gallery.html"
         metadata = draw_match(match, day, path, fetch, base)
         if not metadata['image_embedded']:
             print('Waiting for a verified match photo:', match['id'])
@@ -83,13 +87,18 @@ def main():
         for name in [match['id'], 'latest']:
             (dest / f'{name}.json').write_text(json.dumps(report, ensure_ascii=False, indent=2))
             (dest / f'{name}.html').write_text(render(report))
+        if match.get('gallery_url'):
+            for name in [match['id'], 'latest']:
+                (dest / f'{name}-gallery.html').write_text(
+                    render_gallery(match, day, f"{base}/real-madrid/{match['id']}.html#{match['id']}"))
         messages = build_messages(report, out, os.environ.get('SMTP_USERNAME', 'test@example.invalid'),
                                   os.environ.get('REPORT_EMAIL', 'test@example.invalid'))
         for msg in messages:
             msg.replace_header('Message-ID', f"<real-madrid-{match['id']}@football-daily.local>")
         if not args.send:
             print(json.dumps({'event': match['id'], 'photo': True, 'crests': metadata['team_crests_embedded'],
-                              'highlights': len(match['highlights']), 'image': str(path), 'dry_run': True}))
+                              'highlights': len(match['highlights']),
+                              'gallery': len(match.get('gallery', [])), 'image': str(path), 'dry_run': True}))
             continue
         sender, password, recipient = [os.environ.get(k) for k in ('SMTP_USERNAME', 'SMTP_PASSWORD', 'REPORT_EMAIL')]
         if not all((sender, password, recipient)):

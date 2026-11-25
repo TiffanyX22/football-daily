@@ -72,11 +72,25 @@ def draw_match(match, day, path, fetch, public_base):
     if not match.get('standings'):
         text(translated(match['impact']), 52, 1110, 21, FG, 976)
     target = match['highlights'][0]['url'] if match['highlights'] else public_base + '/reports/' + day + '.html#' + match['id']
-    qr = qrcode.make(target).convert('RGB').resize((112,112),Image.Resampling.NEAREST)
-    image.paste(qr,(916,1184))
-    text('扫码看官方集锦 / Official highlights' if match['highlights'] else '扫码看完整战报 / Full report',52,1190,22,ACCENT,835)
-    text('积分为抓取时快照 · 图源版权归原作者',52,1232,18,MUTED,835)
-    text('tiffanyx22.github.io/football-daily',52,1265,18,MUTED,835)
+    if match.get('gallery_url'):
+        # Two codes: photo gallery (left) and video highlights / report (right).
+        def code(url, x, caption):
+            qr = qrcode.make(url).convert('RGB').resize((100, 100), Image.Resampling.NEAREST)
+            image.paste(qr, (x, 1176))
+            width = font(15).getlength(caption)
+            draw.text((x + (100 - width) / 2, 1282), caption, font=font(15), fill=MUTED)
+        code(match['gallery_url'], 798, '比赛图集')
+        code(target, 928, '视频集锦' if match['highlights'] else '完整战报')
+        count = len(match.get('gallery', []))
+        text(f'扫码看本场图集（{count}张）· ' + ('官方视频集锦' if match['highlights'] else '完整战报'), 52, 1190, 22, ACCENT, 720)
+        text('Photo gallery · ' + ('Official highlights' if match['highlights'] else 'Full report'), 52, 1224, 18, MUTED, 720)
+        text('积分为抓取时快照 · 图源版权归原作者 · tiffanyx22.github.io/football-daily', 52, 1265, 16, MUTED, 720)
+    else:
+        qr = qrcode.make(target).convert('RGB').resize((112,112),Image.Resampling.NEAREST)
+        image.paste(qr,(916,1184))
+        text('扫码看官方集锦 / Official highlights' if match['highlights'] else '扫码看完整战报 / Full report',52,1190,22,ACCENT,835)
+        text('积分为抓取时快照 · 图源版权归原作者',52,1232,18,MUTED,835)
+        text('tiffanyx22.github.io/football-daily',52,1265,18,MUTED,835)
     path.parent.mkdir(parents=True, exist_ok=True)
     image.save(path,'PNG',optimize=True)
     return {'width':1080,'height':1312,'image_embedded':embedded,'team_crests_embedded':crests}

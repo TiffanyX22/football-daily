@@ -58,6 +58,8 @@ def build_messages(report, folder, sender, recipient):
             text += f"\n{match['home']} vs {match['away']}（附件 {match.get('poster', {}).get('filename', match['id'] + '.png')}）\n"
             clips = match.get('highlights', [])
             text += '\n'.join(f"{v['publisher']}：{v['url']}" for v in clips) if clips else '完整官方集锦暂缺'
+            if match.get('gallery_url'):
+                text += f"\n比赛图集（{len(match.get('gallery', []))}张）：{match['gallery_url']}"
             text += '\n'
         if report.get('partial_day'):
             text += f"提前试跑，实际截稿：{report['end']}，不是16:00完整版。\n"
@@ -79,6 +81,8 @@ def build_messages(report, folder, sender, recipient):
                 markup += '<br>'.join('<a href="' + html.escape(v['url'], quote=True) + '">官方集锦 · ' + html.escape(v['publisher']) + '</a>' for v in clips)
             else:
                 markup += '完整官方集锦暂缺'
+            if match.get('gallery_url'):
+                markup += '<br><a href="' + html.escape(match['gallery_url'], quote=True) + '">比赛图集 · ' + str(len(match.get('gallery', []))) + '张照片</a>'
             markup += '<br><small>对应附件：' + html.escape(match.get('poster', {}).get('filename', match['id'] + '.png')) + '</small></li>'
         markup += '</ul>'
         if batch:

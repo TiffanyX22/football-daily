@@ -209,7 +209,7 @@ def valid_photo(image):
         return False
 
 
-def photos(summary, event_id):
+def photos(summary, event_id, limit=2):
     # Only the recap explicitly tied to this event. League-wide news often
     # contains unrelated transfer images and must NEVER supply match photos.
     article = summary.get('article') or {}
@@ -221,7 +221,7 @@ def photos(summary, event_id):
             result.append({'url': image['url'], 'caption': image.get('alt') or image.get('name', ''),
                            'credit': image.get('credit', ''),
                            'source': f'https://www.espn.com/soccer/report/_/gameId/{event_id}'})
-        if len(result) == 2:
+        if len(result) >= limit:
             break
     return result
 
@@ -283,7 +283,8 @@ def standings(summary, competitors):
     return result
 
 
-def make_match(slug, event, start, end, rules):
+def make_match(slug, event, start, end, rules, photo_limit=2):
+    """photo_limit > 2 also returns a verified per-match photo `gallery` (Real Madrid job)."""
     competition = event['competitions'][0]
     if not competition.get('status', {}).get('type', {}).get('completed'):
         return None
@@ -302,11 +303,11 @@ def make_match(slug, event, start, end, rules):
     win_points = [1, 1] if scores[0] == scores[1] else ([3, 0] if int(scores[0]) > int(scores[1]) else [0, 3])
     impact = (f'{home}本场获得{win_points[0]}分，{away}获得{win_points[1]}分。'
               if slug in ('eng.1', 'esp.1', 'ita.1', 'ger.1', 'fra.1') else '杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。')
-    pictures = photos(summary, event['id'])
+    pictures = photos(summary, event['id'], photo_limit)
     from media import uefa_photos, broadcast_highlights
     if slug == 'uefa.champions':
         reviewed = json.loads(Path(__file__).with_name('reviewed-media.json').read_text()).get(event['id'], {})
-        pictures += uefa_photos(home, away, instant(event['date']), finished, fetch, reviewed.get('uefa_url'))
+        pictures += uefa_photos(home, away, instant(event['date']), finished, fetch, reviewed.get('uefa_url'), photo_limit)
     reviewed_images, reviewed_videos = curated_assets(event['id'], home, away)
     pictures = pictures + [p for p in reviewed_images if p['url'] not in {x['url'] for x in pictures}]
     clips = reviewed_videos or official_highlights(home, away, instant(event['date']).astimezone(LA).date(), rules, slug)
@@ -317,13 +318,16 @@ def make_match(slug, event, start, end, rules):
         clips = [v for v in reviewed.get('verified_highlights', [])
                  if instant(event['date']) <= instant(v['published']) <= instant(event['date']) + dt.timedelta(days=2)
                  and v.get('channel_id') == 'UCET00YnetHT7tOpu12v8jxg']
-    return {'id': event['id'], 'league': LEAGUES[slug], 'slug': slug, 'home': home, 'away': away,
+    match = {'id': event['id'], 'league': LEAGUES[slug], 'slug': slug, 'home': home, 'away': away,
             'score': '–'.join(scores), 'kickoff': instant(event['date']).astimezone(LA).isoformat(),
             'finished': finished.astimezone(LA).isoformat(), 'source': source_url(event),
             'timeline': timeline, 'photos': pictures[:2],
             'team_logos': {s['team']['displayName']: s['team'].get('logo') or next((l['href'] for l in s['team'].get('logos', []) if l.get('href', '').startswith('https://')), '') for s in sides},
             'highlights': clips,
             'standings': standings(summary, sides), 'impact': impact}
+    if photo_limit > 2:
+        match['gallery'] = pictures[:photo_limit]
+    return match
 
 
 def esc(value):
@@ -377,6 +381,8 @@ body{{margin:0;background:#101715;color:#edf5ed;font:17px/1.7 system-ui,sans-ser
         if not m['standings']:
             parts.append('<p class="missing">积分表数据暂缺。</p>')
         parts.append('<nav><a href="' + esc(m['source']) + '">赛果及事件来源</a>')
+        if m.get('gallery_url'):
+            parts.append(f'<a href="{esc(m["gallery_url"])}">比赛图集 · {len(m.get("gallery", []))}张</a>')
         for v in m['highlights']:
             parts.append(f'<a href="{esc(v["url"])}">官方集锦 · {esc(v["publisher"])}</a>')
         parts.append('</nav>')
