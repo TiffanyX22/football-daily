@@ -73,7 +73,7 @@ def main():
         slug = event['league']['slug']
         LEAGUES.setdefault(slug, {'esp.copa_del_rey': '西班牙国王杯', 'esp.super_cup': '西班牙超级杯',
                                  'fifa.club': '世俱杯', 'uefa.super_cup': '欧洲超级杯'}.get(slug, event['league']['name']))
-        match = make_match(slug, normalize(event), since, now, rules, GALLERY_LIMIT)
+        match = make_match(slug, normalize(event), since, now, rules, GALLERY_LIMIT, focus_team_id='86')
         if not match:
             continue
         day = instant(match['finished']).astimezone(LA).date().isoformat()

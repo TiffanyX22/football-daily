@@ -283,8 +283,10 @@ def standings(summary, competitors):
     return result
 
 
-def make_match(slug, event, start, end, rules, photo_limit=2):
-    """photo_limit > 2 also returns a verified per-match photo `gallery` (Real Madrid job)."""
+def make_match(slug, event, start, end, rules, photo_limit=2, focus_team_id=None):
+    """photo_limit > 2 also returns a verified per-match photo `gallery` (Real Madrid job).
+
+    focus_team_id keeps only gallery photos whose caption/post is about that team."""
     competition = event['competitions'][0]
     if not competition.get('status', {}).get('type', {}).get('completed'):
         return None
@@ -303,11 +305,28 @@ def make_match(slug, event, start, end, rules, photo_limit=2):
     win_points = [1, 1] if scores[0] == scores[1] else ([3, 0] if int(scores[0]) > int(scores[1]) else [0, 3])
     impact = (f'{home}本场获得{win_points[0]}分，{away}获得{win_points[1]}分。'
               if slug in ('eng.1', 'esp.1', 'ita.1', 'ger.1', 'fra.1') else '杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。')
+    from media import uefa_photos, broadcast_highlights, first_side, focus_terms
+    focus = None
+    if focus_team_id:
+        own, other = [], []
+        for roster in summary.get('rosters', []):
+            team = roster.get('team', {})
+            names = [team.get('displayName', ''), team.get('shortDisplayName', '')]
+            for player in roster.get('roster', []):
+                athlete = player.get('athlete', {})
+                names += [athlete.get('displayName', ''), athlete.get('lastName', '')]
+            (own if str(team.get('id')) == str(focus_team_id) else other).extend(names)
+        if own:
+            if str(focus_team_id) == '86':
+                own += ['Real Madrid', 'Madrid', 'Los Blancos', 'Merengues']
+            focus = (focus_terms(own), focus_terms(other))
     pictures = photos(summary, event['id'], photo_limit)
-    from media import uefa_photos, broadcast_highlights
+    if focus:
+        # Recap photos: drop any whose caption is about the opponent.
+        pictures = [p for p in pictures if first_side(p.get('caption', ''), *focus) != 'other']
     if slug == 'uefa.champions':
         reviewed = json.loads(Path(__file__).with_name('reviewed-media.json').read_text()).get(event['id'], {})
-        pictures += uefa_photos(home, away, instant(event['date']), finished, fetch, reviewed.get('uefa_url'), photo_limit)
+        pictures += uefa_photos(home, away, instant(event['date']), finished, fetch, reviewed.get('uefa_url'), photo_limit, focus)
     reviewed_images, reviewed_videos = curated_assets(event['id'], home, away)
     pictures = pictures + [p for p in reviewed_images if p['url'] not in {x['url'] for x in pictures}]
     clips = reviewed_videos or official_highlights(home, away, instant(event['date']).astimezone(LA).date(), rules, slug)

@@ -72,3 +72,25 @@ class GalleryWindowTests(unittest.TestCase):
         gallery = uefa_photos('Real Madrid', 'PSV Eindhoven', *args[2:], limit=30)
         self.assertEqual([p['url'].split('/')[4] for p in gallery], ['live', 'obj', 'after'])
         self.assertIn('终场后', gallery[2]['caption'])
+
+
+class MadridOnlyTests(unittest.TestCase):
+    def test_focus_keeps_only_posts_about_real_madrid(self):
+        from media import focus_terms
+        focus = (focus_terms(['Real Madrid', 'Madrid', 'Los Blancos', 'Courtois', 'Mbappé', 'Bernardo Silva', 'Silva']),
+                 focus_terms(['PSV Eindhoven', 'PSV', 'Dest', 'Perisic', 'Perišić']))
+        base = 'https://editorial.uefa.com/resources/{}/{}'
+        posts = [
+            ('a', 'real_madrid_c.f._v_psv_eindhoven_md5.jpeg', "UEFA Champions League: Real Madrid-PSV 84'", 'Mbappé scores for Real Madrid!'),
+            ('b', 'fbl-eur-c1-real_madrid-psv.jpeg', "UEFA Champions League: Real Madrid-PSV 32'", 'Perišić scores for PSV!'),
+            ('c', 'real_madrid_c.f._v_psv_eindhoven_md5.jpeg', 'Peter Bosz, PSV coach: &quot;You could see it&quot;', ''),
+            ('d', 'gettyimages-2306715922.jpeg', 'More from Madrid&#39;s Bernardo Silva, speaking to UEFA', ''),
+            ('e', 'real_madrid_c.f._v_psv_eindhoven_md5.jpeg', 'Stay with us for reaction from both sides.', ''),
+            ('f', 'gettyimages-1.jpeg', 'More from Sergiño Dest: &quot;Madrid changed some players&quot;', ''),
+            ('g', 'ucl_24x27_-_goal_of_the_day.jpeg', 'Jude Bellingham, Luis Milla? Vote for your Goal of the Day', '')]
+        updates = [{'image': base.format(i, f), 'headline': h, 'articleBody': b, 'datePublished': '2026-11-24T21:30Z'} for i, f, h, b in posts]
+        body = '<script type="application/ld+json">' + json.dumps({'@type': 'LiveBlogPosting', 'liveBlogUpdate': updates}) + '</script>'
+        fetch = lambda url, binary=False: (b'x', 'image/jpeg') if binary else body
+        kept = uefa_photos('Real Madrid', 'PSV Eindhoven', dt.datetime(2026, 11, 24, 20, tzinfo=dt.timezone.utc),
+                           dt.datetime(2026, 11, 24, 22, tzinfo=dt.timezone.utc), fetch, 'https://www.uefa.com/m/', 30, focus)
+        self.assertEqual([p['url'].split('/')[4] for p in kept], ['a', 'd'])

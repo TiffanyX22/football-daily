@@ -91,6 +91,39 @@ def uefa_match_urls(fetch):
 POST_MATCH = dt.timedelta(hours=3)
 
 
+def first_side(text, own, other):
+    """Which side a caption/post is about: the side whose name or player is mentioned first."""
+    text = ' ' + key_spaced(html.unescape(text or '')) + ' '
+    def first(terms):
+        hits = [text.find(' ' + t + ' ') for t in terms if t]
+        hits = [h for h in hits if h >= 0]
+        return min(hits) if hits else None
+    a, b = first(own), first(other)
+    if a is None and b is None:
+        return None
+    if b is None or (a is not None and a < b):
+        return 'own'
+    return 'other'
+
+
+def post_text(post):
+    """Minute-by-minute headlines ("...: Real Madrid-PSV 87'") always list the home side
+    first, so judge those posts by their body only."""
+    headline = html.unescape(post.get('headline', '')).strip()
+    body = post.get('articleBody', '')
+    return body if re.search(r"\d+'(?:\+\d+)?$", headline) else headline + ' ' + body
+
+
+def key_spaced(value):
+    value = value.lower().replace('ø', 'o').replace('ł', 'l')
+    value = ''.join(c for c in unicodedata.normalize('NFKD', value) if not unicodedata.combining(c))
+    return ' '.join(re.findall('[a-z0-9]+', value))
+
+
+def focus_terms(names):
+    return sorted({key_spaced(n) for n in names if n and len(key_spaced(n)) > 2}, key=len, reverse=True)
+
+
 def shows_match(image, home, away):
     """Gallery mode: the match live blog also carries other fixtures, promos and
     player cutouts. Keep only files whose agency filename names both teams
@@ -110,7 +143,7 @@ def image_urls(value):
     return []
 
 
-def uefa_photos(home, away, kickoff, finished, fetch, reviewed_url=None, limit=2):
+def uefa_photos(home, away, kickoff, finished, fetch, reviewed_url=None, limit=2, focus=None):
     try:
         names = [key(ALIASES.get(n, n)) for n in (home, away)]
         url = reviewed_url or next((u for u in uefa_match_urls(fetch) if all(n in key(u.split('--')[-1]) for n in names)), None)
@@ -136,7 +169,10 @@ def uefa_photos(home, away, kickoff, finished, fetch, reviewed_url=None, limit=2
                     # Gallery mode (limit > 2) also keeps full-time celebrations posted soon after the whistle.
                     if not kickoff <= published <= finished + (POST_MATCH if limit > 2 else dt.timedelta(0)):
                         continue
-                    if limit > 2 and not shows_match(image, home, away):
+                    if limit > 2 and not (shows_match(image, home, away) or (focus and re.search(r'gettyimages-\d+', image))):
+                        continue
+                    # focus = (own_terms, other_terms): keep only posts about the focus team.
+                    if focus and first_side(post_text(post), *focus) != 'own':
                         continue
                     if image in {p['url'] for p in photos}:
                         continue
