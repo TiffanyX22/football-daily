@@ -1,7 +1,10 @@
 {
   "2026-11-25": {
-    "status": "waiting",
+    "status": "reserved",
     "attempts": 0,
-    "strict": false
+    "strict": false,
+    "phase": "initial",
+    "total": 1,
+    "accepted": 0
   }
 }
