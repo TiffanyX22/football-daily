@@ -3,7 +3,7 @@
   "start": "2026-11-24T16:00:00-08:00",
   "end": "2026-11-25T16:00:00-08:00",
   "partial_day": false,
-  "generated": "2026-11-25T19:38:15.351002-08:00",
+  "generated": "2026-11-26T00:43:48.870883-08:00",
   "matches": [
     {
       "id": "401915293",
@@ -23,13 +23,13 @@
           "player": {
             "id": "284769",
             "name": "Tajon Buchanan",
-            "name_zh": "",
+            "name_zh": "泰琼·布坎南",
             "number": "17"
           },
           "assist": {
             "id": "192133",
             "name": "Ayoze Pérez",
-            "name_zh": "",
+            "name_zh": "阿约塞·佩雷斯",
             "number": "22"
           },
           "scoring": true,
@@ -85,7 +85,7 @@
           "player": {
             "id": "268782",
             "name": "Anthony Gordon",
-            "name_zh": "",
+            "name_zh": "安东尼·戈登",
             "number": "17"
           },
           "assist": null,
@@ -99,7 +99,7 @@
           "player": {
             "id": "268782",
             "name": "Anthony Gordon",
-            "name_zh": "",
+            "name_zh": "安东尼·戈登",
             "number": "17"
           },
           "assist": null,
@@ -113,13 +113,13 @@
           "player": {
             "id": "274913",
             "name": "Karim Adeyemi",
-            "name_zh": "",
+            "name_zh": "卡里姆·阿德耶米",
             "number": "14"
           },
           "assist": {
             "id": "323703",
             "name": "Alejandro Balde",
-            "name_zh": "",
+            "name_zh": "亚历杭德罗·巴尔德",
             "number": "3"
           },
           "scoring": true,
@@ -132,7 +132,7 @@
           "player": {
             "id": "217289",
             "name": "Gabriel Jesus",
-            "name_zh": "",
+            "name_zh": "加布里埃尔·热苏斯",
             "number": "9"
           },
           "assist": null,
@@ -146,13 +146,13 @@
           "player": {
             "id": "291791",
             "name": "Joy-Lance Mickels",
-            "name_zh": "",
+            "name_zh": "乔伊-兰斯·米克尔斯",
             "number": "20"
           },
           "assist": {
             "id": "385377",
             "name": "Christian Nwachukwu",
-            "name_zh": "",
+            "name_zh": "克里斯蒂安·恩瓦楚库",
             "number": "8"
           },
           "scoring": true,
@@ -213,13 +213,13 @@
           "player": {
             "id": "188230",
             "name": "Alexander Sørloth",
-            "name_zh": "",
+            "name_zh": "亚历山大·瑟洛特",
             "number": "9"
           },
           "assist": {
             "id": "166396",
             "name": "Alejandro Grimaldo",
-            "name_zh": "",
+            "name_zh": "亚历杭德罗·格里马尔多",
             "number": "22"
           },
           "scoring": true,
@@ -232,7 +232,7 @@
           "player": {
             "id": "277206",
             "name": "Julián Álvarez",
-            "name_zh": "",
+            "name_zh": "胡利安·阿尔瓦雷斯",
             "number": "19"
           },
           "assist": null,
@@ -246,7 +246,7 @@
           "player": {
             "id": "303281",
             "name": "Henrik Falchener",
-            "name_zh": "",
+            "name_zh": "亨里克·法尔克纳",
             "number": "25"
           },
           "assist": null,
@@ -303,13 +303,13 @@
           "player": {
             "id": "235662",
             "name": "Alexander Isak",
-            "name_zh": "",
+            "name_zh": "亚历山大·伊萨克",
             "number": "9"
           },
           "assist": {
             "id": "257206",
             "name": "Dominik Szoboszlai",
-            "name_zh": "",
+            "name_zh": "多米尼克·索博斯洛伊",
             "number": "8"
           },
           "scoring": true,
@@ -322,13 +322,13 @@
           "player": {
             "id": "303748",
             "name": "Florian Wirtz",
-            "name_zh": "",
+            "name_zh": "弗洛里安·维尔茨",
             "number": "7"
           },
           "assist": {
             "id": "379588",
             "name": "Rio Ngumoha",
-            "name_zh": "",
+            "name_zh": "里奥·恩古莫哈",
             "number": "73"
           },
           "scoring": true,
@@ -341,13 +341,13 @@
           "player": {
             "id": "235662",
             "name": "Alexander Isak",
-            "name_zh": "",
+            "name_zh": "亚历山大·伊萨克",
             "number": "9"
           },
           "assist": {
             "id": "196876",
             "name": "Alisson Becker",
-            "name_zh": "",
+            "name_zh": "阿利松·贝克尔",
             "number": "1"
           },
           "scoring": true,
@@ -368,6 +368,14 @@
           "source": "https://www.uefa.com/uefachampionsleague/match/2049638--club-brugge-vs-liverpool/#02ab-2228772cc132-33d420951d24-10ff",
           "kind": "match-photo",
           "published": "2026-11-25T21:32:14+00:00"
+        },
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-2228769234b3-47ffc84920c7-1000/club_brugge_kv_v_liverpool_fc_-_uefa_champions_league_2026_27_league_phase_md5.jpeg",
+          "caption": "Club Brugge vs Liverpool · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049638--club-brugge-vs-liverpool/#02ab-222876922a0c-33d9cf89ac51-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-25T21:30:32+00:00"
         }
       ],
       "team_logos": {
@@ -416,7 +424,7 @@
           "player": {
             "id": "272722",
             "name": "Luis Suárez",
-            "name_zh": "",
+            "name_zh": "路易斯·苏亚雷斯",
             "number": "97"
           },
           "assist": null,
@@ -430,7 +438,7 @@
           "player": {
             "id": "124091",
             "name": "Bruno Fernandes",
-            "name_zh": "",
+            "name_zh": "布鲁诺·费尔南德斯",
             "number": "8"
           },
           "assist": null,
@@ -444,13 +452,13 @@
           "player": {
             "id": "124091",
             "name": "Bruno Fernandes",
-            "name_zh": "",
+            "name_zh": "布鲁诺·费尔南德斯",
             "number": "8"
           },
           "assist": {
             "id": "291630",
             "name": "Amad Diallo",
-            "name_zh": "",
+            "name_zh": "阿马德·迪亚洛",
             "number": "16"
           },
           "scoring": true,
@@ -463,7 +471,7 @@
           "player": {
             "id": "272722",
             "name": "Luis Suárez",
-            "name_zh": "",
+            "name_zh": "路易斯·苏亚雷斯",
             "number": "97"
           },
           "assist": null,
@@ -477,7 +485,7 @@
           "player": {
             "id": "193297",
             "name": "Youri Tielemans",
-            "name_zh": "",
+            "name_zh": "尤里·蒂勒曼斯",
             "number": "18"
           },
           "assist": null,
@@ -539,7 +547,7 @@
           "player": {
             "id": "222529",
             "name": "Mario Hermoso",
-            "name_zh": "",
+            "name_zh": "马里奥·埃尔莫索",
             "number": "22"
           },
           "assist": null,
@@ -553,13 +561,13 @@
           "player": {
             "id": "304503",
             "name": "Illia Zabarnyi",
-            "name_zh": "",
+            "name_zh": "伊利亚·扎巴尔尼",
             "number": "6"
           },
           "assist": {
             "id": "379088",
             "name": "Senny Mayulu",
-            "name_zh": "",
+            "name_zh": "塞尼·马尤卢",
             "number": "24"
           },
           "scoring": true,
@@ -572,7 +580,7 @@
           "player": {
             "id": "229744",
             "name": "Ousmane Dembélé",
-            "name_zh": "",
+            "name_zh": "奥斯曼·登贝莱",
             "number": "10"
           },
           "assist": null,
@@ -586,7 +594,7 @@
           "player": {
             "id": "259481",
             "name": "Donyell Malen",
-            "name_zh": "",
+            "name_zh": "多尼耶尔·马伦",
             "number": "14"
           },
           "assist": null,
@@ -648,7 +656,7 @@
           "player": {
             "id": "240209",
             "name": "Vedat Muriqi",
-            "name_zh": "",
+            "name_zh": "韦达特·穆里奇",
             "number": "19"
           },
           "assist": null,
@@ -705,7 +713,7 @@
           "player": {
             "id": "341494",
             "name": "Petar Sucic",
-            "name_zh": "",
+            "name_zh": "佩塔尔·苏契奇",
             "number": "8"
           },
           "assist": null,
@@ -719,13 +727,13 @@
           "player": {
             "id": "219713",
             "name": "Lautaro Martínez",
-            "name_zh": "",
+            "name_zh": "劳塔罗·马丁内斯",
             "number": "10"
           },
           "assist": {
             "id": "194748",
             "name": "Federico Dimarco",
-            "name_zh": "",
+            "name_zh": "费德里科·迪马尔科",
             "number": "32"
           },
           "scoring": true,
@@ -781,13 +789,13 @@
           "player": {
             "id": "222793",
             "name": "Dayot Upamecano",
-            "name_zh": "",
+            "name_zh": "达约·于帕梅卡诺",
             "number": "2"
           },
           "assist": {
             "id": "324660",
             "name": "Tom Bischof",
-            "name_zh": "",
+            "name_zh": "汤姆·比朔夫",
             "number": "8"
           },
           "scoring": true,
@@ -800,13 +808,13 @@
           "player": {
             "id": "274277",
             "name": "Ayase Ueda",
-            "name_zh": "",
+            "name_zh": "上田绮世",
             "number": "18"
           },
           "assist": {
             "id": "318577",
             "name": "Nathan Ngoy",
-            "name_zh": "",
+            "name_zh": "内森·恩戈伊",
             "number": "3"
           },
           "scoring": true,
@@ -819,7 +827,7 @@
           "player": {
             "id": "359370",
             "name": "Aleksandar Pavlovic",
-            "name_zh": "",
+            "name_zh": "亚历山大·帕夫洛维奇",
             "number": "45"
           },
           "assist": null,
