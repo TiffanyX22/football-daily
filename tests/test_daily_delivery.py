@@ -75,6 +75,19 @@ class DailyDeliveryTests(unittest.TestCase):
                  '2026-11-28': {'status': 'waiting'}}
         self.assertEqual(delivery.next_pending(state), '2026-11-28')
 
+    def test_backup_recovers_missing_editions_then_resumes_media_retries(self):
+        latest = dt.date(2026, 11, 28)
+        state = {'2026-11-26': {'status': 'pending'}, '2026-11-27': {'status': 'reserved'}}
+        with tempfile.TemporaryDirectory() as path:
+            reports = Path(path)
+            self.assertEqual(delivery.next_scheduled_report(state, latest, reports), ('2026-11-28', False))
+            (reports / '2026-11-28.json').touch()
+            self.assertEqual(delivery.next_scheduled_report(state, latest, reports), ('2026-11-25', False))
+            state['2026-11-25'] = {'status': 'complete'}
+            self.assertEqual(delivery.next_scheduled_report(state, latest, reports), ('2026-11-26', True))
+            state['2026-11-26']['status'] = 'needs_review'
+            self.assertEqual(delivery.next_scheduled_report(state, latest, reports), ('', False))
+
     def test_refresh_preserves_match_set_scores_and_standings(self):
         report = fixture()
         before = copy.deepcopy(report)

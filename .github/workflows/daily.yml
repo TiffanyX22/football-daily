@@ -3,7 +3,7 @@ on:
   schedule:
     - cron: '0 16 * * *'
       timezone: America/Los_Angeles
-    - cron: '0 9,13,19,22 * * *'
+    - cron: '17 9,13,19,22 * * *'
       timezone: America/Los_Angeles
   workflow_dispatch:
     inputs:
@@ -62,15 +62,15 @@ jobs:
           python - <<'PY'
           import datetime as dt, os
           from agent import LA
-          from daily_delivery import load, next_pending
+          from daily_delivery import load, next_scheduled_report
           now = dt.datetime.now(LA)
           requested = os.environ.get('REQUESTED_DATE')
           day = dt.date.fromisoformat(requested) if requested else now.date() - dt.timedelta(days=now.hour < 16)
-          retry = os.environ['RETRY_SCHEDULE'] == 'true'
-          if retry:
-              day = next_pending(load())
-          elif os.environ.get('PREVIEW') != 'true' and str(day) in load() and load()[str(day)].get('status') in ('pending', 'waiting'):
-              retry = True
+          state = load()
+          if os.environ['RETRY_SCHEDULE'] == 'true':
+              day, retry = next_scheduled_report(state, day)
+          else:
+              retry = os.environ.get('PREVIEW') != 'true' and state.get(str(day), {}).get('status') in ('pending', 'waiting')
           with open(os.environ['GITHUB_ENV'], 'a') as f:
               f.write(f'REPORT_DATE={day}\nBUILD_STARTED={now.isoformat()}\nMEDIA_RETRY={str(retry).lower()}\n')
           if retry and day:

@@ -67,6 +67,19 @@ def next_pending(state):
     return min(candidates)[1] if candidates else ''
 
 
+def next_scheduled_report(state, latest_due, reports=Path('docs/reports')):
+    """Pick one missing edition before using a backup slot for media retries."""
+    day = latest_due
+    first = dt.date.fromisoformat(FIRST_DAY)
+    while day >= first:
+        key = day.isoformat()
+        if key not in state and not (reports / f'{key}.json').is_file():
+            return key, False
+        day -= dt.timedelta(days=1)
+    pending = next_pending(state)
+    return pending, bool(pending)
+
+
 def retry_attempt(day):
     state = load()
     entry = state[day]
