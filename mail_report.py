@@ -130,6 +130,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--date', default=os.environ.get('REPORT_DATE'))
     parser.add_argument('--out', default='docs')
+    parser.add_argument('--correction', action='store_true', help='Explicit corrected edition of an already delivered report')
     parser.add_argument('--dry-run', help='Write EML files locally without logging in or sending')
     args = parser.parse_args()
     if not args.date:
@@ -140,13 +141,21 @@ def main():
     strict = os.environ.get('REQUIRE_COMPLETE_MEDIA') == 'true'
     if not args.dry_run:
         state = load()
-        selected = phase(report, state, strict)
+        if args.correction:
+            previous = state.get(report['day'], {})
+            if previous.get('status') not in ('pending', 'complete') or not previous.get('accepted'):
+                raise RuntimeError('Correction requires a previously accepted email, with no ambiguous SMTP reservation')
+            selected = 'correction'
+        else:
+            selected = phase(report, state, strict)
         if not selected:
             if strict and missing_media(report) and not report.get('partial_day'):
                 waiting(report['day'], strict=True)
             print('No new email delivery eligible')
             return
         report['delivery_phase'] = selected
+        if selected == 'correction':
+            report['email_subject'] = f"男足图文日报 {report['day']} · 球员中文名补正版"
         waiting(report['day'], strict=strict)
         state = load()
     sender = os.environ.get('SMTP_USERNAME', '')

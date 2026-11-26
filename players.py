@@ -14,7 +14,7 @@ def timeline(summary):
     def player(athlete):
         pid = str(athlete.get('id', ''))
         return {'id': pid, 'name': athlete.get('displayName', ''),
-                'name_zh': names.get(pid, ''), 'number': roster.get(pid, {}).get('jersey')}
+                'name_zh': names.get(pid, '') or __import__('player_name_lookup').lookup(pid, athlete.get('displayName', '')), 'number': roster.get(pid, {}).get('jersey')}
 
     result = []
     for event in summary.get('keyEvents', []):
@@ -39,6 +39,7 @@ def timeline(summary):
                        'player': scorer, 'assist': assist,
                        'scoring': bool(event.get('scoringPlay')),
                        'text': event.get('text', '')})
+    __import__('player_name_lookup').persist()
     return result
 
 

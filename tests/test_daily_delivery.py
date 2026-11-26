@@ -88,6 +88,12 @@ class DailyDeliveryTests(unittest.TestCase):
             state['2026-11-26']['status'] = 'needs_review'
             self.assertEqual(delivery.next_scheduled_report(state, latest, reports), ('', False))
 
+    def test_retry_accepts_workflow_date_object(self):
+        state = {'2026-11-25': {'status': 'pending', 'attempts': 0}}
+        with patch('daily_delivery.load', return_value=state), patch('daily_delivery.save'):
+            delivery.retry_attempt(dt.date(2026, 11, 25))
+        self.assertEqual(state['2026-11-25']['attempts'], 1)
+
     def test_refresh_preserves_match_set_scores_and_standings(self):
         report = fixture()
         before = copy.deepcopy(report)

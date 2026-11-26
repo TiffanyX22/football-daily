@@ -503,6 +503,10 @@ def main():
                   'generated': now.isoformat(), 'matches': matches, 'errors': errors,
                   'scans': sorted(scans, key=lambda x: (x['league'], x['date'])),
                   'audit': audit, 'coverage': audit['scope']}
+    from player_name_lookup import enrich_report
+    renamed = enrich_report(report)
+    if args.refresh_media:
+        refresh_ids.update(renamed)
     out = Path(args.out)
     (out / 'reports').mkdir(parents=True, exist_ok=True)
     from poster import export

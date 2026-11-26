@@ -3,10 +3,16 @@ on:
   schedule:
     - cron: '0 16 * * *'
       timezone: America/Los_Angeles
-    - cron: '17 9,13,19,22 * * *'
+    - cron: '7,22,37,52 16-23 * * *'
+      timezone: America/Los_Angeles
+    - cron: '17 9,13 * * *'
       timezone: America/Los_Angeles
   workflow_dispatch:
     inputs:
+      correction:
+        description: 'Explicit corrected edition of a previously delivered report'
+        type: boolean
+        default: false
       report_date:
         description: 'Optional LA report day YYYY-MM-DD (blank = latest 16:00 cutoff)'
         required: false
@@ -67,7 +73,7 @@ jobs:
           requested = os.environ.get('REQUESTED_DATE')
           day = dt.date.fromisoformat(requested) if requested else now.date() - dt.timedelta(days=now.hour < 16)
           state = load()
-          if os.environ['RETRY_SCHEDULE'] == 'true':
+          if os.environ.get('REQUESTED_DATE', '') == '' and os.environ.get('PREVIEW') != 'true':
               day, retry = next_scheduled_report(state, day)
           else:
               retry = os.environ.get('PREVIEW') != 'true' and state.get(str(day), {}).get('status') in ('pending', 'waiting')
@@ -111,6 +117,7 @@ jobs:
             exit 0
           fi
           git add docs
+          if [ -f data/player-name-cache.json ]; then git add data/player-name-cache.json; fi
           if ! git diff --cached --quiet; then
             git commit -m 'Publish daily football report'
             git push
@@ -182,9 +189,14 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
           REQUIRE_COMPLETE_MEDIA: ${{ inputs.require_complete_media }}
+          CORRECTION: ${{ inputs.correction }}
         run: |
           if [ -n "$SMTP_USERNAME" ] && [ -n "$SMTP_PASSWORD" ] && [ -n "$REPORT_EMAIL" ]; then
-            python mail_report.py --date "$REPORT_DATE"
+            if [ "$CORRECTION" = 'true' ]; then
+              python mail_report.py --date "$REPORT_DATE" --correction
+            else
+              python mail_report.py --date "$REPORT_DATE"
+            fi
           else
             echo '::notice::Attachment email is awaiting Gmail authorization. GitHub notification remains active.'
           fi

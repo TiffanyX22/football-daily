@@ -81,6 +81,7 @@ def next_scheduled_report(state, latest_due, reports=Path('docs/reports')):
 
 
 def retry_attempt(day):
+    day = str(day)
     state = load()
     entry = state[day]
     entry['attempts'] = entry.get('attempts', 0) + 1
