@@ -1,11 +1,11 @@
 {
   "2026-11-25": {
-    "status": "pending",
+    "status": "reserved",
     "attempts": 1,
     "strict": false,
-    "phase": "initial",
+    "phase": "correction",
     "total": 1,
-    "accepted": 1,
+    "accepted": 0,
     "last_attempt": "2026-11-26T08:43:47.598393+00:00"
   }
 }
