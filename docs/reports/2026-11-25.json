@@ -1,0 +1,1920 @@
+{
+  "day": "2026-11-25",
+  "start": "2026-11-24T16:00:00-08:00",
+  "end": "2026-11-25T16:00:00-08:00",
+  "partial_day": false,
+  "generated": "2026-11-25T19:38:15.351002-08:00",
+  "matches": [
+    {
+      "id": "401915293",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Slavia Prague",
+      "away": "Villarreal",
+      "score": "0–1",
+      "kickoff": "2026-11-25T09:45:00-08:00",
+      "finished": "2026-11-25T11:39:09-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915293/villarreal-slavia-prague",
+      "timeline": [
+        {
+          "minute": "62'",
+          "type": "Goal",
+          "players": "Tajon Buchanan",
+          "player": {
+            "id": "284769",
+            "name": "Tajon Buchanan",
+            "name_zh": "",
+            "number": "17"
+          },
+          "assist": {
+            "id": "192133",
+            "name": "Ayoze Pérez",
+            "name_zh": "",
+            "number": "22"
+          },
+          "scoring": true,
+          "text": "Goal! Slavia Prague 0, Villarreal 1. Tajon Buchanan (Villarreal) left footed shot from the centre of the box to the bottom right corner. Assisted by Ayoze Pérez."
+        }
+      ],
+      "photos": [],
+      "team_logos": {
+        "Slavia Prague": "https://a.espncdn.com/i/teamlogos/soccer/500/494.png",
+        "Villarreal": "https://a.espncdn.com/i/teamlogos/soccer/500/102.png"
+      },
+      "highlights": [],
+      "standings": [
+        "Slavia Prague：1分，第35名，已赛5场，距本组榜首14分。",
+        "Villarreal：6分，第24名，已赛5场，距本组榜首9分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster_pages": [
+        {
+          "filename": "401915293-zh-en.png",
+          "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915293-zh-en.png"
+        }
+      ],
+      "poster": {
+        "filename": "401915293-zh-en.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915293-zh-en.png",
+        "width": 1080,
+        "height": 1312,
+        "image_embedded": false,
+        "team_crests_embedded": 2
+      },
+      "media_missing": [
+        "缺已核实配图",
+        "缺官方集锦",
+        "海报未嵌入图片"
+      ]
+    },
+    {
+      "id": "401915378",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Sabah FK",
+      "away": "Barcelona",
+      "score": "1–4",
+      "kickoff": "2026-11-25T09:45:00-08:00",
+      "finished": "2026-11-25T11:34:47-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915378/barcelona-sabah-fk",
+      "timeline": [
+        {
+          "minute": "31'",
+          "type": "Goal",
+          "players": "Anthony Gordon",
+          "player": {
+            "id": "268782",
+            "name": "Anthony Gordon",
+            "name_zh": "",
+            "number": "17"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Sabah 0, Barcelona 1. Anthony Gordon (Barcelona) right footed shot from the centre of the box to the centre of the goal."
+        },
+        {
+          "minute": "51'",
+          "type": "Goal - Volley",
+          "players": "Anthony Gordon",
+          "player": {
+            "id": "268782",
+            "name": "Anthony Gordon",
+            "name_zh": "",
+            "number": "17"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Sabah 0, Barcelona 2. Anthony Gordon (Barcelona) right footed shot from the left side of the six yard box to the bottom left corner."
+        },
+        {
+          "minute": "55'",
+          "type": "Goal",
+          "players": "Karim Adeyemi",
+          "player": {
+            "id": "274913",
+            "name": "Karim Adeyemi",
+            "name_zh": "",
+            "number": "14"
+          },
+          "assist": {
+            "id": "323703",
+            "name": "Alejandro Balde",
+            "name_zh": "",
+            "number": "3"
+          },
+          "scoring": true,
+          "text": "Goal! Sabah 0, Barcelona 3. Karim Adeyemi (Barcelona) right footed shot from very close range to the bottom right corner. Assisted by Alejandro Balde."
+        },
+        {
+          "minute": "60'",
+          "type": "Goal",
+          "players": "Gabriel Jesus",
+          "player": {
+            "id": "217289",
+            "name": "Gabriel Jesus",
+            "name_zh": "",
+            "number": "9"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Sabah 0, Barcelona 4. Gabriel Jesus (Barcelona) right footed shot from very close range to the bottom right corner following a corner."
+        },
+        {
+          "minute": "63'",
+          "type": "Goal",
+          "players": "Joy-Lance Mickels",
+          "player": {
+            "id": "291791",
+            "name": "Joy-Lance Mickels",
+            "name_zh": "",
+            "number": "20"
+          },
+          "assist": {
+            "id": "385377",
+            "name": "Christian Nwachukwu",
+            "name_zh": "",
+            "number": "8"
+          },
+          "scoring": true,
+          "text": "Goal! Sabah 1, Barcelona 4. Joy-Lance Mickels (Sabah) left footed shot from the centre of the box to the bottom left corner. Assisted by Christian Nwachukwu.Goal confirmed following VAR Review."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://a.espncdn.com/photo/2026/1125/r1751214_1296x729_16-9.jpg",
+          "caption": "Anthony Gordon of FC Barcelona celebrates scoring his teamâs second goal during the UEFA Champions League 2026/27 League Phase MD5 match between Sabah FC and FC Barcelona at Tofig Bahramov Stadium on November 25, 2026 in Baku, Azerbaijan.",
+          "credit": "Aziz Karimov - UEFA/UEFA via Getty Images",
+          "source": "https://www.espn.com/soccer/report/_/gameId/401915378"
+        }
+      ],
+      "team_logos": {
+        "Sabah FK": "https://a.espncdn.com/i/teamlogos/soccer/500/21922.png",
+        "Barcelona": "https://a.espncdn.com/i/teamlogos/soccer/500/83.png"
+      },
+      "highlights": [],
+      "standings": [
+        "Sabah FK：3分，第33名，已赛5场，距本组榜首12分。",
+        "Barcelona：12分，第4名，已赛5场，距本组榜首3分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster_pages": [
+        {
+          "filename": "401915378-zh-en.png",
+          "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915378-zh-en.png"
+        }
+      ],
+      "poster": {
+        "filename": "401915378-zh-en.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915378-zh-en.png",
+        "width": 1080,
+        "height": 1312,
+        "image_embedded": true,
+        "team_crests_embedded": 2
+      },
+      "media_missing": [
+        "缺官方集锦"
+      ]
+    },
+    {
+      "id": "401915291",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Atlético Madrid",
+      "away": "Viking FK",
+      "score": "2–0",
+      "kickoff": "2026-11-25T12:00:00-08:00",
+      "finished": "2026-11-25T13:51:04-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915291/viking-fk-atletico-madrid",
+      "timeline": [
+        {
+          "minute": "19'",
+          "type": "Goal",
+          "players": "Alexander Sørloth",
+          "player": {
+            "id": "188230",
+            "name": "Alexander Sørloth",
+            "name_zh": "",
+            "number": "9"
+          },
+          "assist": {
+            "id": "166396",
+            "name": "Alejandro Grimaldo",
+            "name_zh": "",
+            "number": "22"
+          },
+          "scoring": true,
+          "text": "Goal! Atletico Madrid 1, Viking 0. Alexander Sørloth (Atletico Madrid) left footed shot from the centre of the box to the high centre of the goal. Assisted by Alejandro Grimaldo."
+        },
+        {
+          "minute": "24'",
+          "type": "Goal - Free-kick",
+          "players": "Julián Álvarez",
+          "player": {
+            "id": "277206",
+            "name": "Julián Álvarez",
+            "name_zh": "",
+            "number": "19"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Atletico Madrid 2, Viking 0. Julián Alvarez (Atletico Madrid) from a free kick with a right footed shot to the bottom left corner."
+        },
+        {
+          "minute": "90'+1'",
+          "type": "Red Card",
+          "players": "Henrik Falchener",
+          "player": {
+            "id": "303281",
+            "name": "Henrik Falchener",
+            "name_zh": "",
+            "number": "25"
+          },
+          "assist": null,
+          "scoring": false,
+          "text": "Henrik Falchener (Viking) is shown the red card."
+        }
+      ],
+      "photos": [],
+      "team_logos": {
+        "Atlético Madrid": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+        "Viking FK": "https://a.espncdn.com/i/teamlogos/soccer/500/510.png"
+      },
+      "highlights": [],
+      "standings": [
+        "Atlético Madrid：7分，第18名，已赛5场，距本组榜首8分。",
+        "Viking FK：4分，第27名，已赛5场，距本组榜首11分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster_pages": [
+        {
+          "filename": "401915291-zh-en.png",
+          "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915291-zh-en.png"
+        }
+      ],
+      "poster": {
+        "filename": "401915291-zh-en.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915291-zh-en.png",
+        "width": 1080,
+        "height": 1312,
+        "image_embedded": false,
+        "team_crests_embedded": 2
+      },
+      "media_missing": [
+        "缺已核实配图",
+        "缺官方集锦",
+        "海报未嵌入图片"
+      ]
+    },
+    {
+      "id": "401915292",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Club Brugge",
+      "away": "Liverpool",
+      "score": "0–3",
+      "kickoff": "2026-11-25T12:00:00-08:00",
+      "finished": "2026-11-25T13:54:19-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915292/liverpool-club-brugge",
+      "timeline": [
+        {
+          "minute": "13'",
+          "type": "Goal",
+          "players": "Alexander Isak",
+          "player": {
+            "id": "235662",
+            "name": "Alexander Isak",
+            "name_zh": "",
+            "number": "9"
+          },
+          "assist": {
+            "id": "257206",
+            "name": "Dominik Szoboszlai",
+            "name_zh": "",
+            "number": "8"
+          },
+          "scoring": true,
+          "text": "Goal! Club Brugge 0, Liverpool 1. Alexander Isak (Liverpool) right footed shot from the centre of the box to the bottom left corner. Assisted by Dominik Szoboszlai."
+        },
+        {
+          "minute": "79'",
+          "type": "Goal",
+          "players": "Florian Wirtz",
+          "player": {
+            "id": "303748",
+            "name": "Florian Wirtz",
+            "name_zh": "",
+            "number": "7"
+          },
+          "assist": {
+            "id": "379588",
+            "name": "Rio Ngumoha",
+            "name_zh": "",
+            "number": "73"
+          },
+          "scoring": true,
+          "text": "Goal! Club Brugge 0, Liverpool 2. Florian Wirtz (Liverpool) right footed shot from outside the box to the bottom left corner. Assisted by Rio Ngumoha following a fast break."
+        },
+        {
+          "minute": "82'",
+          "type": "Goal",
+          "players": "Alexander Isak",
+          "player": {
+            "id": "235662",
+            "name": "Alexander Isak",
+            "name_zh": "",
+            "number": "9"
+          },
+          "assist": {
+            "id": "196876",
+            "name": "Alisson Becker",
+            "name_zh": "",
+            "number": "1"
+          },
+          "scoring": true,
+          "text": "Goal! Club Brugge 0, Liverpool 3. Alexander Isak (Liverpool) right footed shot from the centre of the box to the centre of the goal. Assisted by Alisson Becker following a fast break."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://a.espncdn.com/photo/2026/1125/r1751315_1296x729_16-9.jpg",
+          "caption": "Alexander Isak of Liverpool celebrates scoring his teamâs third goal during the UEFA Champions League 2026/27 League Phase MD5 match between Club Brugge KV and Liverpool FC at Jan Breydel Stadium on November 25, 2026 in Bruges, Belgium.",
+          "credit": "Dean Mouhtaropoulos/Getty Images",
+          "source": "https://www.espn.com/soccer/report/_/gameId/401915292"
+        },
+        {
+          "url": "https://editorial.uefa.com/resources/02ab-2228772ccaa6-881064e6a850-1000/matchday_live_20261125223213.jpeg",
+          "caption": "Club Brugge vs Liverpool · 本场赛中照片",
+          "credit": "UEFA 官方比赛中心 / 原摄影机构",
+          "source": "https://www.uefa.com/uefachampionsleague/match/2049638--club-brugge-vs-liverpool/#02ab-2228772cc132-33d420951d24-10ff",
+          "kind": "match-photo",
+          "published": "2026-11-25T21:32:14+00:00"
+        }
+      ],
+      "team_logos": {
+        "Club Brugge": "https://a.espncdn.com/i/teamlogos/soccer/500/570.png",
+        "Liverpool": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png"
+      },
+      "highlights": [],
+      "standings": [
+        "Club Brugge：9分，第13名，已赛5场，距本组榜首6分。",
+        "Liverpool：12分，第5名，已赛5场，距本组榜首3分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster_pages": [
+        {
+          "filename": "401915292-zh-en.png",
+          "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915292-zh-en.png"
+        }
+      ],
+      "poster": {
+        "filename": "401915292-zh-en.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915292-zh-en.png",
+        "width": 1080,
+        "height": 1312,
+        "image_embedded": true,
+        "team_crests_embedded": 2
+      },
+      "media_missing": [
+        "缺官方集锦"
+      ]
+    },
+    {
+      "id": "401915373",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Sporting CP",
+      "away": "Manchester United",
+      "score": "2–2",
+      "kickoff": "2026-11-25T12:00:00-08:00",
+      "finished": "2026-11-25T13:54:59-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915373/manchester-united-sporting-cp",
+      "timeline": [
+        {
+          "minute": "33'",
+          "type": "Penalty - Scored",
+          "players": "Luis Suárez",
+          "player": {
+            "id": "272722",
+            "name": "Luis Suárez",
+            "name_zh": "",
+            "number": "97"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Sporting Lisbon 1, Manchester United 0. Luis Suárez (Sporting Lisbon) converts the penalty with a right footed shot to the bottom left corner."
+        },
+        {
+          "minute": "48'",
+          "type": "Penalty - Scored",
+          "players": "Bruno Fernandes",
+          "player": {
+            "id": "124091",
+            "name": "Bruno Fernandes",
+            "name_zh": "",
+            "number": "8"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Sporting Lisbon 1, Manchester United 1. Bruno Fernandes (Manchester United) converts the penalty with a right footed shot to the bottom left corner."
+        },
+        {
+          "minute": "50'",
+          "type": "Goal",
+          "players": "Bruno Fernandes",
+          "player": {
+            "id": "124091",
+            "name": "Bruno Fernandes",
+            "name_zh": "",
+            "number": "8"
+          },
+          "assist": {
+            "id": "291630",
+            "name": "Amad Diallo",
+            "name_zh": "",
+            "number": "16"
+          },
+          "scoring": true,
+          "text": "Goal! Sporting Lisbon 1, Manchester United 2. Bruno Fernandes (Manchester United) left footed shot from outside the box to the high centre of the goal. Assisted by Amad Diallo."
+        },
+        {
+          "minute": "80'",
+          "type": "Goal",
+          "players": "Luis Suárez",
+          "player": {
+            "id": "272722",
+            "name": "Luis Suárez",
+            "name_zh": "",
+            "number": "97"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Sporting Lisbon 2, Manchester United 2. Luis Suárez (Sporting Lisbon) right footed shot from very close range to the centre of the goal.Goal confirmed following VAR Review."
+        },
+        {
+          "minute": "90'+3'",
+          "type": "Red Card",
+          "players": "Youri Tielemans",
+          "player": {
+            "id": "193297",
+            "name": "Youri Tielemans",
+            "name_zh": "",
+            "number": "18"
+          },
+          "assist": null,
+          "scoring": false,
+          "text": "Second yellow card to Youri Tielemans (Manchester United) for a bad foul."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://a.espncdn.com/photo/2026/1125/r1751321_1296x729_16-9.jpg",
+          "caption": "Sporting Lisbon's Colombian forward #97 Luis Suarez (R) celebrates scoring his team's second goal during the UEFA Champions League 1st round day 5 football match between Sporting CP and Manchester United at Jose Alvalade Stadium in Lisbon on November 25,",
+          "credit": "PATRICIA DE MELO MOREIRA / AFP via Getty Images",
+          "source": "https://www.espn.com/soccer/report/_/gameId/401915373"
+        }
+      ],
+      "team_logos": {
+        "Sporting CP": "https://a.espncdn.com/i/teamlogos/soccer/500/2250.png",
+        "Manchester United": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png"
+      },
+      "highlights": [],
+      "standings": [
+        "Sporting CP：10分，第9名，已赛5场，距本组榜首5分。",
+        "Manchester United：7分，第19名，已赛5场，距本组榜首8分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster_pages": [
+        {
+          "filename": "401915373-zh-en.png",
+          "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915373-zh-en.png"
+        }
+      ],
+      "poster": {
+        "filename": "401915373-zh-en.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915373-zh-en.png",
+        "width": 1080,
+        "height": 1312,
+        "image_embedded": true,
+        "team_crests_embedded": 2
+      },
+      "media_missing": [
+        "缺官方集锦"
+      ]
+    },
+    {
+      "id": "401915374",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Paris Saint-Germain",
+      "away": "AS Roma",
+      "score": "2–2",
+      "kickoff": "2026-11-25T12:00:00-08:00",
+      "finished": "2026-11-25T13:54:12-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915374/as-roma-paris-saint-germain",
+      "timeline": [
+        {
+          "minute": "5'",
+          "type": "Goal",
+          "players": "Mario Hermoso",
+          "player": {
+            "id": "222529",
+            "name": "Mario Hermoso",
+            "name_zh": "",
+            "number": "22"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Paris Saint Germain 0, Roma 1. Mario Hermoso (Roma) left footed shot from the centre of the box to the centre of the goal. Assisted by Matías Soulé."
+        },
+        {
+          "minute": "31'",
+          "type": "Goal - Header",
+          "players": "Illia Zabarnyi",
+          "player": {
+            "id": "304503",
+            "name": "Illia Zabarnyi",
+            "name_zh": "",
+            "number": "6"
+          },
+          "assist": {
+            "id": "379088",
+            "name": "Senny Mayulu",
+            "name_zh": "",
+            "number": "24"
+          },
+          "scoring": true,
+          "text": "Goal! Paris Saint Germain 1, Roma 1. Illia Zabarnyi (Paris Saint Germain) header from the right side of the six yard box to the top right corner. Assisted by Senny Mayulu with a cross following a corner."
+        },
+        {
+          "minute": "62'",
+          "type": "Penalty - Scored",
+          "players": "Ousmane Dembélé",
+          "player": {
+            "id": "229744",
+            "name": "Ousmane Dembélé",
+            "name_zh": "",
+            "number": "10"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Paris Saint Germain 2, Roma 1. Ousmane Dembélé (Paris Saint Germain) converts the penalty with a right footed shot to the bottom right corner."
+        },
+        {
+          "minute": "78'",
+          "type": "Penalty - Scored",
+          "players": "Donyell Malen",
+          "player": {
+            "id": "259481",
+            "name": "Donyell Malen",
+            "name_zh": "",
+            "number": "14"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Paris Saint Germain 2, Roma 2. Donyell Malen (Roma) converts the penalty with a right footed shot to the bottom left corner."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://a.espncdn.com/photo/2026/1125/r1751343_1296x729_16-9.jpg",
+          "caption": "PSG v Roma [1296x729]",
+          "credit": "Photo by YOAN VALAT/EPA/Shutterstock",
+          "source": "https://www.espn.com/soccer/report/_/gameId/401915374"
+        }
+      ],
+      "team_logos": {
+        "Paris Saint-Germain": "https://a.espncdn.com/i/teamlogos/soccer/500/160.png",
+        "AS Roma": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png"
+      },
+      "highlights": [],
+      "standings": [
+        "Paris Saint-Germain：13分，第2名，已赛5场，距本组榜首2分。",
+        "AS Roma：5分，第25名，已赛5场，距本组榜首10分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster_pages": [
+        {
+          "filename": "401915374-zh-en.png",
+          "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915374-zh-en.png"
+        }
+      ],
+      "poster": {
+        "filename": "401915374-zh-en.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915374-zh-en.png",
+        "width": 1080,
+        "height": 1312,
+        "image_embedded": true,
+        "team_crests_embedded": 2
+      },
+      "media_missing": [
+        "缺官方集锦"
+      ]
+    },
+    {
+      "id": "401915375",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Shakhtar Donetsk",
+      "away": "Fenerbahce",
+      "score": "0–1",
+      "kickoff": "2026-11-25T12:00:00-08:00",
+      "finished": "2026-11-25T13:54:29-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915375/fenerbahce-shakhtar-donetsk",
+      "timeline": [
+        {
+          "minute": "56'",
+          "type": "Goal",
+          "players": "Vedat Muriqi",
+          "player": {
+            "id": "240209",
+            "name": "Vedat Muriqi",
+            "name_zh": "",
+            "number": "19"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Shakhtar Donetsk 0, Fenerbahce 1. Vedat Muriqi (Fenerbahce) left footed shot from very close range to the centre of the goal."
+        }
+      ],
+      "photos": [],
+      "team_logos": {
+        "Shakhtar Donetsk": "https://a.espncdn.com/i/teamlogos/soccer/500/493.png",
+        "Fenerbahce": "https://a.espncdn.com/i/teamlogos/soccer/500/436.png"
+      },
+      "highlights": [],
+      "standings": [
+        "Shakhtar Donetsk：4分，第26名，已赛5场，距本组榜首11分。",
+        "Fenerbahce：8分，第16名，已赛5场，距本组榜首7分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster_pages": [
+        {
+          "filename": "401915375-zh-en.png",
+          "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915375-zh-en.png"
+        }
+      ],
+      "poster": {
+        "filename": "401915375-zh-en.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915375-zh-en.png",
+        "width": 1080,
+        "height": 1312,
+        "image_embedded": false,
+        "team_crests_embedded": 2
+      },
+      "media_missing": [
+        "缺已核实配图",
+        "缺官方集锦",
+        "海报未嵌入图片"
+      ]
+    },
+    {
+      "id": "401915376",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Internazionale",
+      "away": "VfB Stuttgart",
+      "score": "2–0",
+      "kickoff": "2026-11-25T12:00:00-08:00",
+      "finished": "2026-11-25T13:53:16-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915376/vfb-stuttgart-internazionale",
+      "timeline": [
+        {
+          "minute": "57'",
+          "type": "Penalty - Scored",
+          "players": "Petar Sucic",
+          "player": {
+            "id": "341494",
+            "name": "Petar Sucic",
+            "name_zh": "",
+            "number": "8"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Goal! Inter Milan 1, Stuttgart 0. Petar Sucic (Inter Milan) converts the penalty with a right footed shot to the centre of the goal."
+        },
+        {
+          "minute": "74'",
+          "type": "Goal",
+          "players": "Lautaro Martínez",
+          "player": {
+            "id": "219713",
+            "name": "Lautaro Martínez",
+            "name_zh": "",
+            "number": "10"
+          },
+          "assist": {
+            "id": "194748",
+            "name": "Federico Dimarco",
+            "name_zh": "",
+            "number": "32"
+          },
+          "scoring": true,
+          "text": "Goal! Inter Milan 2, Stuttgart 0. Lautaro Martínez (Inter Milan) right footed shot from the centre of the box to the bottom left corner. Assisted by Federico Dimarco."
+        }
+      ],
+      "photos": [],
+      "team_logos": {
+        "Internazionale": "https://a.espncdn.com/i/teamlogos/soccer/500/110.png",
+        "VfB Stuttgart": "https://a.espncdn.com/i/teamlogos/soccer/500/134.png"
+      },
+      "highlights": [],
+      "standings": [
+        "Internazionale：9分，第12名，已赛5场，距本组榜首6分。",
+        "VfB Stuttgart：7分，第17名，已赛5场，距本组榜首8分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster_pages": [
+        {
+          "filename": "401915376-zh-en.png",
+          "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915376-zh-en.png"
+        }
+      ],
+      "poster": {
+        "filename": "401915376-zh-en.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915376-zh-en.png",
+        "width": 1080,
+        "height": 1312,
+        "image_embedded": false,
+        "team_crests_embedded": 2
+      },
+      "media_missing": [
+        "缺已核实配图",
+        "缺官方集锦",
+        "海报未嵌入图片"
+      ]
+    },
+    {
+      "id": "401915377",
+      "league": "欧冠",
+      "slug": "uefa.champions",
+      "home": "Lille",
+      "away": "Bayern Munich",
+      "score": "2–1",
+      "kickoff": "2026-11-25T12:00:00-08:00",
+      "finished": "2026-11-25T13:52:17-08:00",
+      "source": "https://www.espn.com/soccer/match/_/gameId/401915377/bayern-munich-lille",
+      "timeline": [
+        {
+          "minute": "15'",
+          "type": "Goal - Header",
+          "players": "Dayot Upamecano",
+          "player": {
+            "id": "222793",
+            "name": "Dayot Upamecano",
+            "name_zh": "",
+            "number": "2"
+          },
+          "assist": {
+            "id": "324660",
+            "name": "Tom Bischof",
+            "name_zh": "",
+            "number": "8"
+          },
+          "scoring": true,
+          "text": "Goal! Lille 0, Bayern Munich 1. Dayot Upamecano (Bayern Munich) header from very close range to the centre of the goal. Assisted by Tom Bischof with a cross following a corner."
+        },
+        {
+          "minute": "62'",
+          "type": "Goal",
+          "players": "Ayase Ueda",
+          "player": {
+            "id": "274277",
+            "name": "Ayase Ueda",
+            "name_zh": "",
+            "number": "18"
+          },
+          "assist": {
+            "id": "318577",
+            "name": "Nathan Ngoy",
+            "name_zh": "",
+            "number": "3"
+          },
+          "scoring": true,
+          "text": "Goal! Lille 1, Bayern Munich 1. Ayase Ueda (Lille) right footed shot from the left side of the box to the bottom right corner. Assisted by Nathan Ngoy with a through ball."
+        },
+        {
+          "minute": "65'",
+          "type": "Own Goal",
+          "players": "Aleksandar Pavlovic",
+          "player": {
+            "id": "359370",
+            "name": "Aleksandar Pavlovic",
+            "name_zh": "",
+            "number": "45"
+          },
+          "assist": null,
+          "scoring": true,
+          "text": "Own Goal by Aleksandar Pavlovic, Bayern Munich. Lille 2, Bayern Munich 1."
+        }
+      ],
+      "photos": [
+        {
+          "url": "https://a.espncdn.com/photo/2026/1125/r1751327_1296x729_16-9.jpg",
+          "caption": "25 November 2026, France, Lille: Soccer, Men: Champions League, OSC Lille vs. Bayern Munich, Group Stage, Matchday 5; Jamal Musiala (FC Bayern Munich) and Konrad Laimer (FC Bayern Munich) leave the field after the game",
+          "credit": "Sven Hoppe/picture alliance via Getty Images",
+          "source": "https://www.espn.com/soccer/report/_/gameId/401915377"
+        }
+      ],
+      "team_logos": {
+        "Lille": "https://a.espncdn.com/i/teamlogos/soccer/500/166.png",
+        "Bayern Munich": "https://a.espncdn.com/i/teamlogos/soccer/500/132.png"
+      },
+      "highlights": [],
+      "standings": [
+        "Lille：4分，第29名，已赛5场，距本组榜首11分。",
+        "Bayern Munich：8分，第15名，已赛5场，距本组榜首7分。"
+      ],
+      "impact": "杯赛晋级影响需按当轮赛制核实，不能套用联赛积分。",
+      "poster_pages": [
+        {
+          "filename": "401915377-zh-en.png",
+          "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915377-zh-en.png"
+        }
+      ],
+      "poster": {
+        "filename": "401915377-zh-en.png",
+        "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/401915377-zh-en.png",
+        "width": 1080,
+        "height": 1312,
+        "image_embedded": true,
+        "team_crests_embedded": 2
+      },
+      "media_missing": [
+        "缺官方集锦"
+      ]
+    }
+  ],
+  "errors": [],
+  "scans": [
+    {
+      "league": "afc.asian.cup",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "afc.asian.cup",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "afc.asian.cup",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "eng.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "eng.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "eng.1",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "esp.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "esp.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "esp.1",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fra.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "fra.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fra.1",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "ger.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "ger.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "ger.1",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "ita.1",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "ita.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "ita.1",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261124",
+      "count": 9
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261125",
+      "count": 9
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261124",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261126",
+      "count": 0
+    }
+  ],
+  "audit": {
+    "url": "https://www.soccerbase.com/matches/results.sd?date=2026-11-25",
+    "expected": 0,
+    "findings": [],
+    "scope": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准"
+  },
+  "coverage": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准",
+  "covers": [
+    {
+      "filename": "cover-2026-11-25-social-1.png",
+      "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/cover-2026-11-25-social-1.png",
+      "matches": 9,
+      "team_crests_embedded": 18
+    }
+  ],
+  "cover": {
+    "filename": "cover-2026-11-25-social-1.png",
+    "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/cover-2026-11-25-social-1.png",
+    "matches": 9,
+    "team_crests_embedded": 18
+  },
+  "standings_charts": [
+    {
+      "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/standings-uefa.champions-1-zh-en-crests-social.png",
+      "filename": "standings-uefa.champions-1-zh-en-crests-social.png",
+      "league": "欧冠",
+      "group": "League Phase",
+      "source": "https://site.web.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings",
+      "rows": [
+        {
+          "team": "Real Madrid",
+          "team_zh": "皇家马德里",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/86.png",
+          "gamesPlayed": "5",
+          "losses": "0",
+          "pointDifferential": "+10",
+          "points": "15",
+          "pointsAgainst": "8",
+          "pointsFor": "18",
+          "ties": "0",
+          "wins": "5",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "1",
+          "rankChange": "0",
+          "overall": "5-0-0"
+        },
+        {
+          "team": "Paris Saint-Germain",
+          "team_zh": "巴黎圣日耳曼",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/160.png",
+          "gamesPlayed": "5",
+          "losses": "0",
+          "pointDifferential": "+15",
+          "points": "13",
+          "pointsAgainst": "7",
+          "pointsFor": "22",
+          "ties": "1",
+          "wins": "4",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "2",
+          "rankChange": "0",
+          "overall": "4-1-0"
+        },
+        {
+          "team": "Como",
+          "team_zh": "科莫",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2572.png",
+          "gamesPlayed": "5",
+          "losses": "1",
+          "pointDifferential": "+14",
+          "points": "12",
+          "pointsAgainst": "6",
+          "pointsFor": "20",
+          "ties": "0",
+          "wins": "4",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "3",
+          "rankChange": "0",
+          "overall": "4-0-1"
+        },
+        {
+          "team": "Barcelona",
+          "team_zh": "巴塞罗那",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/83.png",
+          "gamesPlayed": "5",
+          "losses": "1",
+          "pointDifferential": "+11",
+          "points": "12",
+          "pointsAgainst": "7",
+          "pointsFor": "18",
+          "ties": "0",
+          "wins": "4",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "4",
+          "rankChange": "0",
+          "overall": "4-0-1"
+        },
+        {
+          "team": "Liverpool",
+          "team_zh": "利物浦",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
+          "gamesPlayed": "5",
+          "losses": "1",
+          "pointDifferential": "+7",
+          "points": "12",
+          "pointsAgainst": "10",
+          "pointsFor": "17",
+          "ties": "0",
+          "wins": "4",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "5",
+          "rankChange": "0",
+          "overall": "4-0-1"
+        },
+        {
+          "team": "Real Betis",
+          "team_zh": "皇家贝蒂斯",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/244.png",
+          "gamesPlayed": "5",
+          "losses": "1",
+          "pointDifferential": "+4",
+          "points": "12",
+          "pointsAgainst": "6",
+          "pointsFor": "10",
+          "ties": "0",
+          "wins": "4",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "6",
+          "rankChange": "0",
+          "overall": "4-0-1"
+        },
+        {
+          "team": "Arsenal",
+          "team_zh": "阿森纳",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/359.png",
+          "gamesPlayed": "5",
+          "losses": "0",
+          "pointDifferential": "+5",
+          "points": "11",
+          "pointsAgainst": "4",
+          "pointsFor": "9",
+          "ties": "2",
+          "wins": "3",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "7",
+          "rankChange": "0",
+          "overall": "3-2-0"
+        },
+        {
+          "team": "Manchester City",
+          "team_zh": "曼城",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
+          "gamesPlayed": "5",
+          "losses": "1",
+          "pointDifferential": "+5",
+          "points": "10",
+          "pointsAgainst": "9",
+          "pointsFor": "14",
+          "ties": "1",
+          "wins": "3",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "8",
+          "rankChange": "0",
+          "overall": "3-1-1"
+        },
+        {
+          "team": "Sporting CP",
+          "team_zh": "葡萄牙体育",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2250.png",
+          "gamesPlayed": "5",
+          "losses": "1",
+          "pointDifferential": "+4",
+          "points": "10",
+          "pointsAgainst": "6",
+          "pointsFor": "10",
+          "ties": "1",
+          "wins": "3",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "9",
+          "rankChange": "0",
+          "overall": "3-1-1"
+        },
+        {
+          "team": "Borussia Dortmund",
+          "team_zh": "多特蒙德",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/124.png",
+          "gamesPlayed": "5",
+          "losses": "1",
+          "pointDifferential": "+2",
+          "points": "10",
+          "pointsAgainst": "6",
+          "pointsFor": "8",
+          "ties": "1",
+          "wins": "3",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "10",
+          "rankChange": "0",
+          "overall": "3-1-1"
+        },
+        {
+          "team": "Aston Villa",
+          "team_zh": "阿斯顿维拉",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
+          "gamesPlayed": "5",
+          "losses": "2",
+          "pointDifferential": "+5",
+          "points": "9",
+          "pointsAgainst": "7",
+          "pointsFor": "12",
+          "ties": "0",
+          "wins": "3",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "11",
+          "rankChange": "0",
+          "overall": "3-0-2"
+        },
+        {
+          "team": "Internazionale",
+          "team_zh": "国际米兰",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/110.png",
+          "gamesPlayed": "5",
+          "losses": "2",
+          "pointDifferential": "+4",
+          "points": "9",
+          "pointsAgainst": "6",
+          "pointsFor": "10",
+          "ties": "0",
+          "wins": "3",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "12",
+          "rankChange": "0",
+          "overall": "3-0-2"
+        },
+        {
+          "team": "Club Brugge",
+          "team_zh": "布鲁日",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/570.png",
+          "gamesPlayed": "5",
+          "losses": "2",
+          "pointDifferential": "+1",
+          "points": "9",
+          "pointsAgainst": "10",
+          "pointsFor": "11",
+          "ties": "0",
+          "wins": "3",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "13",
+          "rankChange": "0",
+          "overall": "3-0-2"
+        },
+        {
+          "team": "Galatasaray",
+          "team_zh": "加拉塔萨雷",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/432.png",
+          "gamesPlayed": "5",
+          "losses": "2",
+          "pointDifferential": "0",
+          "points": "9",
+          "pointsAgainst": "9",
+          "pointsFor": "9",
+          "ties": "0",
+          "wins": "3",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "14",
+          "rankChange": "0",
+          "overall": "3-0-2"
+        },
+        {
+          "team": "Bayern Munich",
+          "team_zh": "拜仁慕尼黑",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132.png",
+          "gamesPlayed": "5",
+          "losses": "1",
+          "pointDifferential": "+6",
+          "points": "8",
+          "pointsAgainst": "7",
+          "pointsFor": "13",
+          "ties": "2",
+          "wins": "2",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "15",
+          "rankChange": "0",
+          "overall": "2-2-1"
+        },
+        {
+          "team": "Fenerbahce",
+          "team_zh": "费内巴切",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/436.png",
+          "gamesPlayed": "5",
+          "losses": "1",
+          "pointDifferential": "-4",
+          "points": "8",
+          "pointsAgainst": "11",
+          "pointsFor": "7",
+          "ties": "2",
+          "wins": "2",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "16",
+          "rankChange": "0",
+          "overall": "2-2-1"
+        },
+        {
+          "team": "VfB Stuttgart",
+          "team_zh": "斯图加特",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/134.png",
+          "gamesPlayed": "5",
+          "losses": "2",
+          "pointDifferential": "+1",
+          "points": "7",
+          "pointsAgainst": "6",
+          "pointsFor": "7",
+          "ties": "1",
+          "wins": "2",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "17",
+          "rankChange": "0",
+          "overall": "2-1-2"
+        },
+        {
+          "team": "Atlético Madrid",
+          "team_zh": "马德里竞技",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+          "gamesPlayed": "5",
+          "losses": "2",
+          "pointDifferential": "+1",
+          "points": "7",
+          "pointsAgainst": "5",
+          "pointsFor": "6",
+          "ties": "1",
+          "wins": "2",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "18",
+          "rankChange": "0",
+          "overall": "2-1-2"
+        },
+        {
+          "team": "Manchester United",
+          "team_zh": "曼联",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
+          "gamesPlayed": "5",
+          "losses": "2",
+          "pointDifferential": "0",
+          "points": "7",
+          "pointsAgainst": "10",
+          "pointsFor": "10",
+          "ties": "1",
+          "wins": "2",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "19",
+          "rankChange": "0",
+          "overall": "2-1-2"
+        },
+        {
+          "team": "Bodo/Glimt",
+          "team_zh": "博德闪耀",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2980.png",
+          "gamesPlayed": "5",
+          "losses": "2",
+          "pointDifferential": "-4",
+          "points": "7",
+          "pointsAgainst": "9",
+          "pointsFor": "5",
+          "ties": "1",
+          "wins": "2",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "20",
+          "rankChange": "0",
+          "overall": "2-1-2"
+        },
+        {
+          "team": "LASK Linz",
+          "team_zh": "林茨",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4411.png",
+          "gamesPlayed": "5",
+          "losses": "3",
+          "pointDifferential": "0",
+          "points": "6",
+          "pointsAgainst": "10",
+          "pointsFor": "10",
+          "ties": "0",
+          "wins": "2",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "21",
+          "rankChange": "0",
+          "overall": "2-0-3"
+        },
+        {
+          "team": "FC Porto",
+          "team_zh": "波尔图",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png",
+          "gamesPlayed": "5",
+          "losses": "3",
+          "pointDifferential": "0",
+          "points": "6",
+          "pointsAgainst": "7",
+          "pointsFor": "7",
+          "ties": "0",
+          "wins": "2",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "22",
+          "rankChange": "0",
+          "overall": "2-0-3"
+        },
+        {
+          "team": "RB Leipzig",
+          "team_zh": "RB莱比锡",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11420.png",
+          "gamesPlayed": "5",
+          "losses": "3",
+          "pointDifferential": "-4",
+          "points": "6",
+          "pointsAgainst": "12",
+          "pointsFor": "8",
+          "ties": "0",
+          "wins": "2",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "23",
+          "rankChange": "0",
+          "overall": "2-0-3"
+        },
+        {
+          "team": "Villarreal",
+          "team_zh": "比利亚雷亚尔",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/102.png",
+          "gamesPlayed": "5",
+          "losses": "3",
+          "pointDifferential": "-5",
+          "points": "6",
+          "pointsAgainst": "14",
+          "pointsFor": "9",
+          "ties": "0",
+          "wins": "2",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "24",
+          "rankChange": "0",
+          "overall": "2-0-3"
+        },
+        {
+          "team": "AS Roma",
+          "team_zh": "罗马",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
+          "gamesPlayed": "5",
+          "losses": "2",
+          "pointDifferential": "+2",
+          "points": "5",
+          "pointsAgainst": "10",
+          "pointsFor": "12",
+          "ties": "2",
+          "wins": "1",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "25",
+          "rankChange": "0",
+          "overall": "1-2-2"
+        },
+        {
+          "team": "Shakhtar Donetsk",
+          "team_zh": "顿涅茨克矿工",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/493.png",
+          "gamesPlayed": "5",
+          "losses": "3",
+          "pointDifferential": "-1",
+          "points": "4",
+          "pointsAgainst": "5",
+          "pointsFor": "4",
+          "ties": "1",
+          "wins": "1",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "26",
+          "rankChange": "0",
+          "overall": "1-1-3"
+        },
+        {
+          "team": "Viking FK",
+          "team_zh": "维京",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/510.png",
+          "gamesPlayed": "5",
+          "losses": "3",
+          "pointDifferential": "-3",
+          "points": "4",
+          "pointsAgainst": "12",
+          "pointsFor": "9",
+          "ties": "1",
+          "wins": "1",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "27",
+          "rankChange": "0",
+          "overall": "1-1-3"
+        },
+        {
+          "team": "Napoli",
+          "team_zh": "那不勒斯",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/114.png",
+          "gamesPlayed": "5",
+          "losses": "3",
+          "pointDifferential": "-5",
+          "points": "4",
+          "pointsAgainst": "13",
+          "pointsFor": "8",
+          "ties": "1",
+          "wins": "1",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "28",
+          "rankChange": "0",
+          "overall": "1-1-3"
+        },
+        {
+          "team": "Lille",
+          "team_zh": "里尔",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/166.png",
+          "gamesPlayed": "5",
+          "losses": "3",
+          "pointDifferential": "-5",
+          "points": "4",
+          "pointsAgainst": "11",
+          "pointsFor": "6",
+          "ties": "1",
+          "wins": "1",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "29",
+          "rankChange": "0",
+          "overall": "1-1-3"
+        },
+        {
+          "team": "PSV Eindhoven",
+          "team_zh": "PSV埃因霍温",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/148.png",
+          "gamesPlayed": "5",
+          "losses": "3",
+          "pointDifferential": "-5",
+          "points": "4",
+          "pointsAgainst": "9",
+          "pointsFor": "4",
+          "ties": "1",
+          "wins": "1",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "30",
+          "rankChange": "0",
+          "overall": "1-1-3"
+        },
+        {
+          "team": "AEK Athens",
+          "team_zh": "雅典AEK",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/887.png",
+          "gamesPlayed": "5",
+          "losses": "4",
+          "pointDifferential": "-7",
+          "points": "3",
+          "pointsAgainst": "12",
+          "pointsFor": "5",
+          "ties": "0",
+          "wins": "1",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "31",
+          "rankChange": "0",
+          "overall": "1-0-4"
+        },
+        {
+          "team": "Feyenoord Rotterdam",
+          "team_zh": "费耶诺德",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/142.png",
+          "gamesPlayed": "5",
+          "losses": "4",
+          "pointDifferential": "-8",
+          "points": "3",
+          "pointsAgainst": "12",
+          "pointsFor": "4",
+          "ties": "0",
+          "wins": "1",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "32",
+          "rankChange": "0",
+          "overall": "1-0-4"
+        },
+        {
+          "team": "Sabah FK",
+          "team_zh": "沙巴",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/21922.png",
+          "gamesPlayed": "5",
+          "losses": "4",
+          "pointDifferential": "-9",
+          "points": "3",
+          "pointsAgainst": "14",
+          "pointsFor": "5",
+          "ties": "0",
+          "wins": "1",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "33",
+          "rankChange": "0",
+          "overall": "1-0-4"
+        },
+        {
+          "team": "Lens",
+          "team_zh": "朗斯",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/175.png",
+          "gamesPlayed": "5",
+          "losses": "4",
+          "pointDifferential": "-14",
+          "points": "3",
+          "pointsAgainst": "19",
+          "pointsFor": "5",
+          "ties": "0",
+          "wins": "1",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "34",
+          "rankChange": "0",
+          "overall": "1-0-4"
+        },
+        {
+          "team": "Slavia Prague",
+          "team_zh": "布拉格斯拉维亚",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/494.png",
+          "gamesPlayed": "5",
+          "losses": "4",
+          "pointDifferential": "-5",
+          "points": "1",
+          "pointsAgainst": "10",
+          "pointsFor": "5",
+          "ties": "1",
+          "wins": "0",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "35",
+          "rankChange": "0",
+          "overall": "0-1-4"
+        },
+        {
+          "team": "Slovan Bratislava",
+          "team_zh": "布拉迪斯拉发",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/521.png",
+          "gamesPlayed": "5",
+          "losses": "5",
+          "pointDifferential": "-18",
+          "points": "0",
+          "pointsAgainst": "19",
+          "pointsFor": "1",
+          "ties": "0",
+          "wins": "0",
+          "advanced": "0",
+          "deductions": "",
+          "ppg": "0",
+          "rank": "36",
+          "rankChange": "0",
+          "overall": "0-0-5"
+        }
+      ],
+      "bilingual_complete": true,
+      "logos_complete": true
+    }
+  ],
+  "poster_bundle": "https://tiffanyx22.github.io/football-daily/posters/2026-11-25/football-2026-11-25-social.zip",
+  "media_status": "pending"
+}
