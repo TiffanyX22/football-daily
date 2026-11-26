@@ -1,0 +1,27 @@
+name: Football delivery watchdog
+on:
+  schedule:
+    - cron: '2,7,12,17,22,27,32,37,42,47,52,57 * * * *'
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Daily men's football", "Real Madrid full-time graphic"]
+    types: [completed]
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: football-delivery-watchdog
+  cancel-in-progress: false
+  queue: max
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Recover missing email without duplicate dispatches
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 delivery_watchdog.py

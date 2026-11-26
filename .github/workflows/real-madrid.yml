@@ -19,6 +19,7 @@ permissions:
 concurrency:
   group: football-daily
   cancel-in-progress: false
+  queue: max
 jobs:
   madrid:
     runs-on: ubuntu-latest

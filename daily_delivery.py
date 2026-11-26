@@ -73,7 +73,7 @@ def next_scheduled_report(state, latest_due, reports=Path('docs/reports')):
     first = dt.date.fromisoformat(FIRST_DAY)
     while day >= first:
         key = day.isoformat()
-        if key not in state and not (reports / f'{key}.json').is_file():
+        if key not in state:
             return key, False
         day -= dt.timedelta(days=1)
     pending = next_pending(state)

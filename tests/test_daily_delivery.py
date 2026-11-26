@@ -82,6 +82,9 @@ class DailyDeliveryTests(unittest.TestCase):
             reports = Path(path)
             self.assertEqual(delivery.next_scheduled_report(state, latest, reports), ('2026-11-28', False))
             (reports / '2026-11-28.json').touch()
+            # Published files alone are not evidence that an email was sent.
+            self.assertEqual(delivery.next_scheduled_report(state, latest, reports), ('2026-11-28', False))
+            state['2026-11-28'] = {'status': 'complete'}
             self.assertEqual(delivery.next_scheduled_report(state, latest, reports), ('2026-11-25', False))
             state['2026-11-25'] = {'status': 'complete'}
             self.assertEqual(delivery.next_scheduled_report(state, latest, reports), ('2026-11-26', True))
