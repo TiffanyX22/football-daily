@@ -1,0 +1,365 @@
+{
+  "day": "2026-11-26",
+  "start": "2026-11-25T16:00:00-08:00",
+  "end": "2026-11-26T16:00:00-08:00",
+  "partial_day": false,
+  "generated": "2026-11-26T16:31:09.432290-08:00",
+  "matches": [],
+  "errors": [],
+  "scans": [
+    {
+      "league": "afc.asian.cup",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "afc.asian.cup",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "afc.asian.cup",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "caf.nations",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "concacaf.gold",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "concacaf.nations.league",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "conmebol.america",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "eng.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "eng.1",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "eng.1",
+      "date": "20261127",
+      "count": 1
+    },
+    {
+      "league": "esp.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "esp.1",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "esp.1",
+      "date": "20261127",
+      "count": 1
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.confederations",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.friendly",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.world",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.afc",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.caf",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.concacaf",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.conmebol",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.ofc",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fifa.worldq.uefa",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "fra.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "fra.1",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "fra.1",
+      "date": "20261127",
+      "count": 1
+    },
+    {
+      "league": "ger.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "ger.1",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "ger.1",
+      "date": "20261127",
+      "count": 1
+    },
+    {
+      "league": "ita.1",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "ita.1",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "ita.1",
+      "date": "20261127",
+      "count": 1
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261125",
+      "count": 9
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "uefa.champions",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "uefa.euro",
+      "date": "20261127",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261125",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261126",
+      "count": 0
+    },
+    {
+      "league": "uefa.nations",
+      "date": "20261127",
+      "count": 0
+    }
+  ],
+  "audit": {
+    "url": "https://www.soccerbase.com/matches/results.sd?date=2026-11-26",
+    "expected": 0,
+    "findings": [],
+    "scope": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准"
+  },
+  "coverage": "五大联赛当日UK赛果单向交叉核对；跨日及国家队/欧冠仍以主源为准",
+  "covers": [
+    {
+      "filename": "cover-2026-11-26-social-1.png",
+      "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-26/cover-2026-11-26-social-1.png",
+      "matches": 0,
+      "team_crests_embedded": 0
+    }
+  ],
+  "cover": {
+    "filename": "cover-2026-11-26-social-1.png",
+    "url": "https://tiffanyx22.github.io/football-daily/posters/2026-11-26/cover-2026-11-26-social-1.png",
+    "matches": 0,
+    "team_crests_embedded": 0
+  },
+  "standings_charts": [],
+  "poster_bundle": "https://tiffanyx22.github.io/football-daily/posters/2026-11-26/football-2026-11-26-social.zip",
+  "media_status": "complete"
+}
