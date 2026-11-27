@@ -9,7 +9,7 @@
     "last_attempt": "2026-11-26T18:58:19.046602+00:00"
   },
   "2026-11-26": {
-    "status": "reserved",
+    "status": "complete",
     "attempts": 0,
     "strict": false,
     "phase": "initial",
