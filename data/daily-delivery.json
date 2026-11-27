@@ -7,5 +7,10 @@
     "total": 1,
     "accepted": 1,
     "last_attempt": "2026-11-26T18:58:19.046602+00:00"
+  },
+  "2026-11-26": {
+    "status": "waiting",
+    "attempts": 0,
+    "strict": false
   }
 }
