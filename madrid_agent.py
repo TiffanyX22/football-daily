@@ -12,8 +12,6 @@ import subprocess
 from agent import LA, UTC, LEAGUES, get_json, instant, make_match, fetch, render
 from gallery import render_gallery
 from madrid_gallery import enrich_gallery
-from mail_report import build_messages
-from social_match import draw_match
 
 STATE = Path('data/madrid-delivery.json')
 GALLERY_LIMIT = 30  # verified photos of this exact match on the 图集 page
@@ -51,6 +49,7 @@ def checkpoint(state):
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument('--check-only', action='store_true', help='Lightweight schedule gate; no rendering or sending')
     parser.add_argument('--send', action='store_true')
     parser.add_argument('--out', default='docs')
     parser.add_argument('--event', help='Re-render one already-delivered match (card + gallery + pages)')
@@ -67,9 +66,17 @@ def main():
             raise SystemExit(f'Completed Real Madrid match {args.event} not found in schedule')
     else:
         candidates = sorted([e for e in events if eligible(e, now, since, state['deliveries'])], key=lambda e: e['date'])
+    if args.check_only:
+        if os.environ.get('GITHUB_OUTPUT'):
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+                output.write('work=' + str(bool(candidates)).lower() + '\n')
+        print('Real Madrid matches needing work:', len(candidates))
+        return
     if not candidates:
         print('No new completed Real Madrid men matches; no email sent')
         return
+    from mail_report import build_messages
+    from social_match import draw_match
     rules = json.loads(Path('publishers.json').read_text())
     out = Path(args.out)
     for event in candidates:

@@ -60,18 +60,10 @@ function footballTick() {
     const entry = deliveries[day] || {};
     if (!entry.status || entry.status === 'waiting') dispatch('daily.yml', {report_date: day}, now);
     lateNotice(day, entry, now);
-    // The same independent timer also recovers the Real Madrid full-time agent.
-    const madrid = stateFile('madrid-delivery.json');
-    const schedule = JSON.parse(UrlFetchApp.fetch('https://site.api.espn.com/apis/site/v2/sports/soccer/all/teams/86/schedule').getContentText());
-    const candidates = (schedule.events || []).filter(event => {
-      const competition = (event.competitions || [])[0] || {};
-      const kickoff = new Date(event.date).getTime();
-      return !madrid.deliveries[String(event.id)] && competition.status && competition.status.type.completed &&
-        (competition.competitors || []).some(side => String(side.team.id) === '86') &&
-        kickoff >= new Date(madrid.enabled_at).getTime() && kickoff >= now.getTime() - 3 * 86400000 && kickoff <= now.getTime();
-    });
-    if (candidates.length) dispatch('real-madrid.yml', {}, now);
-    console.log('Checked football delivery for ' + day + '; Madrid candidates: ' + candidates.length);
+    // Google egress may be blocked by ESPN. GitHub performs the lightweight
+    // match check itself; the Google timer only uses the GitHub API.
+    dispatch('real-madrid.yml', {}, now);
+    console.log('Checked football delivery for ' + day + '; Madrid cloud check scheduled when due');
   } finally { lock.releaseLock(); }
 }
 
