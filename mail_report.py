@@ -137,6 +137,8 @@ def main():
         parser.error('Report date is required')
     folder = Path(args.out)
     report = json.loads((folder / 'reports' / f'{args.date}.json').read_text())
+    from player_name_lookup import require_names
+    require_names(report)
     from daily_delivery import load, save, phase, missing_media, waiting
     strict = os.environ.get('REQUIRE_COMPLETE_MEDIA') == 'true'
     if not args.dry_run:

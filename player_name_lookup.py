@@ -89,3 +89,20 @@ def enrich_report(report):
                     changed.add(str(match['id']))
     persist()
     return changed
+
+
+def missing_names(report):
+    missing = {}
+    for match in report['matches']:
+        for event in match.get('timeline', []):
+            for role in ('player', 'assist'):
+                player = event.get(role)
+                if player and not player.get('name_zh'):
+                    missing[str(player['id'])] = player['name']
+    return missing
+
+
+def require_names(report):
+    missing = missing_names(report)
+    if missing:
+        raise RuntimeError('Chinese player names incomplete; refuse placeholder images: ' + ', '.join(missing.values()))

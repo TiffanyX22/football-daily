@@ -110,6 +110,8 @@ def main():
             for name in [match['id'], 'latest']:
                 (dest / f'{name}-gallery.html').write_text(
                     render_gallery(match, day, f"{base}/real-madrid/{match['id']}.html#{match['id']}"))
+        from player_name_lookup import require_names
+        require_names(report)
         messages = build_messages(report, out, os.environ.get('SMTP_USERNAME', 'test@example.invalid'),
                                   os.environ.get('REPORT_EMAIL', 'test@example.invalid'))
         for msg in messages:

@@ -25,3 +25,11 @@ class NameLookupTests(unittest.TestCase):
         self.assertEqual(player['name_zh'], '安东尼·戈登')
         self.assertEqual((player['name'], player['number']), ('Anthony Gordon', '10'))
         self.assertEqual(report['matches'][0]['score'], '2–0')
+
+    def test_delivery_rejects_name_placeholders(self):
+        from player_name_lookup import require_names
+        report = {'matches': [{'timeline': [{'player': {'id': '99', 'name': 'Unknown', 'name_zh': ''}}]}]}
+        with self.assertRaisesRegex(RuntimeError, 'refuse placeholder'):
+            require_names(report)
+        report['matches'][0]['timeline'][0]['player']['name_zh'] = '测试姓名'
+        require_names(report)
