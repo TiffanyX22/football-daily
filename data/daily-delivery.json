@@ -15,5 +15,10 @@
     "phase": "initial",
     "total": 1,
     "accepted": 1
+  },
+  "2026-11-27": {
+    "status": "waiting",
+    "attempts": 0,
+    "strict": false
   }
 }
