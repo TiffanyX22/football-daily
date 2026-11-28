@@ -3,7 +3,7 @@
   "start": "2026-11-26T16:00:00-08:00",
   "end": "2026-11-27T16:00:00-08:00",
   "partial_day": false,
-  "generated": "2026-11-27T22:50:25.719053-08:00",
+  "generated": "2026-11-27T23:36:44.909517-08:00",
   "matches": [
     {
       "id": "401884720",
@@ -76,7 +76,7 @@
           "assist": {
             "id": "408539",
             "name": "Wael Mohya",
-            "name_zh": "",
+            "name_zh": "瓦埃尔·莫亚",
             "number": "36"
           },
           "scoring": true,
@@ -160,7 +160,7 @@
           "player": {
             "id": "363150",
             "name": "Luc Zogbe",
-            "name_zh": "",
+            "name_zh": "吕克·佐格贝",
             "number": "20"
           },
           "assist": {
@@ -264,7 +264,7 @@
           "player": {
             "id": "287869",
             "name": "Igor Jesus",
-            "name_zh": "",
+            "name_zh": "伊戈尔·热苏斯",
             "number": "11"
           },
           "assist": {
@@ -297,7 +297,7 @@
           "player": {
             "id": "304871",
             "name": "Emmanuel Emegha",
-            "name_zh": "",
+            "name_zh": "埃马纽埃尔·埃梅加",
             "number": "22"
           },
           "assist": null,
@@ -330,7 +330,7 @@
           "player": {
             "id": "304871",
             "name": "Emmanuel Emegha",
-            "name_zh": "",
+            "name_zh": "埃马纽埃尔·埃梅加",
             "number": "22"
           },
           "assist": {
@@ -397,7 +397,7 @@
           "player": {
             "id": "311054",
             "name": "Iván Romero",
-            "name_zh": "",
+            "name_zh": "伊万·罗梅罗",
             "number": "9"
           },
           "assist": null,
@@ -411,7 +411,7 @@
           "player": {
             "id": "399278",
             "name": "Pablo García",
-            "name_zh": "",
+            "name_zh": "巴勃罗·加西亚",
             "number": "15"
           },
           "assist": {
@@ -430,13 +430,13 @@
           "player": {
             "id": "390389",
             "name": "Yassir Zabiri",
-            "name_zh": "",
+            "name_zh": "亚西尔·扎比里",
             "number": "21"
           },
           "assist": {
             "id": "284699",
             "name": "Iñigo Vicente",
-            "name_zh": "",
+            "name_zh": "伊尼戈·比森特",
             "number": "10"
           },
           "scoring": true,
@@ -449,13 +449,13 @@
           "player": {
             "id": "399278",
             "name": "Pablo García",
-            "name_zh": "",
+            "name_zh": "巴勃罗·加西亚",
             "number": "15"
           },
           "assist": {
             "id": "178237",
             "name": "Jorge Salinas",
-            "name_zh": "",
+            "name_zh": "豪尔赫·萨利纳斯",
             "number": "17"
           },
           "scoring": true,
