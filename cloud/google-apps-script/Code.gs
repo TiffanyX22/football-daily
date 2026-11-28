@@ -50,6 +50,24 @@ function lateNotice(day, entry, now) {
   props.setProperty('late_notice', day);
 }
 
+function resolveNameRequests(now) {
+  const requests = stateFile('player-name-requests.json');
+  const names = {};
+  Object.values(requests).forEach(r => Object.entries(r.players).forEach(([id, english]) => names[id] = english));
+  if (!Object.keys(names).length) return false;
+  const props = PropertiesService.getScriptProperties();
+  if (now.getTime() - Number(props.getProperty('name_attempt') || 0) < 600000) return true;
+  props.setProperty('name_attempt', String(now.getTime()));
+  const translations = [];
+  Object.entries(names).slice(0, 100).forEach(([id, english]) => {
+    const chinese = LanguageApp.translate(english, 'en', 'zh-CN').trim();
+    if (/[\u4e00-\u9fff]/.test(chinese)) translations.push({id, english, chinese});
+  });
+  if (translations.length) dispatch('player-names.yml', {translations: JSON.stringify(translations)}, now);
+  console.log('Chinese name requests: ' + Object.keys(names).length + '; transliterations ready: ' + translations.length);
+  return true;
+}
+
 function footballTick() {
   const lock = LockService.getScriptLock();
   if (!lock.tryLock(1000)) return;
@@ -58,8 +76,9 @@ function footballTick() {
     const day = dueDay(now);
     const deliveries = stateFile('daily-delivery.json');
     const entry = deliveries[day] || {};
-    if (!entry.status || entry.status === 'waiting') dispatch('daily.yml', {report_date: day}, now);
     lateNotice(day, entry, now);
+    if (resolveNameRequests(now)) return;
+    if (!entry.status || entry.status === 'waiting') dispatch('daily.yml', {report_date: day}, now);
     // Google egress may be blocked by ESPN. GitHub performs the lightweight
     // match check itself; the Google timer only uses the GitHub API.
     dispatch('real-madrid.yml', {}, now);

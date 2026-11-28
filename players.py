@@ -47,7 +47,8 @@ def label(player):
     if not player:
         return '球员资料暂缺'
     number = '#' + str(player['number']) if player.get('number') else '号码未核实'
-    return f"{number} {player.get('name_zh') or '中文名待核实'}（{player['name']}）"
+    suffix = '〔音译〕' if player.get('name_zh_kind') == 'transliteration' else ''
+    return f"{number} {player.get('name_zh') or '中文名待核实'}{suffix}（{player['name']}）"
 
 
 def show_assist(event):

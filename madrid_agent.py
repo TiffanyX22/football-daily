@@ -40,8 +40,12 @@ def checkpoint(state):
     # Serialize with the daily workflow. Persist the send reservation before SMTP:
     # an interrupted/ambiguous SMTP send is not automatically sent a second time.
     subprocess.run(['git', 'add', 'data/madrid-delivery.json', 'docs/real-madrid', 'docs/posters'], check=True)
+    if Path('data/player-name-requests.json').exists():
+        subprocess.run(['git', 'add', 'data/player-name-requests.json'], check=True)
     if Path('data/player-name-cache.json').exists():
         subprocess.run(['git', 'add', 'data/player-name-cache.json'], check=True)
+    if subprocess.run(['git', 'diff', '--cached', '--quiet']).returncode == 0:
+        return
     subprocess.run(['git', '-c', 'user.name=github-actions[bot]', '-c', 'user.email=41898282+github-actions[bot]@users.noreply.github.com',
                     'commit', '-m', 'Update Real Madrid match delivery'], check=True)
     subprocess.run(['git', 'push', 'origin', 'HEAD:main'], check=True)
@@ -86,6 +90,8 @@ def main():
         match = make_match(slug, normalize(event), since, now, rules, GALLERY_LIMIT, focus_team_id='86')
         if not match:
             continue
+        from player_name_lookup import enrich_report
+        enrich_report({'matches': [match]})
         enrich_gallery(match, GALLERY_LIMIT, fetch)
         day = instant(match['finished']).astimezone(LA).date().isoformat()
         root = out / 'posters' / day
@@ -110,7 +116,13 @@ def main():
             for name in [match['id'], 'latest']:
                 (dest / f'{name}-gallery.html').write_text(
                     render_gallery(match, day, f"{base}/real-madrid/{match['id']}.html#{match['id']}"))
-        from player_name_lookup import require_names
+        from player_name_lookup import require_names, enrich_report, queue_missing
+        enrich_report(report)
+        if queue_missing(report, 'madrid'):
+            if args.send:
+                checkpoint(state)
+            print('Waiting for automatic Chinese transliterations:', match['id'])
+            continue
         require_names(report)
         messages = build_messages(report, out, os.environ.get('SMTP_USERNAME', 'test@example.invalid'),
                                   os.environ.get('REPORT_EMAIL', 'test@example.invalid'))

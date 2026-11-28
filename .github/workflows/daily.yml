@@ -120,6 +120,7 @@ jobs:
             exit 0
           fi
           git add docs
+          if [ -f data/player-name-requests.json ]; then git add data/player-name-requests.json; fi
           if [ -f data/player-name-cache.json ]; then git add data/player-name-cache.json; fi
           if ! git diff --cached --quiet; then
             git commit -m 'Publish daily football report'

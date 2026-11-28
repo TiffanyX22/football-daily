@@ -505,6 +505,8 @@ def main():
                   'audit': audit, 'coverage': audit['scope']}
     from player_name_lookup import enrich_report
     renamed = enrich_report(report)
+    from player_name_lookup import queue_missing
+    queue_missing(report)
     if args.refresh_media:
         refresh_ids.update(renamed)
     out = Path(args.out)

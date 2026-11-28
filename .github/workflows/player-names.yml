@@ -1,0 +1,27 @@
+name: Resolve player transliterations
+on:
+  workflow_dispatch:
+    inputs:
+      translations:
+        description: 'JSON of requested ESPN player IDs, original English names and Chinese transliterations'
+        required: true
+        type: string
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: football-daily
+  queue: max
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Validate requested identities, cache names, and resume held reports
+        env:
+          TRANSLATED_NAMES: ${{ inputs.translations }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 import_player_names.py

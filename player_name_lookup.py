@@ -76,6 +76,7 @@ def persist():
 
 def enrich_report(report):
     names = json.loads(Path(__file__).with_name('player-names.json').read_text())
+    cache = json.loads(CACHE.read_text()) if CACHE.exists() else {}
     changed = set()
     for match in report['matches']:
         for event in match.get('timeline', []):
@@ -86,6 +87,10 @@ def enrich_report(report):
                 chinese = names.get(str(player['id'])) or player.get('name_zh') or lookup(str(player['id']), player['name'])
                 if chinese and chinese != player.get('name_zh'):
                     player['name_zh'] = chinese
+                    changed.add(str(match['id']))
+                kind = '' if str(player['id']) in names else cache.get(str(player['id']), {}).get('kind', '')
+                if player.get('name_zh_kind', '') != kind:
+                    player['name_zh_kind'] = kind
                     changed.add(str(match['id']))
     persist()
     return changed
@@ -106,3 +111,17 @@ def require_names(report):
     missing = missing_names(report)
     if missing:
         raise RuntimeError('Chinese player names incomplete; refuse placeholder images: ' + ', '.join(missing.values()))
+
+
+def queue_missing(report, kind='daily', path=None):
+    path = path or Path(__file__).with_name('data') / 'player-name-requests.json'
+    requests = json.loads(path.read_text()) if path.exists() else {}
+    key = kind + ':' + report['day']
+    missing = missing_names(report)
+    if missing:
+        requests[key] = {'kind': kind, 'day': report['day'], 'players': missing}
+    else:
+        requests.pop(key, None)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(requests, ensure_ascii=False, indent=2) + '\n')
+    return bool(missing)
