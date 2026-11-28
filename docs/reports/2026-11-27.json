@@ -3,7 +3,7 @@
   "start": "2026-11-26T16:00:00-08:00",
   "end": "2026-11-27T16:00:00-08:00",
   "partial_day": false,
-  "generated": "2026-11-27T16:19:46.019637-08:00",
+  "generated": "2026-11-27T16:33:46.309998-08:00",
   "matches": [
     {
       "id": "401884720",
@@ -103,7 +103,7 @@
           "player": {
             "id": "170257",
             "name": "Niclas Füllkrug",
-            "name_zh": "",
+            "name_zh": "尼可拉斯·菲尔克鲁格",
             "number": "10"
           },
           "assist": null,
@@ -283,7 +283,7 @@
           "player": {
             "id": "243396",
             "name": "Morgan Gibbs-White",
-            "name_zh": "",
+            "name_zh": "摩根·吉布斯-怀特",
             "number": "10"
           },
           "assist": null,
@@ -311,7 +311,7 @@
           "player": {
             "id": "243396",
             "name": "Morgan Gibbs-White",
-            "name_zh": "",
+            "name_zh": "摩根·吉布斯-怀特",
             "number": "10"
           },
           "assist": {
