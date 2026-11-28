@@ -17,12 +17,12 @@
     "accepted": 1
   },
   "2026-11-27": {
-    "status": "pending",
+    "status": "reserved",
     "attempts": 9,
     "strict": false,
-    "phase": "initial",
+    "phase": "correction",
     "total": 1,
-    "accepted": 1,
+    "accepted": 0,
     "last_attempt": "2026-11-28T07:36:31.877317+00:00"
   }
 }
